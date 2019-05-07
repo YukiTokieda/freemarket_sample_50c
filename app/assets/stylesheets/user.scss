@@ -1,3 +1,46 @@
 // Place all the styles related to the user controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.my-containercleanfix{
+  margin: 40px auto 0;
+  width: 1020px;
+  height: 100vh;
+  .my-content{
+    float: right;
+    width: 700px;
+    height: 100%;
+    background-color: red;
+  }
+  .my-side{
+    float: left;
+    width: 280px;
+    height: 100vh;
+    margin: 0 40px 0 0;
+    background-color: blue;
+  .mypage-navi{
+    background-color: yellow;
+    &__list{
+      list-style: none;
+      background-color: green;
+      &__li{
+        border-top: 1px solid #eee;
+        &__item{
+          position: relative;
+          display: block;
+          min-height: 48px;
+          padding: 16px;
+          background: #fff;
+          font-size: 14px;
+          color: #333;
+          text-decoration: none;
+        }
+        .icon-arrow-right{
+        }
+      }
+    }
+    &__head{
+      margin: 40px 0 0;
+    }
+  }
+  }
+}
