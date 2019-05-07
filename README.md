@@ -1,11 +1,13 @@
 # README
 
 
-## userテーブル
+## Userテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|null: false,|
+|nickname|string|null: false|
+|email|string|null: false|unique: true|
+|telephone|integer|null: false|unique: true|
 |first_name|string|null: false|
 |last_name|string|null: false|
 |first_name_ka|string|null: false|
@@ -17,7 +19,7 @@
 - has_many :products
 
 
-## commentテーブル
+## Commentテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -30,15 +32,13 @@
 - belongs_to :product
 
 
-## productテーブル
+## Productテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|title|string|null: false|
+|name|string|null: false|index: true|
 |image|string|null: false|
 |price|integer|null: false|
-|region|string|null: false|
-|shipping_date|string|null: false|
 |user_id|integer|foreign_key: true|
 |brand_id|integer|foreign_key: true|
 |status_id|indeger|foreign_key: true|
@@ -47,24 +47,12 @@
 - belongs_to :user
 - belongs_to :brand
 - belongs_to :status
+- belongs_to :shipping
 - has_many :comments
 - has_many :categories, through: :products_categories
 
-#### Options
-- user_id index: true
 
-
-## statusテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|title|string|null: false|
-
-### Association
-- belongs_to :product
-
-
-## product_category
+## Product_categoryテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -76,21 +64,68 @@
 - belongs_to :category
 
 
-## category
+## Categoryテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 
 ### Association
+- has_many :types
 - has_many :products, through: :products_categories
 
 
-## brand
+## Typeテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+|category_id|indeger|foreign_key: true|
+
+### Association
+- belongs :category
+- has_many :details
+
+
+##  Detailテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|type_id|integer|foreign_key: true|
+
+### Association
+- belongs_to :type
+
+
+## Brandテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+### Association
+- belongs_to :product
+
+
+## Statusテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|title|string|null: false|
+|product_id|integer|foreign_key: true|
+
+### Association
+- belongs_to :product
+
+
+## Shippingテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|method|string|null: false|
+|region|integer|null: false|
+|period|integer|null: false|
 
 ### Association
 - belongs_to :product
