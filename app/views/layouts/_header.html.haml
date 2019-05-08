@@ -1,0 +1,46 @@
+%main-header.main-header
+  .header_inner
+    .header_top 
+      %h1.logo
+        %img{:alt => "mercari", :height => "36", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?613028459", :width => "134"}
+
+      .header_form
+        .header_form__textfield 何をお探しですか？
+        -# = form_for [] do |f|
+          -# =f.text_field :content, class: 'search_form', placeholder: '何をお探しですか？'
+        .search-icon
+          -# fa_icon '', class: 'search-icon'
+    .header_bottom-crearfix
+      .left-contents
+        .left-contents_search-nav
+          %li.category_nav
+            -# = link_to 'カテゴリーから探す' category_path do
+            .category_text
+              カテゴリーから探す
+            .category_icon
+              -# = fa_icon '', class: 'icon'
+          %li.brand_nav
+            -# = link_to  'ブランドから探す' brand_path do
+            .brand_text
+              ブランドから探す
+            .brand_icon
+              -# = fa_icon '', class: 'icon'
+      
+      .right-contents
+        .right-contents_user-nav
+          %li.right-header_notification
+            -# = link_to 'お知らせ' mypage_notification_path do
+            .notification_text お知らせ
+            
+            .notification_icon
+            -# = fa_icon '', class: 'icon'
+          %li.right-header_todo-list
+            -# = link_to 'やることリスト' mypage_todo_path do
+            .todo-list_text やることリスト
+            .todo-list_icon
+            -# = fa_icon '', class: 'icon'
+          %li.right-header_mypage-link
+            -# = link_to 'マイページ' mypage_path do
+            .mypage-link_text マイページ
+            .mypage-link_icon
+            -# = fa_icon '', class:'icon'

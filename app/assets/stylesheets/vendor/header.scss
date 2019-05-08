@@ -1,0 +1,163 @@
+main-header {
+  height: 100px;
+  width: 100%;
+  position: relative;
+  background-color: pink;
+
+  .header_inner {
+    width: 1020px;
+    margin: 0 auto;
+    padding: 8px 0 0;
+    // background-color: rgb(121, 206, 199);
+    z-index: 100;
+    .header_top {
+      height: 40px;
+      margin:12px;
+      padding: 0;
+      // background-color: rgb(96, 139, 114);
+      .logo {
+        height: 36px;
+        width: 130px;
+        margin: 2px 2px;
+        // background-color: rgb(36, 99, 99);
+        float: left;
+      }
+      .header_form {
+        height: 34px;
+        width: 80%;
+        margin: left 45px;
+        border-radius: 5px;
+        border: solid rgb(202, 202, 202);
+        background-color: rgb(243, 243, 243);
+        float: right;
+        .header_form__textfield {
+          height: 34px;
+          width: 740px;
+          padding: 5px;
+          opacity: 0.5;
+          float: left;
+        }
+        .search-icon {
+          height: 34px;
+          width: 45px;
+          float: right;
+          background-color: rgb(117, 146, 136);
+        }
+      }
+    }
+    .header_bottom-crearfix {
+      height: 50px;
+      margin: 8px;
+      padding: 0;
+      // background-color: rgb(85, 117, 117);
+      .left-contents {
+        height: 40px;
+        width: 350px;
+        margin: 5px 5px;
+        float: left;
+        // background-color: rgb(168, 196, 150);
+        .left-contents_search-nav {
+          height: 40px;
+          width: 350px;
+          display: flex;
+          .category_nav {
+            width: 150px;
+            // float: left;
+            display: inline-block;
+            padding: 10px;
+            // background-color: bisque;
+            .category_text {
+              font-size: 14px;
+              float: right;
+            }
+            .category_icon {
+              height: 15px;
+              width: 15px;
+              float: left;
+              padding: 2px;
+              background-color: rgb(117, 146, 136);
+            }
+          }
+          .brand_nav {
+            width: 140px;
+            // float: right;
+            display: inline-block;
+            padding: 10px;
+            // background-color: bisque;
+            .brand_text {
+              font-size: 14px;
+              float: right;
+            }
+            .brand_icon {
+              height: 15px;
+              width: 15px;
+              float: left;
+              padding: 2px;
+              background-color: rgb(117, 146, 136);
+            }
+          }
+        }
+      }
+      .right-contents {
+        height: 40px;
+        width: 380px;
+        margin: 5px 5px;
+        float: right;
+        // background-color: rgb(168, 196, 150);
+        .right-contents_user-nav {
+          height: 40px;
+          width: 380px;
+          display: flex;
+          .right-header_notification {
+            width: 80px;
+            padding: 10px;
+            display: inline-block;
+            .notification_text {
+              font-size: 14px;
+              float: right;
+            }
+            .notification_icon {
+              height: 15px;
+              width: 15px;
+              float: left;
+              padding: 2px;
+              background-color: rgb(117, 146, 136);
+            }
+          }
+          .right-header_todo-list {
+            width: 125px;
+            padding: 10px;
+            display: inline-block;
+            .todo-list_text {
+              font-size: 14px;
+              float: right;
+            }
+            .todo-list_icon {
+              height: 15px;
+              width: 15px;
+              float: left;
+              padding: 2px;
+              background-color: rgb(117, 146, 136);
+            }
+          }
+          .right-header_mypage-link {
+            width: 100px;
+            padding: 10px;
+            display: inline-block;
+            .mypage-link_text {
+              font-size: 14px;
+              float: right;
+            }
+            .mypage-link_icon {
+              height: 15px;
+              width: 15px;
+              float: left;
+              padding: 2px;
+              background-color: rgb(117, 146, 136);
+            }
+          }
+        }
+      }
+    }
+  }
+}
