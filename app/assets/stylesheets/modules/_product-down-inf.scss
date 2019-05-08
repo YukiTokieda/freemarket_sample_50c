@@ -1,0 +1,21 @@
+.product-box {
+  margin: 24px 0 0;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  &.__text-center {
+    text-align: center;
+  }
+  &_price {
+    margin: 0 16px 0 0;
+    font-size: 50px;
+    &.__text-bold {
+      font-weight: 600;
+    }
+  }
+  &_tax {
+    font-size: 10px;
+  }
+  &_shipping-fee {
+    display: inline-block;
+    font-size: 16px;
+  }
+}
