@@ -10,7 +10,91 @@
     width: 700px;
     height: 100%;
     background-color: red;
+    .mypage-user_icon{
+      height: 160px;
+      position: relative;
+      padding: 20px;
+      background-color: yellow;
+      &_link{
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        color: #333;
+        background-color: aqua;
+        .figure{
+          overflow: hidden;
+          width: 60px;
+          height: 60px;
+          margin: 0 auto;
+          border-radius: 50%;
+        }
+        .bold{
+          margin: 0 auto;
+          font-size: 14px;
+          text-align: center;
+        }
+        .mypage-number{
+          display: flex;
+          margin: 8px auto 0;
+          font-size: 14px;
+          width: 120px;
+          &_evaluation{
+          }
+          &_exhibits{
+            margin: 0 0 0 16px;
+          }
+          .bold{
+            margin: 0 0 0 8px;
+            font-size: 16px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+    .mypage-tab_container_notification-todo{
+      margin: 0;
+      .mypage-tabs{
+        border: 0;
+        background: #eee;
+        font-size: 0;
+        height: 74px;
+        &_2{
+          width: 50%;
+          display: inline-block;
+          text-align: center;
+          vertical-align: top;
+            &_notification-todo{
+              text-decoration: none;
+              position: relative;
+              display: block;
+              color: #333;
+              font-size: 16px;
+              line-height: 74px;
+            }
+        }
+      }
+
+      .tab-content{
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+        height: 50px;
+        .mypage-item-list{
+          list-style: none;
+        }
+      }
+    }
+    .mypage-tab_container{
+      margin: 40px 0 0;
+      background: black;
+      width: 100%;
+    }
   }
+
   .my-side{
     float: left;
     width: 280px;
@@ -19,12 +103,12 @@
     background-color: blue;
   .mypage-navi{
     background-color: yellow;
-    &__list{
+    .mypage-navi-list{
       list-style: none;
       background-color: green;
-      &__li{
+      &_li{
         border-top: 1px solid #eee;
-        &__item{
+        &_item{
           position: relative;
           display: block;
           min-height: 48px;
@@ -38,7 +122,7 @@
         }
       }
     }
-    &__head{
+    &_head{
       margin: 40px 0 0;
     }
   }
