@@ -26,7 +26,7 @@ main-header {
         border: solid rgb(202, 202, 202);
         background-color: rgb(243, 243, 243);
         float: right;
-        .header_form__textfield {
+        &__textfield {
           height: 34px;
           width: 740px;
           padding: 5px;
