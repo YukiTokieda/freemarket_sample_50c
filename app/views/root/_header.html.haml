@@ -8,6 +8,7 @@
         .header_form__textfield 何をお探しですか？
         -# = form_for [] do |f|
           -# =f.text_field :content, class: 'search_form', placeholder: '何をお探しですか？'
+          -# link先実装後にlink化します
         .search-icon
           %i= fa_icon 'search', class: 'loupe-icon icon'
     .header_bottom-crearfix
@@ -15,12 +16,14 @@
         .left-contents_search-nav
           %li.category_nav
             -# = link_to 'カテゴリーから探す' category_path do
+            -# link先実装後にlink化します
             .category_text
               カテゴリーから探す
             .category_icon
               %i= fa_icon 'align-justify', class: 'border-icon icon fa-fw'
           %li.brand_nav
             -# = link_to  'ブランドから探す' brand_path do
+            -# link先実装後にlink化します
             .brand_text
               ブランドから探す
             .brand_icon
@@ -30,16 +33,19 @@
         .right-contents_user-nav
           %li.right-header_notification
             -# = link_to 'お知らせ' mypage_notification_path do
+            -# link先実装後にlink化します
             .notification_text お知らせ
             .notification_icon
               %i= fa_icon 'bullhorn', class: 'horn-icon icon fa-fw'
           %li.right-header_todo-list
             -# = link_to 'やることリスト' mypage_todo_path do
+            -# link先実装後にlink化します
             .todo-list_text やることリスト
             .todo-list_icon
               %i= fa_icon 'check-circle', class: 'check-icon icon fa-fw'
           %li.right-header_mypage-link
             -# = link_to 'マイページ' mypage_path do
+            -# link先実装後にlink化します
             .mypage-link_text マイページ
             .mypage-link_icon
               %i= fa_icon 'user-circle', class:'user-icon icon fa-fw'
