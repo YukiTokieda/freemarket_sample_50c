@@ -1,7 +1,9 @@
 %section.item-card
   =link_to root_index_path, class: "item-card_url" do
+
     .item-card-photo
       = image_tag("https://static.mercdn.net/thumb/photos/m91813716433_1.jpg?155769760", class: "lazyloaded")
+
     .item-card-body
       %h3.item-card-body_name チェックパンツ
       .item-card-body_num
@@ -9,5 +11,6 @@
         .font-2
           .icon-like
             =fa_icon 'heart', class: 'icon-like-border'
+
           .like-count 10
       %p.item-card-tax (税込)
