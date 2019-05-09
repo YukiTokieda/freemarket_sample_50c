@@ -41,7 +41,14 @@ main-header {
           height: 34px;
           width: 45px;
           float: right;
-          background-color: rgb(117, 146, 136);
+          background-color: rgb(230, 230, 230);
+          .loupe-icon {
+            font-size: 16px;
+            padding-top: 8px;
+            padding-left: 15px;
+            position: absolute;
+            opacity: 0.5;
+          }
         }
       }
     }
@@ -64,36 +71,50 @@ main-header {
             width: 150px;
             // float: left;
             display: inline-block;
-            padding: 10px;
+            padding: 6px;
             // background-color: bisque;
             .category_text {
               font-size: 14px;
               float: right;
             }
             .category_icon {
-              height: 15px;
-              width: 15px;
+              height: 20px;
+              width: 20px;
               float: left;
-              padding: 2px;
-              background-color: rgb(117, 146, 136);
+              padding: bottom 2px;
+              // background-color: rgb(117, 146, 136);
+              .border-icon {
+                font-size: 16px;
+                padding: 2px;
+                position: absolute;
+                opacity: 0.9;
+                color: rgb(255, 0, 0);
+              }
             }
           }
           .brand_nav {
             width: 140px;
             // float: right;
             display: inline-block;
-            padding: 10px;
+            padding: 6px;
             // background-color: bisque;
             .brand_text {
               font-size: 14px;
               float: right;
             }
             .brand_icon {
-              height: 15px;
-              width: 15px;
+              height: 20px;
+              width: 20px;
               float: left;
-              padding: 2px;
-              background-color: rgb(117, 146, 136);
+              padding: bottom 2px;
+              // background-color: rgb(117, 146, 136);
+              .label-icon {
+                font-size: 16px;
+                padding: 2px;
+                position: absolute;
+                opacity: 0.9;
+                color: rgb(255, 0, 0);
+              }
             }
           }
         }
@@ -110,50 +131,68 @@ main-header {
           display: flex;
           .right-header_notification {
             width: 80px;
-            padding: 10px;
+            padding: 6px;
             display: inline-block;
             .notification_text {
               font-size: 14px;
               float: right;
             }
             .notification_icon {
-              height: 15px;
-              width: 15px;
+              height: 20px;
+              width: 20px;
               float: left;
-              padding: 2px;
-              background-color: rgb(117, 146, 136);
+              padding: bottom 2px;
+              // background-color: rgb(117, 146, 136);
+              .horn-icon {
+                font-size: 16px;
+                padding: 2px;
+                position: absolute;
+                opacity: 0.5;
+              }
             }
           }
           .right-header_todo-list {
             width: 125px;
-            padding: 10px;
+            padding: 6px;
             display: inline-block;
             .todo-list_text {
               font-size: 14px;
               float: right;
             }
             .todo-list_icon {
-              height: 15px;
-              width: 15px;
+              height: 20px;
+              width: 20px;
               float: left;
-              padding: 2px;
-              background-color: rgb(117, 146, 136);
+              padding: bottom 2px;
+              // background-color: rgb(117, 146, 136);
+              .check-icon {
+                font-size: 16px;
+                padding: 2px;
+                position: absolute;
+                opacity: 0.5;
+              }
             }
           }
           .right-header_mypage-link {
             width: 100px;
-            padding: 10px;
+            padding: 6px;
             display: inline-block;
             .mypage-link_text {
               font-size: 14px;
               float: right;
             }
             .mypage-link_icon {
-              height: 15px;
-              width: 15px;
+              height: 20px;
+              width: 20px;
               float: left;
-              padding: 2px;
-              background-color: rgb(117, 146, 136);
+              padding: bottom 2px;
+              // background-color: rgb(117, 146, 136);
+              .user-icon {
+                font-size: 16px;
+                padding: 2px;
+                position: absolute;
+                opacity: 0.5;
+              }
             }
           }
         }
