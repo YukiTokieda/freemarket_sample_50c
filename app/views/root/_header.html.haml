@@ -1,6 +1,6 @@
 %main-header.main-header
   .header_inner
-    .header_top 
+    .header_inner_top
       %h1.logo
         = image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?613028459")
 
@@ -34,18 +34,18 @@
           %li.right-header_notification
             -# = link_to 'お知らせ' mypage_notification_path do
             -# link先実装後にlink化します
-            .notification_text お知らせ
-            .notification_icon
+            .right-header_notification_text お知らせ
+            .right-header_notification_icon
               %i= fa_icon 'bullhorn', class: 'horn-icon icon fa-fw'
           %li.right-header_todo-list
             -# = link_to 'やることリスト' mypage_todo_path do
             -# link先実装後にlink化します
-            .todo-list_text やることリスト
-            .todo-list_icon
+            .right-header_todo-list_text やることリスト
+            .right-header_todo-list_icon
               %i= fa_icon 'check-circle', class: 'check-icon icon fa-fw'
           %li.right-header_mypage-link
             -# = link_to 'マイページ' mypage_path do
             -# link先実装後にlink化します
-            .mypage-link_text マイページ
-            .mypage-link_icon
+            .right-header_mypage-link_text マイページ
+            .right-header_mypage-link_icon
               %i= fa_icon 'user-circle', class:'user-icon icon fa-fw'

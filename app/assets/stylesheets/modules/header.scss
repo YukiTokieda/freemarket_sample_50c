@@ -8,7 +8,7 @@ main-header {
     margin: 0 auto;
     padding: 8px 0 0;
     z-index: 100;
-    .header_top {
+    &_top {
       height: 40px;
       margin:12px;
       padding: 0;
@@ -57,7 +57,7 @@ main-header {
         width: 350px;
         margin: 5px 5px;
         float: left;
-        .left-contents_search-nav {
+        &_search-nav {
           height: 40px;
           width: 350px;
           display: flex;
@@ -112,7 +112,7 @@ main-header {
         width: 380px;
         margin: 5px 5px;
         float: right;
-        .right-contents_user-nav {
+        &_user-nav {
           height: 40px;
           width: 380px;
           display: flex;
@@ -120,11 +120,11 @@ main-header {
             width: 80px;
             padding: 6px;
             display: inline-block;
-            .notification_text {
+            &_text {
               font-size: 14px;
               float: right;
             }
-            .notification_icon {
+            &_icon {
               height: 20px;
               width: 20px;
               float: left;
@@ -141,11 +141,11 @@ main-header {
             width: 125px;
             padding: 6px;
             display: inline-block;
-            .todo-list_text {
+            &_text {
               font-size: 14px;
               float: right;
             }
-            .todo-list_icon {
+            &_icon {
               height: 20px;
               width: 20px;
               float: left;
@@ -162,15 +162,16 @@ main-header {
             width: 100px;
             padding: 6px;
             display: inline-block;
-            .mypage-link_text {
+            &_text {
               font-size: 14px;
               float: right;
             }
-            .mypage-link_icon {
+            &_icon {
               height: 20px;
               width: 20px;
               float: left;
               padding: bottom 2px;
+
               .user-icon {
                 font-size: 16px;
                 padding: 2px;
