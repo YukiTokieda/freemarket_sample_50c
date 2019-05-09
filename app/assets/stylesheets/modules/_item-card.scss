@@ -3,6 +3,7 @@
   width: 213px;
   height: 330px;
   position: relative;
+  border: solid red;
   &_url{
     display: block;
     color: #333;
@@ -39,7 +40,8 @@
           font-size: 16px;
           font-weight: 400;
           color: #333;
-          .icon-like-borde{
+          display: flex;
+          .icon-like{
             color: #ccc;
           }
         }
