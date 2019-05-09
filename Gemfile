@@ -64,3 +64,5 @@ gem "font-awesome-rails"
 gem 'kaminari'
 # ユーザー機能
 gem 'devise'
+#erb→haml
+gem 'erb2haml'
