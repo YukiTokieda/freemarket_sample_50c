@@ -9,12 +9,14 @@
     float: right;
     width: 700px;
     height: 100%;
-    background-color: red;
+    // background-color: red;
     .mypage-user_icon{
       height: 160px;
       position: relative;
       padding: 20px;
       background-color: yellow;
+      background-repeat: no-repeat;
+      background-size: cover;
       &_link{
         display: block;
         position: absolute;
@@ -24,7 +26,7 @@
         -webkit-transform: translate(0, -50%);
         transform: translate(0, -50%);
         color: #333;
-        background-color: aqua;
+        // background-color: aqua;
         .figure{
           overflow: hidden;
           width: 60px;
@@ -67,7 +69,24 @@
           display: inline-block;
           text-align: center;
           vertical-align: top;
-            &_notification-todo{
+            // &_notification-todo{
+            //   text-decoration: none;
+            //   position: relative;
+            //   display: block;
+            //   color: #333;
+            //   font-size: 16px;
+            //   line-height: 74px;
+            // }
+            &_notification{
+              text-decoration: none;
+              position: relative;
+              display: block;
+              color: #333;
+              font-size: 16px;
+              line-height: 74px;
+              background-color: aqua
+            }
+            &_todo{
               text-decoration: none;
               position: relative;
               display: block;
