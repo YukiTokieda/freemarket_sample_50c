@@ -1,50 +1,48 @@
 .product-detail-message {
     margin: 8px auto;
     width: 700px;
-}
-
-.product-message {
-    margin: 8px auto;
-    .message-content {
-        padding: 24px;
-        background: #fff;
-        .message-form p {
-            padding: 8px;
-            font-size: 14px;
-            background: #fff6de;
-        }
-        .message-form .textarea-default {
-            margin: 8px 0 0;
-        }
-        .textarea-default {
-            display: block;
-            width: 100%;
-            max-width: 100%;
-            min-height: 104px;
-            border: 1px solid #ccc;
+    &_product-message {
+        margin: 8px auto;
+        &__message-content {
+            padding: 24px;
             background: #fff;
-            font-size: 16px;
-            line-height: 1.5;
-            box-sizing:border-box;
-        }
-        .message-submit {
-            width: 100%;
-            margin: 8px 0 0;
-            font-size: 0;
-            text-align: center;
-        }
-        .btn-default {
-            display: block;
-            line-height: 48px;
-            font-size: 14px;
-            cursor: pointer;
-            text-align: center;
-        }
-        .btn-gray {
-            background: #aaa;
-            border: 1px solid #aaa;
-            color: #fff;
+            .message-form p {
+                padding: 8px;
+                font-size: 14px;
+                background: #fff6de;
+            }
+            .message-form .textarea-default {
+                margin: 8px 0 0;
+            }
+            .textarea-default {
+                display: block;
+                width: 100%;
+                max-width: 100%;
+                min-height: 104px;
+                border: 1px solid #ccc;
+                background: #fff;
+                font-size: 16px;
+                line-height: 1.5;
+                box-sizing:border-box;
+            }
+            .message-submit {
+                width: 100%;
+                margin: 8px 0 0;
+                font-size: 0;
+                text-align: center;
+            }
+            .btn-default {
+                display: block;
+                line-height: 48px;
+                font-size: 14px;
+                cursor: pointer;
+                text-align: center;
+            }
+            .btn-gray {
+                background: #aaa;
+                border: 1px solid #aaa;
+                color: #fff;
+            }
         }
     }
 }
-
