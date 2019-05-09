@@ -4,6 +4,7 @@
   padding: 40px 0;
   margin: 0 auto;
   text-align: center;
+
   .clearfix{
     .simple-footer_lists{
       display: flex;
@@ -16,6 +17,7 @@
       }
     }
   }
+
   .simple-footer_logo{
     &_url{
       display: block;
@@ -26,10 +28,11 @@
       }
     }
   }
+
   .copy-write{
     height: 14px;
-  &_text{
+    &_text{
     font-size: 11px;
-  }
+    }
   }
 }
