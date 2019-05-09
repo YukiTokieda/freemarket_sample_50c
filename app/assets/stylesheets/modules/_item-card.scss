@@ -7,11 +7,14 @@
     display: block;
     color: #333;
     text-decoration: none;
+    width: 213px;
+    height: 330px;
     .item-card-photo{
       height: 220px;
       .lazyloaded{
         position: absolute;
-        width: 100%;
+        width: 213px;
+        height: 220px;
       }
     }
     .item-card-body{

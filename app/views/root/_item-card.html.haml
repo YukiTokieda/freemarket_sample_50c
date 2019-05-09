@@ -1,7 +1,7 @@
 %section.item-card
-  %a{href: "＃",class: "item-card_url",width: "213",height: "330"}
+  =link_to root_index_path, class: "item-card_url" do
     .item-card-photo
-      %img.lazyloaded{alt: "チェックパンツ", src: "https://static.mercdn.net/thumb/photos/m91813716433_1.jpg?1557369760",width: "213",height: "220"}
+      = image_tag("https://static.mercdn.net/thumb/photos/m91813716433_1.jpg?155769760", class: "lazyloaded")
     .item-card-body
       %h3.item-card-body_name チェックパンツ
       .item-card-body_num
