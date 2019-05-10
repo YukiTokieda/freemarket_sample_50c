@@ -1,0 +1,39 @@
+.simple-footer{
+  width: 456px;
+  height: 140px;
+  padding: 40px 0;
+  margin: 0 auto;
+  text-align: center;
+  
+
+  .clearfix{
+    .simple-footer_lists{
+      display: flex;
+      &_list{
+        display: inline-block;
+        font-size: 12px;
+        margin: 0 0 0 16px;
+        text-decoration: none;
+        color:black;
+      }
+    }
+  }
+
+  .simple-footer_logo{
+    &_url{
+      display: block;
+      margin: 40px auto 0;
+      &_image{
+        height: 65px;
+        width: 80px;
+      }
+    }
+  }
+
+  .copy-write{
+    height: 14px;
+    &_text{
+    font-size: 11px;
+    }
+  }
+}
