@@ -58,5 +58,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'haml-rails'
 gem 'erb2haml'
-
+# アイコン
 gem "font-awesome-rails"
+# ページネーション
+gem 'kaminari'
+# ユーザー機能
+gem 'devise'
+#erb→haml
+gem 'erb2haml'
