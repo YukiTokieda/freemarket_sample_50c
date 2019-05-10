@@ -1,3 +1,95 @@
-%h1 Root#index
-%p Find me in app/views/root/index.html.erb
-= render 'root/header'
+-# %h1 Root#index
+-# %p Find me in app/views/root/index.html.erb
+%body
+
+  = render 'root/header'
+
+  .body_main
+    .slide-image
+      = image_tag('')
+    .product-container
+      %h2.product-container_title
+        ピックアップカテゴリー
+      .product-container_box__clearfix
+        .text_place 
+          レディース 新着アイテム
+        .product-container_contents__box-clearfix
+          = render 'item-card'
+          = render 'item-card'
+          = render 'item-card'
+          = render 'item-card'
+        .view-more
+          全ての商品を見る
+      .product-container_box__clearfix
+        .text_place 
+          メンズ 新着アイテム
+        .product-container_contents__box-clearfix
+          = render 'item-card'
+          = render 'item-card'
+          = render 'item-card'
+          = render 'item-card'
+        .view-more
+          全ての商品を見る
+      .product-container_box__clearfix
+        .text_place 
+          ベビー・キッズ 新着アイテム
+        .product-container_contents__box-clearfix
+          = render 'item-card'
+          = render 'item-card'
+          = render 'item-card'
+          = render 'item-card'
+        .view-more
+          全ての商品を見る
+      .product-container_box__clearfix
+        .text_place 
+          コスメ・香水・美容 新着アイテム
+        .product-container_contents__box-clearfix
+          = render 'item-card'
+          = render 'item-card'
+          = render 'item-card'
+          = render 'item-card'
+        .view-more
+          全ての商品を見る
+    .product-container
+      %h2.product-container_title
+        ピックアップブランド
+      .product-container_box__clearfix
+        .text_place 
+          シャネル 新着アイテム
+        .product-container_contents__box-clearfix
+          = render 'item-card'
+          = render 'item-card'
+          = render 'item-card'
+          = render 'item-card'
+        .view-more
+          全ての商品を見る
+      .product-container_box__clearfix
+        .text_place 
+          ルイ ヴィトン 新着アイテム
+        .product-container_contents__box-clearfix
+          = render 'item-card'
+          = render 'item-card'
+          = render 'item-card'
+          = render 'item-card'
+        .view-more
+          全ての商品を見る
+      .product-container_box__clearfix
+        .text_place 
+          シュプリーム 新着アイテム
+        .product-container_contents__box-clearfix
+          = render 'item-card'
+          = render 'item-card'
+          = render 'item-card'
+          = render 'item-card'
+        .view-more
+          全ての商品を見る
+      .product-container_box__clearfix
+        .text_place 
+          ナイキ 新着アイテム
+        .product-container_contents__box-clearfix
+          = render 'item-card'
+          = render 'item-card'
+          = render 'item-card'
+          = render 'item-card'
+        .view-more
+          全ての商品を見る
