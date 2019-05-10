@@ -3,6 +3,10 @@
   width: 213px;
   height: 330px;
   position: relative;
+  &.__position-left {
+    float: left;
+    background: rgb(255, 255, 255);
+  }
   &_url{
     display: block;
     color: #333;
