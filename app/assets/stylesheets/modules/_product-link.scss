@@ -1,0 +1,28 @@
+.nav-product-link-prev-next.clearfix {
+  margin: 24px auto 0;
+  width: 700px;
+  list-style: none;
+  font-size: 14px;
+    .nav-product-link-prev-next li, .nav-user-link-prev-next li {
+        position: relative;
+        width: 43%;
+        word-wrap: break-word;
+    }
+    .nav-product-link-prev, .nav-user-link-prev {
+        float: left;
+        padding: 0 0 0 14px;
+        .link, .icon {
+            color: #0099e8;
+            text-decoration: none;
+        }
+    }
+    .nav-product-link-next, .nav-user-link-next {
+        float: right;
+        padding: 0 14px 0 0;
+        text-align: right;
+        .link, .icon {
+            color: #0099e8;
+            text-decoration: none;
+        }
+    }
+}
