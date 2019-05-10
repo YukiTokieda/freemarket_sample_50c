@@ -43,3 +43,33 @@
     }
   }
 }
+
+.footer_sell__button {
+    width: 160px;
+    height: 160px;
+    float: right;
+    bottom: 32px;
+    right: 32px;
+    position: fixed;
+    z-index: 1000;
+    // shape-outside: circle(70px at 50% 50%);
+    // -webkit-clip-path: circle(70px at 50% 50%);
+    // clip-path: circle(70px at 50% 50%);
+  .footer_sell__circle {
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    background-color:#EA352C;
+    .footer_sell__text {
+      padding-top: 30px;
+      font-size: 22px;
+      text-align: center;
+      color: white;
+    }
+    .footer_sell__icon {
+      text-align: center;
+      padding-top: 3px;
+      .white { color: white; }
+    }
+  }
+}
