@@ -6,21 +6,21 @@
   right: 32px;
   position: fixed;
   z-index: 1000;
-.footer_sell__circle {
-  height: 160px;
-  width: 160px;
-  border-radius: 50%;
-  background-color:#EA352C;
-  .footer_sell__text {
-    padding-top: 30px;
-    font-size: 22px;
-    text-align: center;
-    color: white;
+  &__circle {
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    background-color:#EA352C;
+    &__text {
+      padding-top: 30px;
+      font-size: 22px;
+      text-align: center;
+      color: white;
+    }
+    &__icon {
+      text-align: center;
+      padding-top: 3px;
+      .white { color: white; }
+    }
   }
-  .footer_sell__icon {
-    text-align: center;
-    padding-top: 3px;
-    .white { color: white; }
-  }
-}
 }
