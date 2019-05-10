@@ -1,9 +1,9 @@
 .item-card{
-  margin: 0 0 0 20px;
   width: 213px;
   height: 330px;
   position: relative;
-  &.__position-left {
+  &__position-left {
+    margin: 0 0 0 20px;
     float: left;
     background: rgb(255, 255, 255);
   }
