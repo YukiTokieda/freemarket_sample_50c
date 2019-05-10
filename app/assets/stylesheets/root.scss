@@ -11,14 +11,14 @@
   width: 100%;
   background-color: rgb(245, 245, 245);
   padding-top: 20px;
-  .product-container_title {
+  &_title {
     height: 40px;
     text-align: center;
     font-size: 26px;
     font-weight: bold;
     opacity: 0.7;
   }
-  .product-container_box__clearfix {
+  &_box__clearfix {
     height: 440px;
     width: 952px;
     margin: 0 auto;
@@ -31,10 +31,11 @@
     }
     .product-container_contents__box-clearfix {
       height: 330px;
-      width: auto;
+      width: 952px;
       margin: 0 auto;
     }
     .view-more {
+      height: 14px;
       padding: 20px 30px;
       font-size: 14px;
       color: rgb(36, 187, 233);
