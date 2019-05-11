@@ -1,8 +1,9 @@
 -# %h1 Root#index
 -# %p Find me in app/views/root/index.html.erb
-%body
-
+.wrapper
   = render 'root/header'
+
+  %body
 
   .body_main
     .slide-image
@@ -94,5 +95,7 @@
         .view-more
           全ての商品を見る
 
-  = render 'root/aside'
-  = render 'root/footer'
+
+    = render 'root/aside'
+    = render 'root/footer'
+    = render 'root/sell-button'
