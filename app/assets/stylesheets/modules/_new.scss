@@ -1,0 +1,19 @@
+.main-contents {
+  height: 2000px;
+  width: 100%;
+  &_conteiner {
+    height: 100%;
+    width: 700px;
+    margin: 0 auto;
+    &_inner {
+      height: 100%;
+      width: 100%;
+      .header-text {
+        padding: 32px 16px;
+        font-size: 22px;
+        text-align: center;
+        font-weight: bold;
+      }
+    }
+  }
+}
