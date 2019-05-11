@@ -1,0 +1,47 @@
+%main.single-main
+  %section.l-single-container.buy-item-container
+    %h2.l-single-head 購入を確定しますか？
+    %section.buy-content.buy-item
+      .buy-content-inner
+        %h3.buy-item-image
+          %img.is-higher-height.lazyloaded{:alt => "", "data-src" => "https://static.mercdn.net/thumb/photos/m17197496880_1.jpg?1556585936", :src => "https://static.mercdn.net/thumb/photos/m17197496880_1.jpg?1556585936"}/
+        %p.buy-item-name.bold BLACKBARRETT by Neil Barrett ポロシャツ
+        %form.buy-form{:action => "https://www.mercari.com/jp/transaction/buy/done/m17197496880/", :method => "POST", :novalidate => "novalidate"}
+          %p.buy-price-ja.bold
+            ¥ 500
+            %span.item-shipping-fee.f14.bold 送料込み
+          %ul.buy-accordion.not-have
+            %li.accordion-parent
+              .accordion-toggle
+                ポイントはありません
+          %ul.buy-price-table
+            %li.buy-price-row.buy-you-pay.bold
+              .buy-price-cell 支払い金額
+              .buy-price-cell
+                %span{"data-buy-pay" => "500"} ¥ 500
+         %p.has-error-text 配送先と支払い方法の入力を完了してください。
+          %button.btn-default.btn-red.bold{:disabled => "disabled", :type => "submit"} 購入する
+          %input#user_info_is_not_complete{:type => "hidden"}/
+    %section.buy-content.buy-user-info
+      .buy-content-inner
+        %h3 配送先
+        %address.buy-user-info-text
+          〒-
+          %br/
+          %br/
+        %p.buy-user-info-text
+        %a.buy-user-info-fix{:href => "https://www.mercari.com/jp/transaction/address/m17197496880/"}
+          %span 変更する
+          %i.icon-arrow-right
+    %section.buy-content.buy-user-info{"data-buy" => "pay-method"}
+      .buy-content-inner
+        %h3 支払い方法
+        %p.buy-user-info-text
+          %br/
+          \/
+        %figure
+          %img{:alt => "", :height => "", :src => "", :width => ""}/
+        %p
+        %a.buy-user-info-fix{:href => "https://www.mercari.com/jp/transaction/card/m17197496880/"}
+          %span 変更する
+          %i.icon-arrow-right
