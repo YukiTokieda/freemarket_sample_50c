@@ -16,4 +16,16 @@
       }
     }
   }
+  &_bar{
+    padding: 40px 0 0 44px;
+    border: 0;
+    display: inline-block;
+    vertical-align: top;
+     &_clearfix{
+      &_text{
+      }
+      &_status{
+      }
+     }
+  }
 }
