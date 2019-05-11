@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
+.item-main-container {
     position: relative;
     min-height: 100%;
     background: #f5f5f5;
@@ -26,32 +26,34 @@ body {
             line-height: 1.4;
             font-weight: bold;
         }
-        &__item-main-content.clearfix {
+        &__item-main-content {
             margin: 16px 0 0;
             .item-photo {
-                float: left;
-                min-width: 300px;
-                max-width: 300px;
-                min-height: 375px;
-                background-color: #ccc;
-                margin-right: 10px;
-            }
-            .item-description {
-                padding: 24px 0 0;
-                line-height: 1.5;
-                font-size: 18px;
+                .owl-carousel.owl-loaded.owl-drag {
+                    float: left;
+                    .owl-stage-outer img {
+                        padding: 5px;
+                        height: 300px;
+                        width: 300px;
+                    }
+                    .owl-dots img {
+                        padding-right: 5px;
+                        height: 70px;
+                        width: 70px;
+                    }
+                }
             }
             .item-button-container {
                 margin: 16px 0 0;
                 .item-button-left {
                     float: left;
                     .item-button {
-                      display: inline-block;
-                      padding: 8px 16px;
-                      border-radius: 40px;
-                      -webkit-transition: all ease-out .3s;
-                      transition: all ease-out .3s;
-                      font-size: 14px;
+                    display: inline-block;
+                    padding: 8px 16px;
+                    border-radius: 40px;
+                    -webkit-transition: all ease-out .3s;
+                    transition: all ease-out .3s;
+                    font-size: 14px;
                     }
                     .item-button-like {
                         color: #333;
@@ -79,6 +81,6 @@ body {
                     }
                 }
             }
-        }    
-    }
+        }
+    }    
 }
