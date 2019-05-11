@@ -1,0 +1,11 @@
+.credit
+  %h2.credit_head 支払い方法
+  .credit_content
+    %h3.credit_content_head クレジットカード一覧
+    .credit_content_card
+      = link_to '#', class: 'credit_content_card_link' do
+        = fa_icon 'credit-card'
+        %span クレジットカードを追加する
+    = link_to '#', class: 'credit_content_about-link' do
+      %span 支払い方法について
+      = fa_icon 'chevron-right'
