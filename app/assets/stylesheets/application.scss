@@ -1,11 +1,27 @@
 @import 'reset';
+@import 'root';
 @import 'modules/header';
+@import 'modules/aside';
+@import 'modules/footer';
+@import 'modules/sell-button';
 @import 'modules/simple-header';
 @import 'font-awesome';
+<<<<<<< HEAD
 @import 'user';
 @import 'modules/mypage-side';
 @import 'modules/mypage-user';
+=======
+@import 'modules/sign-up';
+@import 'modules/header';
+@import 'modules/simple-footer';
+>>>>>>> master
 @import 'modules/item-card';
 @import 'modules/product-right-inf';
 @import 'modules/product-down-inf';
 @import 'modules/product-buy-btn';
+@import 'modules/product-comment';
+@import 'modules/product-link';
+@import 'modules/product-sns';
+@import 'products';
+@import 'mixin/required-tag';
+@import 'modules/creditcard';
