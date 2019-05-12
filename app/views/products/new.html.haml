@@ -9,7 +9,7 @@
           .sell-form_image-box
             .sell-upload_text-top
               出品画像
-              %span.required 必須
+              %span.required-tag 必須
             .sell-upload_text-bottom
               最大10枚までアップロードできます
             .sell-box_container
@@ -21,11 +21,11 @@
           .sell-content
             .form_product-name
               %label 商品名
-              %span.required 必須
+              %span.required-tag 必須
               %input.input-name{placeholder: '商品名(必須 40文字まで)'}
             .form_product-intro
               %label 商品の説明
-              %span.required 必須
+              %span.required-tag 必須
               %input.input-intro{placeholder: '商品の説明 (必須 1,000文字以内) (色、素材、重さ、定価、注意点など) 例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'}
           
           .sell-content-detail
@@ -33,7 +33,7 @@
             .sell-form-box
               .form-area
                 %label カテゴリー
-                %span.required 必須
+                %span.required-tag 必須
                 %div
                   .select-wrap
                     %select.select-place
@@ -47,7 +47,7 @@
                     = fa_icon 'chevron-down', class: 'arrow-icon'
               .form-area.form-area_bottom
                 %label 商品の状態
-                %span.required 必須
+                %span.required-tag 必須
                 %div
                   .select-wrap
                     %select.select-place
@@ -58,7 +58,7 @@
                       %option{value: '4'}やや傷や汚れあり
                       %option{value: '5'}傷や汚れあり
                       %option{value: '6'}全体的に状態が悪い
-                    %i= fa_icon 'chevron-down', class: 'arrow-icon icon fa-fw'
+                    = fa_icon 'chevron-down', class: 'arrow-icon icon fa-fw'
 
           .sell-content-shipping-method
             %h3 配送について
@@ -67,16 +67,17 @@
             .sell-form-box
               .form-area
                 %label 配送料の負担
-                %span.required 必須
+                %span.required-tag 必須
                 %div
                   .select-wrap
                     %select.select-place
                       %option ---
                       %option{value: '1'}送料込み(出品者負担)
                       %option{value: '2'}着払い(購入者負担)
+                    = fa_icon 'chevron-down', class: 'arrow-icon'
               .form-area.form-area_bottom
                 %label 発送元の地域
-                %span.required 必須
+                %span.required-tag 必須
                 %div
                   .select-wrap
                     %select.select-place
@@ -84,9 +85,10 @@
                       %option{value: '1'}神奈川県
                       %option{value: '1'}東京都
                       %option{value: '1'}千葉県
+                    = fa_icon 'chevron-down', class: 'arrow-icon'
               .form-area.form-area_bottom
                 %label 発送までの日数
-                %span.required 必須
+                %span.required-tag 必須
                 %div
                   .select-wrap
                     %select.select-place
@@ -94,7 +96,8 @@
                       %option{value: '1'}1~2日で発送
                       %option{value: '1'}2~3日で発送
                       %option{value: '1'}4~7日で発送
-
+                    = fa_icon 'chevron-down', class: 'arrow-icon'
+                    
           .contents-price
             %h3 販売価格(300~9,999,999)
             .form-help
@@ -105,7 +108,7 @@
                   .price_form-area
                     %label.left-text
                       価格
-                      %span.required 必須
+                      %span.required-tag 必須
                     .right-price_input
                       ¥
                       %div
