@@ -1,0 +1,26 @@
+.mypage-box{
+  background-color: #eee;
+
+  .my-containercleanfix{
+    margin: 0 auto;
+    padding: 40px 0;
+    width: 1020px;
+    height: 1252px;
+
+    .my-content{
+      float: right;
+      width: 700px;
+      height: 100%;
+      height: 1189px;
+      background-color:#eee;
+
+      .mypage-tab_container{
+        margin: 40px 0 0;
+        width: 100%;
+        height: 382px;
+        background-color:white;
+        border: thin solid red;
+      }
+    }
+  }
+}
