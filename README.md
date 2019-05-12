@@ -1,130 +1,141 @@
 # DB設計
 
 ## Userテーブル
-
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false|
 |email|string|null: false, unique: true|
-|telephone|integer|null: false, unique: true|
-|first_name|string|null: false|
-|last_name|string|null: false|
-|first_name_ka|string|null: false|
-|last_name_ka|string|null: false|
-|birth_ymd|date|null: false|
+|password|string|null: false|
 
 ### Association
 - has_many :comments, dependent: :destroy
 - has_many :products, dependent: :destroy
+- has_many :likes
+- has_many :sns
+- has_many :trading
+- has_one :creditcards
+- has_one :profile
 
-
-## Commentテーブル
-
+## Profileテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|string|
-|user_id|integer|foreign_key: true|
-|product_id|integer|foreign_key: true|
+|body|text||
+|first_name|string||
+|last_name|string||
+|first_name_kana|string||
+|last_name_kana|string||
+|birth_year|integer||
+|birth_month|integer||
+|birth_day|integer||
+|phone_number|integer|unique: true|
+|zipcode|integer||
+|prefecture|integer||
+|city|string||
+|district|string||
+|building|string||
+|user_id|reference|null: false, index: true, foreign_key: true|
 
 ### Association
-- belongs_to :user
-- belongs_to :product
-
+- belongs_to: user
 
 ## Productテーブル
-
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|index: true|
-|image|string|null: false|
+|name|string|null: false, index: true|
+|description|text|null: false|
+|state|integer|null: false|
 |price|integer|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|brand_id|integer|foreign_key: true|
-|state_id|indeger|null: false, foreign_key: true|
-|shipping_id|indeger|null: false, foreign_key: true|
+|trade_status|integer|null: false|
+|shipping_id|reference|null: false, index: true, foreign_key: true|
+|category_id|reference|null: false, index: true, foreign_key: true|
+|brand_id|reference|index: true, foreign_key: true|
+|size_id|reference|index: true, foreign_key: true|
+|user_id|reference|null: false, index: true, foreign_key: true|
 
 ### Association
-- belongs_to :user
-- belongs_to :brand
-- belongs_to :state
-- belongs_to :shipping, dependent: :destroy
-- has_many :comments, dependent: :destroy
-- has_many :categories, through: :products_categories
-
-
-## Product_categoryテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|product_id|integer|foreign_key: true|
-|category_id|integer|foreign_key: true|
-
-### Association
-- belongs_to :product
+- belongs_to :shipping
 - belongs_to :category
+- belongs_to :brand
+- belongs_to :size
+- belongs_to :user
+- has_many :images
+- has_many :comments
+- has_many :likes
+- has_one :order
 
-
-## Categoryテーブル
-
+## snsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|token|text|null: false|
+|uid|string|null: false, unique: true|
+|provider|string|null: false|
+|user_id|reference|null: false, index: true, foreign_key: true|
 
 ### Association
-- has_many :types
-- has_many :products, through: :products_categories
+- belongs_to: user
 
-
-## Typeテーブル
-
+## Creditcardテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|category_id|indeger|foreign_key: true|
+|year|integer|null: false|
+|month|integer|null: false|
+|security_code|integer|null: false|
+|card_code|integer|null: false|
+|user_id|reference|null: false, index: true, foreign_key: true|
 
 ### Association
-- belongs :category
-- has_many :details
+- belongs_to: user
 
-
-##  Detailテーブル
-
+## Commentテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|type_id|integer|foreign_key: true|
+|body|text|null: false|
+|user_id|reference|null: false, index: true, foreign_key: true|
+|product_id|reference|null: false, index: true, foreign_key: true|
 
 ### Association
-- belongs_to :type
+- belongs_to: user
+- belongs_to: product
 
-
-## Brandテーブル
-
+## Likeテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|user_id|reference|null: false, index: true, foreign_key: true|
+|product_id|reference|null: false, index: true, foreign_key: true|
+
+### Association
+- belongs_to: user
+- belongs_to: product
+
+## Tradingテーブル
+|Column|Type|Options|
+|------|----|-------|
+|seller_id|reference|null: false, index: true, foreign_key: true|
+|buyer_id|reference|null: false, index: true, foreign_key: true|
+
+### Association
+- belongs_to :buyer_id, class_name: "User"
+- belongs_to :seller_id, class_name: "User"
+- has_many :orders
+- has_many :reviews
+
+## Reviewテーブル
+|Column|Type|Options|
+|------|----|-------|
+|body|text||
+|rating|integer|null: false|
+|trading_id|reference|null: false, index: true, foreign_key: true|
+
+### Association
+- belongs_to :trading
+
+## Orderテーブル
+|Column|Type|Options|
+|------|----|-------|
+|status|integer|null: false|
+|product_id|reference|null: false, index: true, foreign_key: true|
+|trading_id|reference|null: false, index: true, foreign_key: true|
 
 ### Association
 - belongs_to :product
-
-
-## Stateテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-### Association
-- belongs_to :product
-
-
-## Shippingテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|method|string|null: false|
-|region|integer|null: false|
-|period|string|null: false|
-
-### Association
-- belongs_to :product
+- belongs_to :trading
