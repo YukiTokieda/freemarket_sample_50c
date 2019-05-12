@@ -205,7 +205,7 @@
 ## Imageテーブル
 |Column|Type|Options|
 |------|----|-------|
-|uri|string|null: false|
+|url|string|null: false|
 |product_id|reference|null: false, index: true, foreign_key: true|
 
 ### Association
