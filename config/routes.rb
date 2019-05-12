@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :root
-<<<<<<< HEAD
-  resources :users, only: :index
-  resources :products, only: [:new]
-=======
   resources :user, only: :index
   resources :products
   # マイページ
@@ -13,5 +9,4 @@ Rails.application.routes.draw do
   namespace :mypage do
     resources :creditcard, only: [:index, :new, :create, :destroy]
   end
->>>>>>> master
 end

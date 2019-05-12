@@ -1,5 +1,8 @@
 .main_container {
   background-color: rgb(245, 245, 245);
+  .required {
+    @include require-tag();
+  }
   .main-contents {
     height: 2100px;
     width: 100%;

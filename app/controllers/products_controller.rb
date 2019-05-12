@@ -1,12 +1,10 @@
 class ProductsController < ApplicationController
   def index
   end
-<<<<<<< HEAD
  
   def new
-=======
+  end
 
   def show
->>>>>>> master
   end
 end
