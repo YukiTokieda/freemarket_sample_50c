@@ -3,26 +3,30 @@
   width: 280px;
   height: 100vh;
   margin: 0 40px 0 0;
-  background-color: blue;
+
 .mypage-navi{
-  background-color: yellow;
+
   .mypage-navi-list{
     list-style: none;
-    background-color: green;
     &_li{
       border-top: 1px solid #eee;
+
       &_item{
         position: relative;
         display: block;
-        // min-height: 48px;
-        height: 36px;
+        height: 16px;
         padding: 16px;
         background: #fff;
         font-size: 14px;
         color: #333;
         text-decoration: none;
       }
-      .icon-arrow-right{
+      &_icon{
+        position: absolute;
+        top: 50%;
+        right: 16px;
+        transform: translate(0, -50%);
+        color: #ccc;
       }
     }
   }

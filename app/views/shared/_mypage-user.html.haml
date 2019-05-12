@@ -1,9 +1,9 @@
 %section.mypage-user_icon
-  -# %img{src: "/jp/assets/img/mypage/user-bg.jpg?61284655", height: "200",width: "700"}
-  -# = link_to '', user_index_path,class: "mypage-user_icon_link"
-  %a{href: user_index_path, class: "mypage-user_icon_link"}
+  =link_to root_index_path, class: "mypage-user_icon_link" do
+
     %figure.figure
-      %img{alt:  "", height: "60", src: "//static.mercdn.net/images/member_photo_noimage_thumb.png", width: "60"}
+      = image_tag("//static.mercdn.net/images/member_photo_noimage_thumb.png",alt:"mercari",class:"mypage-user_icon_link_image");
+
     %h2.bold ユーザーA
     .mypage-number
       .mypage-number_evaluation 評価 0
