@@ -21,9 +21,11 @@
           .sell-content
             .form_product-name
               %label 商品名
+              %span.required 必須
               %input.input-name{placeholder: '商品名(必須 40文字まで)'}
             .form_product-intro
               %label 商品の説明
+              %span.required 必須
               %input.input-intro{placeholder: '商品の説明 (必須 1,000文字以内) (色、素材、重さ、定価、注意点など) 例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'}
           
           .sell-content-detail
@@ -31,6 +33,7 @@
             .sell-form-box
               .form-area
                 %label カテゴリー
+                %span.required 必須
                 %div
                   .select-wrap
                     %select.select-place
@@ -44,6 +47,7 @@
                     = fa_icon 'chevron-down', class: 'arrow-icon'
               .form-area.form-area_bottom
                 %label 商品の状態
+                %span.required 必須
                 %div
                   .select-wrap
                     %select.select-place
@@ -63,6 +67,7 @@
             .sell-form-box
               .form-area
                 %label 配送料の負担
+                %span.required 必須
                 %div
                   .select-wrap
                     %select.select-place
@@ -71,6 +76,7 @@
                       %option{value: '2'}着払い(購入者負担)
               .form-area.form-area_bottom
                 %label 発送元の地域
+                %span.required 必須
                 %div
                   .select-wrap
                     %select.select-place
@@ -80,6 +86,7 @@
                       %option{value: '1'}千葉県
               .form-area.form-area_bottom
                 %label 発送までの日数
+                %span.required 必須
                 %div
                   .select-wrap
                     %select.select-place
@@ -98,6 +105,7 @@
                   .price_form-area
                     %label.left-text
                       価格
+                      %span.required 必須
                     .right-price_input
                       ¥
                       %div

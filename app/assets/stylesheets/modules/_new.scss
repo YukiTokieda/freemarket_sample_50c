@@ -1,8 +1,5 @@
 .main_container {
   background-color: rgb(245, 245, 245);
-  .required {
-    @include require-tag();
-  }
   .main-contents {
     height: 2100px;
     width: 100%;
@@ -148,17 +145,12 @@
                     border-radius: 4px;
                     border-color: rgb(206, 206, 206);
                     background-color: white;
+                    z-index: 2;
                   }
                   .arrow-icon {
                     display: inline-block;
                     position: absolute;
-                    right: 16px;
-                    top: 50%;
-                    z-index: 2;
-                    color: #888;
-                    font-size: 8px;
-                    -webkit-transform: translate(0, -50%);
-                    transform: translate(0, -50%);
+                    
                   }
                   }
                 }
@@ -176,7 +168,6 @@
           h3 {
             font-size: 14px;
             font-weight: 900;
-            padding-left: 40px;
             float: left;
             color: rgb(136, 136, 136);
           }
