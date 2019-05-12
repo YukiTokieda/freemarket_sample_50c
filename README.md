@@ -8,13 +8,13 @@
 |password|string|null: false|
 
 ### Association
-- has_many :comments, dependent: :destroy
+- has_many :comments
 - has_many :products, dependent: :destroy
 - has_many :likes
 - has_many :sns
 - has_many :trading
-- has_one :creditcards
-- has_one :profile
+- has_one :creditcard
+- has_one :profile, dependent: :destroy
 
 ## Profileテーブル
 |Column|Type|Options|
@@ -156,11 +156,12 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique: true|
-|number|integer|null: false, unique: true|
-|number_path|integer|null: false, unique: true|
+|parent_id|refarence|index: true, foreign_key: true|
 
 ### Association
+- belongs_to :parent, class_name: "Category"
 - has_many :products
+- has_many :childs, class_name: "Category", foreign_key: "parent_id"
 - has_many :brand_category
 - has_many :size_category
 
