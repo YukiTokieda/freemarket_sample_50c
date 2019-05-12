@@ -1,7 +1,36 @@
 .registration-box{
-  background: #eee;
+  background-color: $background;
   .registration-main{
     display: block;
-    border: solid #808000;
+    .registration-main-container{
+      width: 700px;
+      height: 1816px;
+      margin: 0 auto;
+      background-color: $white;
+      &_head{
+        padding: 32px 16px;
+        font-size: 22px;
+        line-height: 1.5;
+        text-align: center;
+      }
+      &_box{
+        height: 1590px;
+        padding: 64px;
+        border-top:1px solid red;
+
+        &_input{
+          width: 320px;
+          height: 1239px;
+          margin: 0 auto;
+          border: thin solid blue;
+        }
+        &_send{
+          width: 320px;
+          height: 311px;
+          margin: 0 auto;
+          border: thin solid green;
+        }
+      }
+    }
   }
 }

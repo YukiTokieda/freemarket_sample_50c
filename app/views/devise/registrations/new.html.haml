@@ -3,7 +3,17 @@
   = render "shared/simple-header2"
 
   .registration-main
-  
+    .registration-main-container
+      %h2.registration-main-container_head
+        会員情報入力
+      %form.registration-main-container_box
+        -# %input(情報入力先指定)
+        .registration-main-container_box_input
+          registration
+        .registration-main-container_box_send
+
+  = render "shared/simple-footer"
+
   -# %h2 Sign up
   -# = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   -#   = render "devise/shared/error_messages", resource: resource
@@ -25,5 +35,3 @@
   -#   .actions
   -#     = f.submit "Sign up"
   -# = render "devise/shared/links"
-
-  = render "shared/simple-footer"
