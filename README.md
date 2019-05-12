@@ -62,6 +62,7 @@
 - has_many :comments
 - has_many :likes
 - has_one :order
+- has_one :shipping
 
 ## snsテーブル
 |Column|Type|Options|
@@ -139,3 +140,74 @@
 ### Association
 - belongs_to :product
 - belongs_to :trading
+
+## Shippingテーブル
+|Column|Type|Options|
+|------|----|-------|
+|method|integer|null: false|
+|prefecture_from|integer|null: false|
+|period_before_shipping|integer|null: false|
+|fee|integer|null: false|
+
+### Association
+- belongs_to :product
+
+## Categoryテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
+|number|integer|null: false, unique: true|
+|number_path|integer|null: false, unique: true|
+
+### Association
+- has_many :products
+- has_many :brand_category
+- has_many :size_category
+
+## Brand_categoryテーブル
+|Column|Type|Options|
+|------|----|-------|
+|brand_id|reference|null: false, index: true, foreign_key: true|
+|category_id|reference|null: false, index: true, foreign_key: true|
+
+### Association
+- belogns_to :category
+- belongs_to :brand
+
+## Size_categoryテーブル
+|Column|Type|Options|
+|------|----|-------|
+|size_id|reference|null: false, index: true, foreign_key: true|
+|category_id|reference|null: false, index: true, foreign_key: true|
+
+### Association
+- belogns_to :category
+- belongs_to :size
+
+## Brandテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+### Association
+- belogns_to :category
+- belongs_to :brand
+
+## Sizeテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+### Association
+- belogns_to :category
+- belongs_to :brand
+
+## Imageテーブル
+|Column|Type|Options|
+|------|----|-------|
+|uri|string|null: false|
+|product_id|reference|null: false, index: true, foreign_key: true|
+
+### Association
+- belogns_to :category
+- belongs_to :brand
