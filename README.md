@@ -200,7 +200,7 @@
 
 ### Association
 - belogns_to :category
-- belongs_to :brand
+- belongs_to :size
 
 ## Imageテーブル
 |Column|Type|Options|
@@ -209,5 +209,4 @@
 |product_id|reference|null: false, index: true, foreign_key: true|
 
 ### Association
-- belogns_to :category
-- belongs_to :brand
+- belongs_to :product
