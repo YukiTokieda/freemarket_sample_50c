@@ -1,0 +1,18 @@
+.simple-header2
+  %h1.simple-header2_logo
+    =link_to root_index_path, class: "simple-header2_logo_url" do
+      = image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2342399531",alt:"mercari",class:"simple-header2_logo_url_image")
+
+  -# ol使い方わからない
+  %nav.simple-header2_bar
+    %ol.simple-header2_clearfix
+      %li.simple-header2_text
+        .simple-header2_status 会員情報
+      %li.simple-header2_text
+        .simple-header2_status 電話番号認証
+      %li.simple-header2_text
+        .simple-header2_status お届け先住所
+      %li.simple-header2_text
+        .simple-header2_status 支払い方法
+      %li.simple-header2_text
+        .simple-header2_status 完了
