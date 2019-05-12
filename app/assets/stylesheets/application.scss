@@ -1,5 +1,6 @@
 @import 'reset';
 @import 'root';
+@import 'config/colors';
 @import 'modules/header';
 @import 'modules/aside';
 @import 'modules/footer';
@@ -17,7 +18,7 @@
 @import 'modules/product-link';
 @import 'modules/product-sns';
 @import 'products';
-@import 'mixin/required-tag';
+@import 'shared/required-tag';
 @import 'modules/creditcard';
 @import 'modules/mypage-logout';
 @import 'modules/profile-edit';
