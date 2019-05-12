@@ -22,26 +22,81 @@
           width: 320px;
           height: 1239px;
           margin: 0 auto;
-
           .registration-form-group-first{
             height: 70px;
-
+            &_label{
+              font-weight: 600;
+              display: inline-block;
+              font-size: 14px;
+            }
+            &_input{
+              width: 100%;
+              margin: 8px 0 0;
+              height: 28px;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+            }
           }
           .registration-form-group-text{
             height: 87px;
             margin: 40px 0 0;
-
+            font-size: 14px;
+            &_title{
+              font-weight: 600;
+            }
+            &_text{
+              margin: 8px 0 0;
+              padding: 0;
+              color: #888;
+            }
           }
           .registration-form-group-birthday{
             height: 182px;
             margin: 40px 0 0;
-
+            &_label{
+              font-weight: 600;
+              display: inline-block;
+              font-size: 14px;
+            }
+            &_input{
+              .select-wrap{
+                display: inline-block;
+                width: 140px;
+                height: 40px;
+                margin: 8px 0 0;
+                background: #fff;
+                .select-default{
+                  width: 140px;
+                  height: 40px;
+                }
+                .arrow-icon{
+                }
+              }
+            }
           }
-
           .registration-form-group{
             height: 70px;
             margin: 40px 0 0;
-
+            &_label{
+              font-weight: 600;
+              display: inline-block;
+              font-size: 14px;
+            }
+            &_input{
+              width: 100%;
+              margin: 8px 0 0;
+              height: 28px;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+            }
           }
           .form-info_text{
             margin: 8px 0 0;
@@ -49,11 +104,46 @@
             font-size: 12px
           }
         }
+
         &_send{
           width: 320px;
           height: 311px;
           margin: 37px auto 0;
-          border: thin solid green;
+          .check_box{
+            margin: 40px 0 0;
+            height: 78px;
+            border: thin solid blue;
+          }
+          .termsofservice{
+            margin: 40px 0 0;
+            font-size: 14px;
+            text-align: center;
+            &_text{
+              text-decoration: none;
+              color: $black;
+            }
+          }
+          .registration-submit{
+            margin: 40px 0 0;
+            background: $red;
+            border: 1px solid $red;
+            color: #fff;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            text-align: center;
+          }
+          .registration-help{
+            margin: 40px 0 0;
+            text-align: right;
+            font-size: 14px;
+
+            &_text{
+              text-decoration: none;
+              color: $blue;
+            }
+          }
         }
       }
     }
