@@ -1,0 +1,31 @@
+.simple-header2{
+  height: 128px;
+  text-align: center;
+  &_logo{
+    margin: 40px 0 0;
+    display: inline-block;
+    height: 49px;
+    &_url{
+      display: block;
+      height: 49px;
+      margin: 0 8px 0 0;
+      text-decoration: none;
+      &_image{
+        width: 185px;
+        height: 49px;
+      }
+    }
+  }
+  &_bar{
+    padding: 40px 0 0 44px;
+    border: 0;
+    display: inline-block;
+    vertical-align: top;
+     &_clearfix{
+      &_text{
+      }
+      &_status{
+      }
+     }
+  }
+}
