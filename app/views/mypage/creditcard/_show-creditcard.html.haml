@@ -1,0 +1,19 @@
+.credit
+  %h2.credit_head 支払い方法
+  .credit_content
+    %h3.credit_content_head クレジットカード一覧
+    .credit_content_card
+      %ul
+        %li
+          %form{:action => "/", :method => "post", class: "credit_content_card-inf"}
+            %figure
+              = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?376951604', height: '20', width: '26'
+            .credit_content_card_num
+              ************1943
+            .credit_content_card_num
+              02 / 24 
+            .credit_content_card_remove-btn
+              削除する
+    = link_to '#', class: 'credit_content_about-link' do
+      %span 支払い方法について
+      = fa_icon 'chevron-right'
