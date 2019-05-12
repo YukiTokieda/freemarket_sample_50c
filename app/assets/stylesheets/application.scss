@@ -4,9 +4,15 @@
 @import 'modules/header';
 @import 'modules/aside';
 @import 'modules/footer';
+@import 'modules/new';
 @import 'modules/sell-button';
 @import 'modules/simple-header';
 @import 'font-awesome';
+@import 'user';
+@import 'modules/mypage-side';
+@import 'modules/mypage-box';
+@import 'modules/mypage-user';
+@import 'modules/mypage-tabs2';
 @import 'modules/sign-up';
 @import 'modules/header';
 @import 'modules/simple-footer';
@@ -18,6 +24,6 @@
 @import 'modules/product-link';
 @import 'modules/product-sns';
 @import 'products';
-@import 'shared/required-tag';
+@import 'shared/tags';
 @import 'modules/creditcard';
 @import 'modules/mypage-logout';
