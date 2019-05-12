@@ -22,12 +22,37 @@
           width: 320px;
           height: 1239px;
           margin: 0 auto;
-          border: thin solid blue;
+
+          .registration-form-group-first{
+            height: 70px;
+
+          }
+          .registration-form-group-text{
+            height: 87px;
+            margin: 40px 0 0;
+
+          }
+          .registration-form-group-birthday{
+            height: 182px;
+            margin: 40px 0 0;
+
+          }
+
+          .registration-form-group{
+            height: 70px;
+            margin: 40px 0 0;
+
+          }
+          .form-info_text{
+            margin: 8px 0 0;
+            color: #888;
+            font-size: 12px
+          }
         }
         &_send{
           width: 320px;
           height: 311px;
-          margin: 0 auto;
+          margin: 37px auto 0;
           border: thin solid green;
         }
       }
