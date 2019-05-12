@@ -10,14 +10,7 @@
       display: inline-block;
       text-align: center;
       vertical-align: top;
-        // &_notification-todo{
-        //   text-decoration: none;
-        //   position: relative;
-        //   display: block;
-        //   color: #333;
-        //   font-size: 16px;
-        //   line-height: 74px;
-        // }
+
         &_notification{
           text-decoration: none;
           position: relative;
@@ -26,7 +19,7 @@
           font-size: 16px;
           line-height: 74px;
           background: #eee;
-          border: thin solid blue;
+
         }
         &_todo{
           text-decoration: none;
@@ -35,7 +28,7 @@
           color: #333;
           font-size: 16px;
           line-height: 74px;
-          border: thin solid yellow;
+
         }
     }
   }
