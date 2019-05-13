@@ -1,0 +1,12 @@
+.container
+  %section.chapter-container
+    %h2.profile-head プロフィール
+    = form_tag () #詳細は今後調整、現在の編集ページURLを指定予定
+    .setting-profile   
+      .profile-icon
+        = image_tag ('profile-image_example1.jpg') ,size:'60x60', class:'profile-icon-round'
+      %input.input-default{name: "nickname", placeholder: "例)AYA☆セール中", type: "text", value: "Fumiaki  Ichikawa"}/
+      .setting-profile-content
+        %textarea.textarea-default{name: "introduction", placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
+        %input{name: "after_save_callback", type: "hidden", value: "https://www.mercari.com/jp/mypage/profile/"}/
+        %button.btn-default.btn-red{type: "submit"} 変更する
