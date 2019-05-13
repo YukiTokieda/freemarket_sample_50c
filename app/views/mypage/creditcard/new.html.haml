@@ -4,7 +4,7 @@
     .credit_form-content
       .credit_form-group
         %label{:for => "card_no"} カード番号
-        %span.credit_form_require 必須
+        %span.required-tag 必須
         %input.credit_form_input{:maxlength => "19", :placeholder => "半角数字のみ", :type => "text", :value => ""}/
         %ul.credit-brand_list
           %li
@@ -23,7 +23,7 @@
             = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?376951604', height: '20', width: '32'
       .credit_form-group__mt
         %label 有効期限
-        %span.credit_form_require 必須
+        %span.required-tag 必須
         %br/
         .credit_form_select-wrap
           %select.credit_form_select-wrap_expire
@@ -59,10 +59,10 @@
         %span 年
       .form-group
         %label{:for => "payment_card_security_code"} セキュリティコード
-        %span.credit_form_require 必須
+        %span.required-tag 必須
         %input.credit_form_input{:placeholder => "カード背面4桁もしくは3桁の番号", :type => "number", :value => ""}/
         .credit_form_what-code
           .credit_form_what-code_text
-            %span.credit_form_question> ?
+            %span.quiestion-tag ?
             カード裏面の番号とは？
       %button.credit_form_btn{:type => "button"} 追加する
