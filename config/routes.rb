@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  root 'root#index'
   resources :root
-  resources :user, only: :index
   resources :products
-  resources :product
   # マイページ
   get 'mypage', to: 'mypage/mypage#index'
   get 'logout', to: 'mypage/logout#index'
