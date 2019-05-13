@@ -1,0 +1,56 @@
+.mypage-tab_container_notification-todo{
+  margin: 0;
+  height: 567px;
+  background-color:white;
+  .mypage-tabs{
+    border: 0;
+    font-size: 0;
+    &_2{
+      width: 50%;
+      display: inline-block;
+      text-align: center;
+      vertical-align: top;
+
+        &_notification{
+          text-decoration: none;
+          position: relative;
+          display: block;
+          color: #333;
+          font-size: 16px;
+          line-height: 74px;
+          background: #eee;
+
+        }
+        &_todo{
+          text-decoration: none;
+          position: relative;
+          display: block;
+          color: #333;
+          font-size: 16px;
+          line-height: 74px;
+
+        }
+    }
+  }
+
+  .tab-content{
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 493px;
+    border: thin solid green;
+    .mypage-item-list{
+      list-style: none;
+      .mypage-item_links{
+        border: thin solid red;
+        &__link{
+          .news-size-icon{
+          }
+          .mypage-item-news{
+
+          }
+        }
+      }
+    }
+  }
+}
