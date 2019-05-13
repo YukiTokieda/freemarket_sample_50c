@@ -1,0 +1,121 @@
+// Place all the styles related to the Transaction::Buy controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.single-main {
+    position: relative;
+    min-height: 100%;
+    font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+    font-size: 14px;
+    color: #333;
+    line-height: 1;
+    background: #f5f5f5;
+}
+
+.single-container.buy-item-container {
+    margin: 0 auto;
+    width: 700px;
+    background: #fff;
+
+    &_single-head {
+        padding: 32px 16px;
+        font-size: 22px;
+    }
+    &_single-head {
+        line-height: 1.5;
+        text-align: center;
+    }
+    &_buy-content {
+        padding: 24px 12.5% 0;
+        border-top: 1px solid #f5f5f5;
+    }
+    .buy-item {
+        text-align: center;
+    }
+    .buy-content-inner {
+        max-width: 320px;
+        margin: 0 auto;
+    }
+    .buy-item-image img {
+        width: auto;
+        max-height: 148px;
+    }
+    .buy-item-name {
+        margin: 8px 0 0;
+        font-size: 14px;
+        line-height: 2.0;
+  }
+    .bold {
+        font-weight: 600;
+    }
+    .buy-form {
+        line-height: 1.5;
+        .buy-form p {
+            margin: 8px 0 0;
+            line-height: 2.0;
+        }
+    }
+    .buy-price-ja .item-shipping-fee {
+        margin: 0 0 0 8px;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .buy-price-ja.bold {
+        font-size: 28px;
+        display: inline-block;
+        padding-right: 10px;
+    }
+      .item-shipping-fee {
+        font-size: 14px;
+        display: inline-block;
+    }
+    .buy-price-table {
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 3.0;
+      .buy-price-cell {
+          display: inline-block;
+          padding-right: 100px;
+      }
+      .data-buy-pay {
+          display: inline-block;
+      }
+    }  
+    .has-error-text {
+        color: #ea352d;
+        line-height: 1.5;
+        font-size: 14px;
+        clear: both;
+    }
+
+    .buy-content {
+        padding: 24px 12.5% 0;
+        border-top: 1px solid #f5f5f5;
+        .buy-content-inner {
+            max-width: 320px;
+            margin: 0 auto;
+        }
+        .buy-content-inner h3 {
+            font-weight: 600;
+        }
+        .buy-user-info h3 {
+            font-size: 14px;
+        }
+        .buy-user-info-text {
+            margin: 8px 0 0;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        .buy-user-info-fix {
+            display: block;
+            text-align: right;
+        }
+        a {
+            color: #0099e8;
+            text-decoration: none;
+        }
+    }
+    .buy-content:last-of-type {
+        padding: 40px 12.5%;
+    }
+}

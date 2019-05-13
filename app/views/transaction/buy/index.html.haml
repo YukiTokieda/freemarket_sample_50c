@@ -1,0 +1,41 @@
+.single-main
+  %section.single-container.buy-item-container
+    %h2.single-container.buy-item-container_single-head.bold 購入を確定しますか？
+    %section.single-container.buy-item-container_buy-content.buy-item
+      .buy-content-inner
+        %h3.buy-item-image
+          %img.is-higher-height.lazyloaded{:alt => "", "data-src" => "https://static.mercdn.net/thumb/photos/m17197496880_1.jpg?1556585936", :src => "https://static.mercdn.net/thumb/photos/m17197496880_1.jpg?1556585936"}/
+        %p.buy-item-name.bold BLACKBARRETT by Neil Barrett ポロシャツ
+        .buy-form
+          %p.buy-price-ja.bold ¥ 500
+          %p.item-shipping-fee 送料込み
+        %ul.buy-price-table
+          %p.buy-price-cell 支払い金額 
+          %p.data-buy-pay ¥ 500
+        %p.has-error-text 配送先と支払い方法の入力を完了してください。
+        .buy-buy
+          %p.buy-buy_btn{:disabled => "disabled", :type => "submit"} 購入する
+          %input#user_info_is_not_complete{:type => "hidden"}/
+    %section.buy-content.buy-user-info
+      .buy-content-inner
+        %h3 配送先
+        %address.buy-user-info-text
+          〒-
+          %br/
+          %br/
+        %p.buy-user-info-text
+        %a.buy-user-info-fix{:href => "https://www.mercari.com/jp/transaction/address/m17197496880/"}
+          %span 変更する
+          %i.icon-arrow-right
+    %section.buy-content.buy-user-info{"data-buy" => "pay-method"}
+      .buy-content-inner
+        %h3 支払い方法
+        %p.buy-user-info-text
+          %br/
+          \/
+        %figure
+          %img{:alt => "", :height => "", :src => "", :width => ""}/
+        %p
+        %a.buy-user-info-fix{:href => "https://www.mercari.com/jp/transaction/card/m17197496880/"}
+          %span 変更する
+          %i.icon-arrow-right

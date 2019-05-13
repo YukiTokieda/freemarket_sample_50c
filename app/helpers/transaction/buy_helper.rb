@@ -1,0 +1,2 @@
+module Transaction::BuyHelper
+end
