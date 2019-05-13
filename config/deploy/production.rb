@@ -59,3 +59,30 @@
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+
+server '52.192.27.154', user: 'ec2-user', roles: %w{app db web}
+
+# config valid only for current version of Capistrano
+lock '~> 3.11.0'
+
+set :application, 'freemarket_sample_50c'
+set :repo_url,  'git@github.com:YukiTokieda/freemarket_sample_50c.git'
+
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
+
+set :rbenv_type, :user
+set :rbenv_ruby, '2.5.1'
+
+set :ssh_options, auth_methods: ['publickey'],
+                  keys: ['~/.ssh/gptyn7127.pem']
+
+set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
+set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
+set :keep_releases, 5
+
+after 'deploy:publishing', 'deploy:restart'
+namespace :deploy do
+  task :restart do
+    invoke 'unicorn:restart'
+  end
+end
