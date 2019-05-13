@@ -1,2 +1,12 @@
-%h1 Mypage#index
-%p Find me in app/views/mypage/index.html.haml
+= render 'root/header'
+.mypage-box
+  %main.my-containercleanfix
+    .my-content
+      = render 'mypagem/mypage-user'
+      = render 'mypage/mypage-tabs2'
+      -# あとで作業
+      %section.mypage-tab_container
+    = render 'mypage/mypage-side'
+
+= render 'root/aside'
+= render 'root/footer'
