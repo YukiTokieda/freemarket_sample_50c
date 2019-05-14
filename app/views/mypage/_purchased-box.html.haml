@@ -1,0 +1,14 @@
+%section.purchased-box
+  %h2.purchased-head 購入した情報
+  %ul.purchased-tabs
+    %li.purchased-tabs_2
+      = link_to '取引中', '#', class: "purchased-tabs_2_during-trading"
+
+    %li.purchased-tabs_2
+      = link_to '過去の取引', '#', class: "purchased-tabs_2_past-transactions"
+
+  .purchased-content
+    %ul.purchased-content_during-trading
+      %li.purchased-content_during-trading_no-item 取引中の商品がありません
+
+    -# %ul.purchased-content_past-transactions
