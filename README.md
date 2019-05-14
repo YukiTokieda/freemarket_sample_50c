@@ -45,10 +45,10 @@
 |description|text|null: false|
 |state|integer|null: false|
 |price|integer|null: false|
+|brand|string||
 |trade_status|integer|null: false|
 |shipping_id|reference|null: false, index: true, foreign_key: true|
 |category_id|reference|null: false, index: true, foreign_key: true|
-|brand_id|reference|index: true, foreign_key: true|
 |size_id|reference|index: true, foreign_key: true|
 |user_id|reference|null: false, index: true, foreign_key: true|
 
