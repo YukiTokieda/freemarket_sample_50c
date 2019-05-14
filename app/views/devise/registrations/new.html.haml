@@ -6,29 +6,29 @@
     .registration-main-container
       %h2.registration-main-container_head
         会員情報入力
-      %form.registration-main-container_box
+      = form_for(resource, as: resource_name, url: registration_path(resource_name), class: "registration-main-container_box") do |f|
         -# %input(情報入力先指定)
         .registration-main-container_box_input
 
           .registration-form-group-first
             %P.registration-form-group-first_label ニックネーム
             %span.required-tag 必須
-            %input.registration-form-group-first_input{placeholder: '例）メルカリ太郎'}
+            = f.text_field :nickname, class: "registration-form-group-first_input", placeholder: "例）メルカリ太郎"
 
           .registration-form-group
             %P.registration-form-group_label メールアドレス
             %span.required-tag 必須
-            %input.registration-form-group_input{placeholder: 'PC・携帯どちらでも可'}
+            = f.text_field :email, class: "registration-form-group-first_input", placeholder: "例）PC・携帯どちらでも可"
 
           .registration-form-group
             %P.registration-form-group_label パスワード
             %span.required-tag 必須
-            %input.registration-form-group_input{placeholder: '6文字以上'}
+            = f.password_field :password, class: "registration-form-group-first_input", placeholder: "6文字以上"
 
           .registration-form-group
             %P.registration-form-group_label パスワード再確認
             %span.required-tag 必須
-            %input.registration-form-group_input{placeholder: '6文字以上'}
+            = f.password_field :password_confirmation, class: "registration-form-group-first_input", placeholder: "6文字以上"
 
           .registration-form-group-text
             %h3.registration-form-group-text_title 本人確認
@@ -37,22 +37,22 @@
           .registration-form-group
             %P.registration-form-group_label 姓 (全角)
             %span.required-tag 必須
-            %input.registration-form-group_input{placeholder: '例）山田'}
+            -# = f.text_field :first_name, class: "registration-form-group-first_input", placeholder: "例）山田"
 
           .registration-form-group
             %P.registration-form-group_label 名 (全角)
             %span.required-tag 必須
-            %input.registration-form-group_input{placeholder: '例）彩'}
+            -# = f.text_field :last_name, class: "registration-form-group-first_input", placeholder: "例）彩"
 
           .registration-form-group
             %P.registration-form-group_label 姓カナ (全角)
             %span.required-tag 必須
-            %input.registration-form-group_input{placeholder: '例）ヤマダ'}
+            -# = f.text_field :first_name_kana, class: "registration-form-group-first_input", placeholder: "例）ヤマダ"
 
           .registration-form-group
             %P.registration-form-group_label 名カナ (全角)
             %span.required-tag 必須
-            %input.registration-form-group_input{placeholder: '例）アヤ'}
+            -# = f.text_field :last_name_kana, class: "registration-form-group-first_input", placeholder: "例）アヤ"
 
           .registration-form-group-birthday
             %P.registration-form-group-birthday_label 生年月日
@@ -62,8 +62,8 @@
                 -# オプションを配列で選びたい（ルビーのヘルパーメソッド？時間がかかりそうなのであと回し）
                 %select.select-default
                   %option ---
-                  %option{value: '1'}1990
-                  %option{value: '2'}2019
+                  - for i in 1900..2019
+                    %option{value: i}#{i}
                 -# = fa_icon 'chevron-down', class: 'arrow-icon'
               %span 年
 
@@ -71,8 +71,8 @@
               .select-wrap
                 %select.select-default
                   %option ---
-                  %option{value: '1'}1
-                  %option{value: '2'}12
+                  - for i in 1..12
+                    %option{value: i}#{i}
                 -# = fa_icon 'chevron-down', class: 'arrow-icon'
               %span 月
 
@@ -80,23 +80,22 @@
               .select-wrap
                 %select.select-default
                   %option ---
-                  %option{value: '1'}1
-                  %option{value: '2'}31
+                  - for i in 1..31
+                    %option{value: i}#{i}
                 -# = fa_icon 'chevron-down', class: 'arrow-icon'
               %span 日
-
 
           %p.form-info_text ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
         .registration-main-container_box_send
           .check_box
           .termsofservice
-            -# %p「次へ進む」のボタンを押すことにより
+            -# %p「メルカリを始める」のボタンを押すことにより
             -# =link_to 'https://www.mercari.com/jp/tos_list/', class: "termsofservice_text" do
             -#   利用規約
             -# %p に同意したものとみなします
             =link_to 'https://www.mercari.com/jp/tos_list/', class: "termsofservice_text" do
-              「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
-          .registration-submit 次に進む
+              「メルカリを始める」のボタンを押すことにより、利用規約に同意したものとみなします
+          .registration-submit メルカリを始める
 
           .registration-help
             =link_to 'https://www.mercari.com/jp/help_center/article/423/', class: "registration-help_text" do
