@@ -122,40 +122,38 @@
             width:400px;
            float: right;
            .form-area_bottom {
-             margin-top: 30px; 
+            //  margin-top: 30px; 
            }
             .form-area {
               label {
                 font-size: 14px;
                 font-weight: 900;
               }
-              div {
-                .select-wrap {
-                  margin: 6px 0 0;
-                  .select-place {
-                    -webkit-appearance: none;
-                    -moz-appearance: none;
-                    appearance: none;
-                    display: inline-block;
-                    height: 48px;
-                    width: 100%;
-                    position: relative;
-                    font-size: 16px;
-                    padding: 0 0px 0 7px;
-                    border-radius: 4px;
-                    border-color: rgb(206, 206, 206);
-                    background-color: white;
-                    z-index: 2;
-                  }
-                  .arrow-icon {
-                    display: inline-block;
-                    position: relative;
-                    left: 370px;
-                    top: -37px;
-                    z-index: 2;
-                    color: rgb(136, 136, 136);
-                  }
-                  }
+              .select-wrap {
+                margin: 6px 0 0;
+                .select-place {
+                  -webkit-appearance: none;
+                  -moz-appearance: none;
+                  appearance: none;
+                  display: inline-block;
+                  height: 48px;
+                  width: 100%;
+                  position: relative;
+                  font-size: 16px;
+                  padding: 0 0px 0 7px;
+                  border-radius: 4px;
+                  border-color: rgb(206, 206, 206);
+                  background-color: white;
+                  z-index: 2;
+                }
+                .arrow-icon {
+                  display: inline-block;
+                  position: relative;
+                  left: 370px;
+                  top: -37px;
+                  z-index: 2;
+                  color: rgb(136, 136, 136);
+                }
                 }
               }
             }
@@ -175,7 +173,7 @@
             color: rgb(136, 136, 136);
           }
           .form-area_bottom {
-            margin-top: 30px; 
+            // margin-top: 30px; 
           }
           .form-help {
 
@@ -264,7 +262,7 @@
             float: right;
             text-align: right;
             font-size: 12px;
-            div {
+            .input-area {
               width: 80%;
               height: 48px;
               padding-left: 5%;
@@ -311,10 +309,10 @@
   height: 248px;
   width: 620px;
   padding: 40px;
-  div {
+  .sell-text_box {
     height: 84px;
     width: 620px;
-    p {
+    .sell-text_box_text {
       font-size: 14px;
     }
   }

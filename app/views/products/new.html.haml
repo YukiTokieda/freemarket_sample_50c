@@ -34,17 +34,16 @@
               .form-area
                 %label カテゴリー
                 %span.required-tag 必須
-                %div
-                  .select-wrap
-                    %select.select-place
-                      %option ---
-                      %option{value: '1'}レディース
-                      %option{value: '2'}メンズ
-                      %option{value: '3'}ベビー・キッズ
-                      %option{value: '4'}インテリア・住まい・小物
-                      %option{value: '5'}本・音楽・ゲーム
-                      %option{value: '6'}おもちゃ・ホビー・グッズ
-                    = fa_icon 'chevron-down', class: 'arrow-icon'
+                .select-wrap
+                  %select.select-place
+                    %option ---
+                    %option{value: '1'}レディース
+                    %option{value: '2'}メンズ
+                    %option{value: '3'}ベビー・キッズ
+                    %option{value: '4'}インテリア・住まい・小物
+                    %option{value: '5'}本・音楽・ゲーム
+                    %option{value: '6'}おもちゃ・ホビー・グッズ
+                  = fa_icon 'chevron-down', class: 'arrow-icon'
               .form-area.form-area_bottom
                 %label 商品の状態
                 %span.required-tag 必須
@@ -111,7 +110,7 @@
                       %span.required-tag 必須
                     .right-price_input
                       ¥
-                      %div
+                      .input-area
                         %input.price_input{placeholder:'例) 300'}
                 .price_fee
                   .left-text
@@ -125,17 +124,17 @@
                     -
 
           .sell_button-box
-            %div
-              %p
+            .sell-text_box
+              %p.sell-text_box_text
                 =link_to '禁止されている出品'
                 、
                 =link_to '行為'
                 を必ずご確認ください。
-              %p
+              %p.sell-text_box_text
                 またブランド品でシリアルナンバー等がある場合はご記載ください。
                 =link_to '偽ブランドの販売'
                 は犯罪であり処罰される可能性があります。
-              %p
+              %p.sell-text_box_text
                 また、出品をもちまして
                 =link_to '加盟店規約'
                 に同意したことになります。
