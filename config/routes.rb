@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   namespace :mypage do
     resources :creditcard, only: [:index, :new, :create, :destroy]
     resources :identification, only: [:edit, :update]
+    resources :profiles, only: [:edit, :update]
   end
   # 購入
   get 'transaction', to: 'transaction/buy#index'
