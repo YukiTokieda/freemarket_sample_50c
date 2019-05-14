@@ -1,0 +1,134 @@
+.wrapper {
+
+  .main-container {
+    height: 1340px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: $gray;
+    &_contents {
+      margin: 0 auto;
+      width: 1020px;
+      padding: 40px 0 40px 0;
+      .left-contents {
+        float: left;
+        width: 280px;
+        margin: 0 40px 0 0;
+      }
+      .right-contents {
+        height: 1255px;
+        width: 700px;
+        background-color: white;
+        float: right;
+        .contents-header {
+          height: 33px;
+          width: 652px;
+          padding: 8px 24px;
+          text-align: center;
+          font-weight: 600;
+          font-size: 24px;
+          border-bottom: solid 1px rgb(245, 245, 245);
+        }
+        .contents-inner {
+          width: 572px;
+          height: 1029px;
+          padding: 40px;
+          margin: 0 auto;
+          div {
+            height: 71px;
+            width: 572px;
+            p {
+              margin: 8px 0 0;
+              line-height: 1.5;
+              font-size: 14px;
+            }
+            .text-top {
+              color: $blue;
+              text-decoration: none;
+              margin: 8px 0 0;
+              line-height: 1.5;
+              font-size: 14px;
+              text-align: right;
+              
+            }
+          }
+        }
+      }
+    }
+  }
+  label {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .form-area {
+    height: 43px;
+    width: 572px;
+    margin: 40px 0 0;
+  }
+  .input-default {
+    height: 28px;
+    width: 538px;
+    margin: 8px 0 0;
+    padding: 10px 16px 8px;
+  }
+  .btn-update {
+    margin: 50px 0 0;
+    display: block;
+    width: 572px;
+    line-height: 48px;
+    font-size: 14px;
+    text-align: center;
+  }
+  .btn-red {
+    height: 50px;
+    width: 572px;
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+  }
+  .text-bottom {
+    height: 21px;
+    width: 572px;
+    margin: 40px 0 0;
+    text-align: right;
+    font-size: 14px;
+  }
+  .select-prefecture {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    height: 48px;
+    width: 100%;
+    position: relative;
+    font-size: 16px;
+    padding: 0 0px 0 7px;
+    border-radius: 4px;
+    border-color: rgb(206, 206, 206);
+    background-color: white;
+  }
+  .arrow-icon {
+    display: inline-block;
+    position: relative;
+    left: 540px;
+    top: -37px;
+    z-index: 2;
+    color: rgb(136, 136, 136);
+  }
+
+  .arrow-right-icon {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    color: $blue;
+    top: -21px;
+    left: 12px;
+  }
+
+.delete-deco{
+  display: block;
+  text-align: right;
+  margin: 40px 0 0;
+  text-decoration: none;
+  color: $blue;
+}
+}
