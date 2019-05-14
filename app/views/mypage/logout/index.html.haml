@@ -1,4 +1,16 @@
-.logout
-  %form.logout_inner-form{:action => "#", :method => "POST"}
-    .logout_inner-form_content
-      = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'logout_inner-form_content_logout-btn'
+= render 'root/header'
+
+.mypage-box
+  %main.my-containercleanfix
+    = render 'mypage/mypage-side'
+    .logout
+      %form.logout_inner-form{:action => "#", :method => "POST"}
+        .logout_inner-form_content
+          = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'logout_inner-form_content_logout-btn'
+
+= render 'root/aside'
+= render 'root/footer'
+= render 'root/sell-button'
+
+
+
