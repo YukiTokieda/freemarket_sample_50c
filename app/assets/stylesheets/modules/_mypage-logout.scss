@@ -1,18 +1,21 @@
 .logout {
+  float:right;
+  width: 700px;
+  height: 180px;
   margin: 0;
-  background: #fff;
+  background: $white;
+  
   &_inner-form {
     padding: 64px;
-    border-top: 1px solid #f5f5f5;
-    padding: 40px;
+    border-top: 1px solid $background;
     &_content {
       max-width: 320px;
       margin: 0 auto;
       &_logout-btn {
         margin: 0;
-        background: #ea352d;
-        border: 1px solid #ea352d;
-        color: #fff;
+        background: $red;
+        border: 1px solid $red;
+        color: $white;
         display: block;
         width: 100%;
         line-height: 48px;
