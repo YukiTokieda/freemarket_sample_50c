@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20190513070255) do
     t.string   "birth_year"
     t.string   "birth_month"
     t.string   "birth_day"
-    t.integer  "phone_number"
+    t.bigint   "phone_number"
     t.integer  "zipcode"
     t.integer  "prefecture"
     t.string   "city"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20190513070255) do
     t.integer  "user_id",                       null: false
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
-    t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
+    t.index ["user_id"], name: "index_profiles_on_user_id", unique: true, using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
