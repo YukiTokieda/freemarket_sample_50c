@@ -2,7 +2,16 @@
 .mypage-box
   %main.my-containercleanfix
     .my-content
-      = render 'mypage/mypage/mypage-user'
+      %section.mypage-user_icon
+        =link_to root_path, class: "mypage-user_icon_link" do
+
+          %figure.figure
+            = image_tag("//static.mercdn.net/images/member_photo_noimage_thumb.png",alt:"mercari",class:"mypage-user_icon_link_image");
+
+          %h2.bold ユーザーA
+          .mypage-number
+            .mypage-number_evaluation 評価 0
+            .mypage-number_exhibits 出品数 0
       = render 'mypage/mypage-tabs2'
       -# あとで作業
       %section.mypage-tab_container
