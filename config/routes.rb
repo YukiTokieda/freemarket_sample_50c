@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
 
   root 'root#index'
-  resources :root
   resources :products
   # マイページ
   get 'mypage', to: 'mypage/mypage#index'
