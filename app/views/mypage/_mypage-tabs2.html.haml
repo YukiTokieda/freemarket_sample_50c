@@ -1,25 +1,71 @@
 %section.mypage-tab_container_notification-todo
   %ul.mypage-tabs
     %li.mypage-tabs_2
-      = link_to 'お知らせ',user_index_path,class: "mypage-tabs_2_notification"
+      = link_to 'お知らせ', '#', class: "mypage-tabs_2_notification"
     %li.mypage-tabs_2
-      = link_to 'やることリスト',user_index_path,class: "mypage-tabs_2_todo"
+      = link_to 'やることリスト', '#', class: "mypage-tabs_2_todo"
 
   .tab-content
-    %ul#tab-content-notification.mypage-item_list
+    %ul#tab-content-notification.mypage-item-list
       -# %li(お知らせを配列で)
-      %li.mypage-item_links
-        %a{href: user_index_path, class: "mypage-item_links_link",data_open: "model",data_model: "banner"}
+      %li.mypage-item-list_links
+        -# %a{href: '#', class: "mypage-item-list_link",data_open: "model",data_model: "banner"}
+        = link_to '#', class: "mypage-item-list_link" do
           %img{alt: "" ,src:"//static.mercdn.net/images/mercari_profile.png",class: "news-size-icon",data_src:"//static.mercdn.net/images/mercari_profile.png"}
           .mypage-item-news
             .mypage-item-news_text お知らせ①
             .mypage-item-news_time
-              %i.icon-time
+              = fa_icon "history", class: "icon-time"
               %span ２日前
-          %i.icon-arrow-icon
+          = fa_icon "chevron-right", class: "news-arrow-icon"
+
+      %li.mypage-item-list_links
+        -# %a{href: '#', class: "mypage-item-list_link",data_open: "model",data_model: "banner"}
+        = link_to '#', class: "mypage-item-list_link" do
+          %img{alt: "" ,src:"//static.mercdn.net/images/mercari_profile.png",class: "news-size-icon",data_src:"//static.mercdn.net/images/mercari_profile.png"}
+          .mypage-item-news
+            .mypage-item-news_text お知らせ①
+            .mypage-item-news_time
+              = fa_icon "history", class: "icon-time"
+              %span ２日前
+          = fa_icon "chevron-right", class: "news-arrow-icon"
+
+      %li.mypage-item-list_links
+        -# %a{href: '#', class: "mypage-item-list_link",data_open: "model",data_model: "banner"}
+        = link_to '#', class: "mypage-item-list_link" do
+          %img{alt: "" ,src:"//static.mercdn.net/images/mercari_profile.png",class: "news-size-icon",data_src:"//static.mercdn.net/images/mercari_profile.png"}
+          .mypage-item-news
+            .mypage-item-news_text お知らせ①
+            .mypage-item-news_time
+              = fa_icon "history", class: "icon-time"
+              %span ２日前
+          = fa_icon "chevron-right", class: "news-arrow-icon"
+
+      %li.mypage-item-list_links
+        -# %a{href: '#', class: "mypage-item-list_link",data_open: "model",data_model: "banner"}
+        = link_to '#', class: "mypage-item-list_link" do
+          %img{alt: "" ,src:"//static.mercdn.net/images/mercari_profile.png",class: "news-size-icon",data_src:"//static.mercdn.net/images/mercari_profile.png"}
+          .mypage-item-news
+            .mypage-item-news_text お知らせ①
+            .mypage-item-news_time
+              = fa_icon "history", class: "icon-time"
+              %span ２日前
+          = fa_icon "chevron-right", class: "news-arrow-icon"
+
+      %li.mypage-item-list_links
+        -# %a{href: '#', class: "mypage-item-list_link",data_open: "model",data_model: "banner"}
+        = link_to '#', class: "mypage-item-list_link" do
+          %img{alt: "" ,src:"//static.mercdn.net/images/mercari_profile.png",class: "news-size-icon",data_src:"//static.mercdn.net/images/mercari_profile.png"}
+          .mypage-item-news
+            .mypage-item-news_text お知らせ①
+            .mypage-item-news_time
+              = fa_icon "history", class: "icon-time"
+              %span ２日前
+          = fa_icon "chevron-right", class: "news-arrow-icon"
+
 
       %li.mypage-go-list
-        = link_to '一覧を見る',user_index_path,class: "mypage-go-list"
+        = link_to '一覧を見る','#',class: "mypage-go-list_link"
 
   -# やることリストボックス（JavaScriptで変換）
     -# %ul#tab-content-todo.mypage-item-list
