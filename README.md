@@ -42,25 +42,26 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, index: true|
+|price|integer|null: false|
 |description|text|null: false|
 |state|integer|null: false|
-|price|integer|null: false|
 |brand|string||
-|trade_status|integer|null: false|
 |shipping_id|reference|null: false, index: true, foreign_key: true|
 |category_id|reference|null: false, index: true, foreign_key: true|
-|size_id|reference|index: true, foreign_key: true|
+|size_id|reference|null: false, index: true, foreign_key: true|
+|state_id|reference|null: false, index: true, foreign_key: true|
+|status_id|reference|null: false, index: true, foreign_key: true|
 |user_id|reference|null: false, index: true, foreign_key: true|
 
 ### Association
-- belongs_to :shipping
 - belongs_to :category
-- belongs_to :brand
-- belongs_to :size
 - belongs_to :user
 - has_many :images
 - has_many :comments
 - has_many :likes
+- has_one :size
+- has_one :state
+- has_one :status
 - has_one :order
 - has_one :shipping
 
@@ -144,10 +145,10 @@
 ## Shippingテーブル
 |Column|Type|Options|
 |------|----|-------|
-|method|integer|null: false|
-|prefecture_from|integer|null: false|
-|period_before_shipping|integer|null: false|
-|fee|integer|null: false|
+|method|sring|null: false|
+|prefecture_from|sring|null: false|
+|period_before_shipping|string|null: false|
+|fee_burden|string|null: false|
 
 ### Association
 - belongs_to :product
