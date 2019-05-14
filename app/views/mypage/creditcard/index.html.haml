@@ -1,6 +1,16 @@
--# クレジットカードがある場合はtrueでクレジットカードを表示する。
--# falseの場合はクレジットカードが登録されてないので、新規登録が表示される
-- if true
-  = render "show-creditcard"
-- else
-  = render "add-creditcard"
+= render 'root/header'
+
+.mypage-box
+  %main.my-containercleanfix
+    = render 'mypage/mypage-side'
+    - if true
+      = render "show-creditcard"
+    - else
+      = render "add-creditcard"
+    -# クレジットカードがある場合はtrueでクレジットカードを表示する。
+    -# falseの場合はクレジットカードが登録されてないので、新規登録が表示される
+
+= render 'root/aside'
+= render 'root/footer'
+= render 'root/sell-button'
+
