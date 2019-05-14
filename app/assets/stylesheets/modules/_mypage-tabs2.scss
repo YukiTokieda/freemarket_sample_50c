@@ -11,6 +11,7 @@
       text-align: center;
       vertical-align: top;
 
+
         &_notification{
           text-decoration: none;
           position: relative;
@@ -38,18 +39,64 @@
     margin: 0;
     padding: 0;
     height: 493px;
-    border: thin solid green;
+
     .mypage-item-list{
-      list-style: none;
-      .mypage-item_links{
-        border: thin solid red;
-        &__link{
+      height: 493px;
+      
+      &_links{
+
+        border-bottom: 1px solid #eee;
+        height: 80px;
+        .mypage-item-list_link{
+          position: relative;
+          display: block;
+          height: 48px;
+          padding: 16px;
+          color: #333;
+          text-decoration: none;
           .news-size-icon{
-            
+            height: 48px;
+            float: left;
           }
           .mypage-item-news{
-
+            margin: 0 40px 0 68px;
+            &_text{
+              font-size: 14px;
+            }
+            &_time{
+              display: inline-block;
+              color: #888;
+              font-size: 14px;
+              .icon-time{
+                color: #888;
+                font-size: 14px;
+                height: 16px;
+                width: 16px;
+              }
+            }
           }
+          .news-arrow-icon{
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            transform: translate(0, -50%);
+            color: $black;
+          }
+        }
+      }
+      .mypage-go-list{
+        position: relative;
+        padding: 16px;
+        height: 56px;
+        &_link{
+          display: block;
+          height: 56px;
+          margin: 0 auto;
+          background: #eee;
+          color: #333;
+          line-height: 56px;
+          text-align: center;
+          text-decoration: none;
         }
       }
     }
