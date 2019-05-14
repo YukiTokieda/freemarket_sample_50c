@@ -4,7 +4,7 @@
   %main.my-containercleanfix
     = render 'mypage/mypage-side'
     .logout
-      %form.logout_inner-form{:action => "#", :method => "POST"}
+      %form.logout_inner-form{ action: "#", method: "POST"}
         .logout_inner-form_content
           = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'logout_inner-form_content_logout-btn'
 
