@@ -72,3 +72,5 @@ gem 'kaminari'
 gem 'devise'
 #erb→haml
 gem 'erb2haml'
+#パンくず
+gem 'gretel'
