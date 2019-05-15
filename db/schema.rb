@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190515004820) do
+ActiveRecord::Schema.define(version: 20190515010654) do
 
   create_table "brand_groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 20190515004820) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.index ["grandparent_id"], name: "index_categories_on_grandparent_id", using: :btree
-    t.index ["name"], name: "index_categories_on_name", unique: true, using: :btree
     t.index ["parent_id"], name: "index_categories_on_parent_id", using: :btree
   end
 
