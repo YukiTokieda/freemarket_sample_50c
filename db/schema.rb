@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190514233913) do
+ActiveRecord::Schema.define(version: 20190514235614) do
 
   create_table "brand_groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_brand_groups_on_name", unique: true, using: :btree
+  end
+
+  create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.integer  "brand_group_id", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["brand_group_id"], name: "index_brands_on_brand_group_id", unique: true, using: :btree
   end
 
   create_table "profiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -52,5 +61,6 @@ ActiveRecord::Schema.define(version: 20190514233913) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "brands", "brand_groups"
   add_foreign_key "profiles", "users"
 end
