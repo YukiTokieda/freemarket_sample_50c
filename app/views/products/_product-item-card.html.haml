@@ -1,0 +1,16 @@
+%section.product-card__position-left
+  =link_to root_path, class: "product-card_url" do
+
+    .product-card-photo
+      = image_tag("https://static.mercdn.net/item/detail/orig/photos/m93191721349_1.jpg?1554798544", class: "lazyloaded")
+
+    .product-card-body
+      %h3.product-card-body_name アクセサリーパーツ ピアス
+      .product-card-body_num
+        .product-card-body_num_price ¥ 500
+        .font-2
+          .icon-like
+            =fa_icon 'heart', class: 'icon-like-border'
+
+          .like-count 10
+      %p.product-card-tax (税込)
