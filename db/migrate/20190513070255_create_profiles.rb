@@ -9,8 +9,8 @@ class CreateProfiles < ActiveRecord::Migration[5.0]
       t.string      :birth_year
       t.string      :birth_month
       t.string      :birth_day
-      t.bigint     :phone_number, unique: true
-      t.integer      :zipcode
+      t.bigint      :phone_number, unique: true
+      t.integer     :zipcode
       t.integer     :prefecture
       t.string      :city
       t.string      :district
