@@ -30,3 +30,19 @@ end
 CSV.foreach('db/dummy_datas/brands.csv') do |record|
   Brand.create(name: record[0], brand_group_id: record[1])
 end
+
+CSV.foreach('db/dummy_datas/shippings.csv') do |record|
+  Shipping.create(method: record[0], prefecture_from: record[1], period_before_shipping: record[2], fee_burden: record[3])
+end
+
+CSV.foreach('db/dummy_datas/states.csv') do |record|
+  State.create(name: record[0])
+end
+
+CSV.foreach('db/dummy_datas/statuses.csv') do |record|
+  Status.create(name: record[0])
+end
+
+CSV.foreach('db/dummy_datas/products.csv') do |record|
+  Product.create(name: record[0], price: record[1], description: record[2], brand: record[3], shipping_id: record[4], category_id: record[5], size_id: record[6], state_id: record[7], status_id: record[8], user_id: record[9])
+end
