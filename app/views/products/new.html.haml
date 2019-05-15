@@ -141,7 +141,7 @@
                 に同意したことになります。
             %button.btn-sell.btn-red{:type => "submit"}
               出品する
-            %button.btn-sell.btn-gray{:type => "submit"}
-              もどる
+            =link_to :back ,style:'text-decoration:none;color:white' do
+              %button.btn-sell.btn-gray もどる
           
   = render 'shared/simple-footer'
