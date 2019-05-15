@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20190515010654) do
     t.integer  "brand_group_id", null: false
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.index ["brand_group_id"], name: "index_brands_on_brand_group_id", unique: true, using: :btree
+    t.index ["brand_group_id"], name: "index_brands_on_brand_group_id", using: :btree
   end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

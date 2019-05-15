@@ -15,3 +15,18 @@ CSV.foreach('db/dummy_datas/profiles.csv') do |record|
   Profile.create(body: record[0], first_name: record[1], last_name: record[2], first_name_kana: record[3], last_name_kana: record[4], birth_year: record[5], birth_month: record[6], birth_day: record[7], phone_number: record[8], zipcode: record[9], prefecture: record[10], city: record[11], district: record[12], building: record[13], user_id: record[14])
 end
 
+CSV.foreach('db/dummy_datas/categories.csv') do |record|
+  Category.create(name: record[0], parent_id: record[1], grandparent_id: record[2])
+end
+
+CSV.foreach('db/dummy_datas/brand_groups.csv') do |record|
+  BrandGroup.create(name: record[0])
+end
+
+CSV.foreach('db/dummy_datas/sizes.csv') do |record|
+  Size.create(name: record[0])
+end
+
+CSV.foreach('db/dummy_datas/brands.csv') do |record|
+  Brand.create(name: record[0], brand_group_id: record[1])
+end
