@@ -3,4 +3,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one :profile, inverse_of: :user
   accepts_nested_attributes_for :profile
+  validates :nickname, presence: true
 end
