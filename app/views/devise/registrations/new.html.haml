@@ -7,19 +7,15 @@
       %h2.registration-main-container_head
         会員情報入力
       = form_for(resource, as: resource_name, url: registration_path(resource_name), class: "registration-main-container_box") do |f|
-
         .registration-main-container_box_input
-
           .registration-form-group-first
             %P.registration-form-group-first_label ニックネーム
             %span.required-tag 必須
             = f.text_field :nickname, class: "registration-form-group-first_input", placeholder: "例）メルカリ太郎"
-
           .registration-form-group
             %P.registration-form-group_label メールアドレス
             %span.required-tag 必須
             = f.text_field :email, class: "registration-form-group-first_input", placeholder: "例）PC・携帯どちらでも可"
-
           .registration-form-group
             %P.registration-form-group_label パスワード
             %span.required-tag 必須
@@ -33,54 +29,45 @@
           .registration-form-group-text
             %h3.registration-form-group-text_title 本人確認
             %p.registration-form-group-text_text 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+          = f.fields_for :profile do |profile_form|
+            .registration-form-group
+              %P.registration-form-group_label 姓 (全角)
+              %span.required-tag 必須
+              = profile_form.text_field :first_name, class: "registration-form-group-first_input", placeholder: "例) 山田"
 
-          .registration-form-group
-            %P.registration-form-group_label 姓 (全角)
-            %span.required-tag 必須
-
-            %P.registration-form-group_label 名 (全角)
-            %span.required-tag 必須
-
-
-          .registration-form-group
-            %P.registration-form-group_label 姓カナ (全角)
-            %span.required-tag 必須
+            .registration-form-group
+              %P.registration-form-group_label 名 (全角)
+              %span.required-tag 必須
+              = profile_form.text_field :last_name, class: "registration-form-group-first_input", placeholder: "例) 彩"
 
 
-          .registration-form-group
-            %P.registration-form-group_label 名カナ (全角)
-            %span.required-tag 必須
+            .registration-form-group
+              %P.registration-form-group_label 姓カナ (全角)
+              %span.required-tag 必須
+              = profile_form.text_field :first_name_kana, class: "registration-form-group-first_input", placeholder: "例) ヤマダ"
 
-          .registration-form-group-birthday
-            %P.registration-form-group-birthday_label 生年月日
-            %span.required-tag 必須
-            .registration-form-group-birthday_input
-              .select-wrap
+            .registration-form-group
+              %P.registration-form-group_label 名カナ (全角)
+              %span.required-tag 必須
+              = profile_form.text_field :last_name_kana, class: "registration-form-group-first_input", placeholder: "例) アヤ"
 
-                %select.select-default
-                  %option ---
-                  - for i in 1900..2019
-                    %option{value: i}#{i}
+            .registration-form-group-birthday
+              %P.registration-form-group-birthday_label 生年月日
+              %span.required-tag 必須
+              .registration-form-group-birthday_input
+                .select-wrap
+                  = profile_form.select :birth_year, [*1990..2019], {:prompt => "--"}, {class: "select-default"}
+                %span 年
 
-              %span 年
+              .registration-form-group-birthday_input
+                .select-wrap
+                  = profile_form.select :birth_month, [*1..12], {:prompt => "--"}, {class: "select-default"}
+                %span 月
 
-            .registration-form-group-birthday_input
-              .select-wrap
-                %select.select-default
-                  %option ---
-                  - for i in 1..12
-                    %option{value: i}#{i}
-
-              %span 月
-
-            .registration-form-group-birthday_input
-              .select-wrap
-                %select.select-default
-                  %option ---
-                  - for i in 1..31
-                    %option{value: i}#{i}
-
-              %span 日
+              .registration-form-group-birthday_input
+                .select-wrap
+                  = profile_form.select :birth_day, [*1..31], {:prompt => "--"}, {class: "select-default"}
+                %span 日
 
           %p.form-info_text ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
         .registration-main-container_box_send
