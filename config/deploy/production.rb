@@ -62,5 +62,8 @@
 
 server '52.192.27.154', user: 'ec2-user', roles: %w{app db web}
 
+set :rails_env, "production"
+set :unicorn_rack_env, "production"
+
 # config valid only for current version of Capistrano
 

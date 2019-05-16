@@ -3,7 +3,7 @@
     %ul.mypage-navi_list
 
       %li.mypage-navi-list_li
-        = link_to '#',class: "mypage-navi-list_li_item" do
+        = link_to mypage_path,class: "mypage-navi-list_li_item" do
           マイページ
           = fa_icon "chevron-right", class: "mypage-navi-list_li_icon"
 
@@ -23,7 +23,7 @@
           = fa_icon "chevron-right", class: "mypage-navi-list_li_icon"
 
       %li.mypage-navi-list_li
-        = link_to '#',class: "mypage-navi-list_li_item" do
+        = link_to new_product_path,class: "mypage-navi-list_li_item" do
           出品する
           = fa_icon "chevron-right", class: "mypage-navi-list_li_icon"
 
@@ -87,7 +87,7 @@
     %h3.mypage-navi_head 設定
     %ul.mypage-navi_list
       %li.mypage-navi-list_li
-        = link_to '#',class: "mypage-navi-list_li_item" do
+        = link_to edit_mypage_profile_path(:id),class: "mypage-navi-list_li_item" do
           プロフィール
           = fa_icon "chevron-right", class: "mypage-navi-list_li_icon"
 
@@ -97,7 +97,7 @@
           = fa_icon "chevron-right", class: "mypage-navi-list_li_icon"
 
       %li.mypage-navi-list_li
-        = link_to '#',class: "mypage-navi-list_li_item" do
+        = link_to mypage_creditcard_index_path,class: "mypage-navi-list_li_item" do
           支払い方法
           = fa_icon "chevron-right", class: "mypage-navi-list_li_icon"
 
@@ -117,6 +117,6 @@
           = fa_icon "chevron-right", class: "mypage-navi-list_li_icon"
 
       %li.mypage-navi-list_li
-        = link_to '#',class: "mypage-navi-list_li_item" do
+        = link_to logout_path,class: "mypage-navi-list_li_item" do
           ログアウト
           = fa_icon "chevron-right", class: "mypage-navi-list_li_icon"

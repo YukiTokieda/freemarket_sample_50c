@@ -1,3 +1,4 @@
+= render 'root/header'
 .item-main-container
   .item-box-container
     .item-box-container_item-cover
@@ -14,8 +15,9 @@
               %img{src: "https://static.mercdn.net/item/detail/orig/photos/m40679013203_4.jpg?1550474573"}/
         = render "product-right-inf"
         = render "product-down-inf"
-        .product-buy
-          %p.product-buy_btn 購入画面に進む
+        %p.product-buy
+          = link_to transaction_buy_index_path, class: "product-buy_btn" do
+            = '購入画面に進む'
         .item-description 
           %p.item-description-inner
             %br ハートの中で ダイヤモンドが揺れて とても綺麗なネックレスです。
@@ -36,3 +38,5 @@
   = render "product-comment"
   = render "product-link"
   = render "product-sns"
+  = render "product-user-profile"
+= render 'root/footer'

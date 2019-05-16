@@ -15,11 +15,11 @@
         %li
           =link_to 'メルカリロゴ利用ガイドライン','',target:'_blank'
         %li.footer-social-link
-          =link_to '','https://twitter.com/mercari_jp',target:'_blank'
-          //%i.icon-twitter：後日追記予定
+          =link_to 'https://twitter.com/mercari_jp',target:'_blank' do
+            %i= fa_icon 'twitter', class:'social-icon'
         %li.footer-social-link
-          =link_to '','https://www.facebook.com/mercarijp',target:'_blank'
-          //%i.icon-facebook：後日追記予定
+          =link_to 'https://www.facebook.com/mercarijp',target:'_blank' do
+            %i= fa_icon 'facebook-square', class:'social-icon'
     
     .footer-cell
       %h2.footer-head ヘルプ＆ガイド

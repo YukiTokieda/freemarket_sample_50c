@@ -72,5 +72,12 @@ gem 'kaminari'
 gem 'devise'
 #erb→haml
 gem 'erb2haml'
+<<<<<<< HEAD
 #パンくず
 gem 'gretel'
+=======
+# 画像
+gem 'carrierwave'
+gem 'mini_magick'
+# gem 'fog-aws'
+>>>>>>> master
