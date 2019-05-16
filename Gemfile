@@ -72,3 +72,7 @@ gem 'kaminari'
 gem 'devise'
 #erb→haml
 gem 'erb2haml'
+# 画像
+gem 'carrierwave'
+gem 'mini_magick'
+# gem 'fog-aws'
