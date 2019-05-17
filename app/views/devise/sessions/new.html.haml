@@ -11,12 +11,12 @@
       .main
         .account-button.main__sns
           .facebook
-            = link_to root_path, class: "account-button__facebook" do
+            = link_to user_facebook_omniauth_authorize_path, class: "account-button__facebook" do
               facebookでログイン
             =fa_icon 'facebook-square'
 
           .google
-            = link_to root_path, class: "account-button__google" do
+            = link_to user_google_oauth2_omniauth_authorize_path, class: "account-button__google" do
               Googleでログイン
             =fa_icon 'google'
 
