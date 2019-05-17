@@ -4,6 +4,15 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
+  devise_scope :user do
+    # ログイン・ログアウト
+    get    'login',                 to: 'users/sessions#new'
+    post   'login',                 to: 'users/sessions#create'
+    delete 'logout',                to: 'users/sessions#destroy'
+    # r新規登録
+    get    'signup',                to: 'users/registrations#index'
+    get    'signup/registration',   to: 'users/registrations#new'
+  end
 
   # トップページ
   root 'root#index'
