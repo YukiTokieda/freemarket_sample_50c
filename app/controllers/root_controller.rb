@@ -1,15 +1,15 @@
 class RootController < ApplicationController
 
   def index
-    @ladies= Product.where(category_id: 159..337).limit(4)
-    @mens= Product.where(category_id: 338..467).limit(4)
-    @kids= Product.where(category_id: 468..586)
-    @cosmetics= Product.where(category_id: 886..952)
+    @ladies = Product.get_category(159..337)
+    @mens = Product.get_category(338..467)
+    @kids = Product.get_category(468..586)
+    @cosmetics = Product.get_category(886..952)
 
-    @chanel= Product.where(brand: "シャネル")
-    @loisvuitton= Product.where(brand: "ルイヴィトン")
-    @supreme= Product.where(brand: "シュプリーム")
-    @nike= Product.where(brand: "ナイキ")
+    @chanel= Product.get_brand("シャネル")
+    @loisvuitton= Product.get_brand("ルイ ヴィトン")
+    @supreme= Product.get_brand("シュプリーム")
+    @nike= Product.get_brand("ナイキ")
   end
 
 end
