@@ -6,13 +6,13 @@
       %h2.sign-up-container_header 新規会員登録
       .sign-up-container-main
         .sign-up-container-main-content
-          =link_to root_index_path, class: "sign-up-container-main-content_mail" do
+          =link_to signup_registration_path, class: "sign-up-container-main-content_mail" do
             =fa_icon 'envelope', class: 'sign-up-container-main-content_mail_icon', text: "　　　　　　メールアドレスで登録"
 
-          =link_to root_index_path, class: "sign-up-container-main-content_facebook" do
+          =link_to root_path, class: "sign-up-container-main-content_facebook" do
             =fa_icon 'facebook-square', class: 'sign-up-container-main-content_facebook_icon', text: "　　　　　　　FaceBookで登録"
 
-          =link_to root_index_path, class: "sign-up-container-main-content_google" do
+          =link_to root_path, class: "sign-up-container-main-content_google" do
             =fa_icon 'google', class: 'sign-up-container-main-content_google_icon', text: "　　　　　　　　Googleで登録"
 
   = render "shared/simple-footer"
