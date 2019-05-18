@@ -3,19 +3,24 @@
     %tr
       %th 出品者
       %td
-        %a{:href => "#"} JUNNA
+        %a{:href => "#"}
+          = @user.nickname
     %tr
       %th カテゴリー
       %td
         %a{:href => "#"}
-          %div レディース
+          %div
+            = @category.name
         %a{:href => "#"}
-          %div アクセサリー
+          %div
+            = @category.name
         %a{:href => "#"}
-          %div ブレスレット
+          %div
+            = @category.name
     %tr
       %th ブランド
       %td
+        = @product.brand
     %tr
       %th 商品の状態
       %td 新品、未使用
@@ -28,7 +33,8 @@
     %tr
       %th 配送元地域
       %td
-        %a{:href => "#"} 福岡県
+        %a{:href => "#"}
+          = @shipping.prefecture_from
     %tr
       %th 発送日の目安
       %td 1~2日で発送

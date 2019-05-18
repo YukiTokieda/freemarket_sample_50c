@@ -1,8 +1,8 @@
 %section.product-card__position-left
-  =link_to root_path, class: "product-card_url" do
+  =link_to mypage_profile_path, class: "product-card_url" do
 
     .product-card-photo
-      = image_tag("https://static.mercdn.net/item/detail/orig/photos/m93191721349_1.jpg?1554798544", class: "lazyloaded")
+      = image_tag @image5.url, class: "lazyloaded"
 
     .product-card-body
       %h3.product-card-body_name アクセサリーパーツ ピアス

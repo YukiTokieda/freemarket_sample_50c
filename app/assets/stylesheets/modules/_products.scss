@@ -40,6 +40,12 @@
                     }
                 }
             }
+            .item-description {
+                padding: 20px;
+                .item-description-inner {
+                    font-size: 18px;
+                }
+            }
             .item-button-container {
                 margin: 16px 0 0;
                 .item-button-left {

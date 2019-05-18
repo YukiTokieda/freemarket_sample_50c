@@ -1,18 +1,20 @@
 = render 'root/header'
+
 .item-main-container
   .item-box-container
     .item-box-container_item-cover
-      %h1.item-box-container_item-cover__item-name K18PG ダンシング ダイヤネックレス
+      %h1.item-box-container_item-cover__item-name
+        = @product.name
       .item-box-container_item-cover__item-main-content
         .item-photo
           .owl-carousel.owl-loaded.owl-drag
             .owl-stage-outer
-              %img{alt: "K18PG ダンシング ダイヤネックレス", src: "https://static.mercdn.net/item/detail/orig/photos/m40679013203_1.jpg?1550474573"}/
+              = image_tag @image1.url, size: "100x100"
             .owl-dots
-              %img{src: "https://static.mercdn.net/item/detail/orig/photos/m40679013203_1.jpg?1550474573"}/
-              %img{src: "https://static.mercdn.net/item/detail/orig/photos/m40679013203_2.jpg?1550474573"}/
-              %img{src: "https://static.mercdn.net/item/detail/orig/photos/m40679013203_3.jpg?1550474573"}/
-              %img{src: "https://static.mercdn.net/item/detail/orig/photos/m40679013203_4.jpg?1550474573"}/
+              = image_tag @image1.url, size: "100x100"
+              = image_tag @image2.url, size: "100x100"
+              = image_tag @image3.url, size: "100x100"
+              = image_tag @image4.url, size: "100x100"
         = render "product-right-inf"
         = render "product-down-inf"
         %p.product-buy
@@ -20,10 +22,7 @@
             = '購入画面に進む'
         .item-description 
           %p.item-description-inner
-            %br ハートの中で ダイヤモンドが揺れて とても綺麗なネックレスです。
-            %br 0.112カラット
-            %br チェーンには アジャスターが付き 最長で43cmです。
-            %br 鑑定書付き
+            = @product.description
         .item-button-container.clearfix
           .item-button-left
             %button.item-button.item-button-like

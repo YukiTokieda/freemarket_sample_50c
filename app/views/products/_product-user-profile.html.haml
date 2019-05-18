@@ -1,7 +1,8 @@
 .items-in-user-profile
 %section.items-box-container.clearfix.items-box-overflow.items-in-user-profile
   %h2.items-box-head
-    = link_to 'JUNNAさんのその他の出品', '#' , style: 'text-decoration:none; color: #0099e8; font-size: 22px;'
+    = link_to mypage_path , style: 'text-decoration:none; color: #0099e8; font-size: 22px;' do
+      = @user.nickname + 'さんのその他の出品'
   .items-box-content.clearfix
     = render 'product-item-card'
     = render 'product-item-card'
@@ -10,7 +11,8 @@
     = render 'product-item-card'
     = render 'product-item-card'
   %h2.items-box-head
-    = link_to 'ピアス （ハンドメイド） その他の商品', '#' , style: 'text-decoration:none; color: #0099e8; font-size: 22px;'
+    = link_to '#' , style: 'text-decoration:none; color: #0099e8; font-size: 22px;' do
+      = 'ピアス （ハンドメイド） その他の商品'
   .items-box-content.clearfix
     = render 'product-item-card'
     = render 'product-item-card'
@@ -18,4 +20,3 @@
     = render 'product-item-card'
     = render 'product-item-card'
     = render 'product-item-card'
-    
