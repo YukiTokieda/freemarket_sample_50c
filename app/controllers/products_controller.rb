@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_user, :set_category, :set_shipping, :set_image
 
+  before_action :authenticate_user!, only: :new
   def index
   end
 
