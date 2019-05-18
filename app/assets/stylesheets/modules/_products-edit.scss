@@ -1,0 +1,40 @@
+.product-change-box{
+    margin: 20px 370px 20px 370px;
+    background: rgba(219, 177, 230, 0);
+    padding: 8px 16px 8px 16px;
+
+    .btn-default {
+        margin: 16px 0 16px 0;
+    }
+    .btn-red {
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+    }
+    .btn-default {
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        border: 1px solid transparent;
+        -webkit-transition: all ease-out .3s;
+        transition: all ease-out .3s;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+    }
+    .p {
+        font-size: 16px;
+    }
+    .text-center {
+        text-align: center;
+    }
+    .btn-default {
+        margin: 16px 0 16px 0;
+    }
+    .btn-gray {
+        background: #aaa;
+        border: 1px solid #aaa;
+        color: #fff;
+    }
+}
