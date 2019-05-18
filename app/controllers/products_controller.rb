@@ -11,8 +11,6 @@ class ProductsController < ApplicationController
 
   def destroy
     product = Products.find(params[:id])
-      if product.user_id == current_user.id
-        product.destroy
-      end
+    product.destroy if product.user_id == current_user.id
   end
 end
