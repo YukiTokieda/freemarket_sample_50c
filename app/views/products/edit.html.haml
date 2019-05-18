@@ -1,5 +1,5 @@
-  .product-change-box
-    %a.btn-default.btn-red{href: "#"} 商品の編集
-    %p.text-center or
-    %button.btn-default.btn-gray{type: "submit"} 出品を一旦停止する
-    %button.btn-default.btn-gray{"data-modal" => "delete-item", "data-open" => "modal"} この商品を削除する
+.product-change-box
+  = link_to "商品の編集", root_path, class: "btn-default btn-red"
+  %p.text-center or
+  %button.btn-default.btn-gray{type: "submit"} 出品を一旦停止する
+  %button.btn-default.btn-gray{"data-modal": "delete-item", "data-open": "modal"} この商品を削除する

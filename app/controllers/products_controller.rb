@@ -6,13 +6,13 @@ class ProductsController < ApplicationController
   end
 
   def show
-    # @product = Product.find(params[:id])
+
   end
 
   def destroy
-    products = Products.find(params[:id])
-      if products.user_id == current_user.id
-        products.destroy
+    product = Products.find(params[:id])
+      if product.user_id == current_user.id
+        product.destroy
       end
   end
 end

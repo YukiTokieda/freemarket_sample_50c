@@ -5,14 +5,6 @@
 
     .btn-default {
         margin: 16px 0 16px 0;
-    }
-    .btn-red {
-        background: #ea352d;
-        border: 1px solid #ea352d;
-        color: #fff;
-    }
-    .btn-default {
-        margin: 16px 0 16px 0;
         display: block;
         width: 100%;
         line-height: 48px;
@@ -24,9 +16,16 @@
         text-align: center;
         text-decoration: none;
     }
+    .btn-red {
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+    }
+
     .p {
         font-size: 16px;
     }
+
     .text-center {
         text-align: center;
     }
