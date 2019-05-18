@@ -15,83 +15,75 @@
         .text_place 
           レディース 新着アイテム
         .product-container_contents__box-clearfix
-          = render 'item-card'
-          = render 'item-card'
-          = render 'item-card'
-          = render 'item-card'
+          - @ladies.each do |product|
+            = render 'item-card', product: product
         .view-more
           全ての商品を見る
+
       .product-container_box__clearfix
         .text_place 
           メンズ 新着アイテム
         .product-container_contents__box-clearfix
-          = render 'item-card'
-          = render 'item-card'
-          = render 'item-card'
-          = render 'item-card'
+          - @mens.each do |product|
+            = render 'item-card', product: product
         .view-more
           全ての商品を見る
+
       .product-container_box__clearfix
         .text_place 
           ベビー・キッズ 新着アイテム
         .product-container_contents__box-clearfix
-          = render 'item-card'
-          = render 'item-card'
-          = render 'item-card'
-          = render 'item-card'
+          - @kids.each do |product|
+            = render 'item-card', product: product
         .view-more
           全ての商品を見る
+
       .product-container_box__clearfix
         .text_place 
           コスメ・香水・美容 新着アイテム
         .product-container_contents__box-clearfix
-          = render 'item-card'
-          = render 'item-card'
-          = render 'item-card'
-          = render 'item-card'
+          - @cosmetics.each do |product|
+            = render 'item-card', product: product
         .view-more
           全ての商品を見る
     .product-container
+
       %h2.product-container_title
         ピックアップブランド
+
       .product-container_box__clearfix
         .text_place 
           シャネル 新着アイテム
         .product-container_contents__box-clearfix
-          = render 'item-card'
-          = render 'item-card'
-          = render 'item-card'
-          = render 'item-card'
+          - @chanel.each do |product|
+            = render 'item-card', product: product
         .view-more
           全ての商品を見る
+
       .product-container_box__clearfix
         .text_place 
           ルイ ヴィトン 新着アイテム
         .product-container_contents__box-clearfix
-          = render 'item-card'
-          = render 'item-card'
-          = render 'item-card'
-          = render 'item-card'
+          - @loisvuitton.each do |product|
+            = render 'item-card', product: product
         .view-more
           全ての商品を見る
+
       .product-container_box__clearfix
         .text_place 
           シュプリーム 新着アイテム
         .product-container_contents__box-clearfix
-          = render 'item-card'
-          = render 'item-card'
-          = render 'item-card'
-          = render 'item-card'
+          - @supreme.each do |product|
+            = render 'item-card', product: product
         .view-more
           全ての商品を見る
+
       .product-container_box__clearfix
         .text_place 
           ナイキ 新着アイテム
         .product-container_contents__box-clearfix
-          = render 'item-card'
-          = render 'item-card'
-          = render 'item-card'
-          = render 'item-card'
+          - @nike.each do |product|
+            = render 'item-card', product: product
         .view-more
           全ての商品を見る
 
