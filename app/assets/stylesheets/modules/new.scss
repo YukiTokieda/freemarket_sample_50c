@@ -27,7 +27,7 @@
           height: 100%;
           width: 700px;
 
-          .sell-form_image-box {
+          &_image-box {
             min-height: 220px;
             padding: 40px;
             border-bottom: solid 1px #EEEEEE;
@@ -376,6 +376,10 @@
               width: 620px;
               p {
                 font-size: 14px;
+               a {
+                text-decoration: none;
+                color: $blue;
+                }
               }
             }
             .btn-sell.btn-red {
