@@ -1,14 +1,14 @@
 class RootController < ApplicationController
 
   def index
-    @ladies       = Product.get_category(159..337)
-    @mens         = Product.get_category(338..467)
-    @kids         = Product.get_category(468..586)
-    @cosmetics    = Product.get_category(886..952)
-    @chanel       = Product.get_brand("シャネル")
-    @loisvuitton  = Product.get_brand("ルイ ヴィトン")
-    @supreme      = Product.get_brand("シュプリーム")
-    @nike         = Product.get_brand("ナイキ")
+    @ladies       = Product.get_ladies.limit(4).includes(:images)
+    @mens         = Product.get_mens.limit(4).includes(:images)
+    @kids         = Product.get_kids.limit(4).includes(:images)
+    @cosmetics    = Product.get_cosmetics.limit(4).includes(:images)
+    @chanel       = Product.get_chanel.limit(4).includes(:images)
+    @loisvuitton  = Product.get_loisvuitton.limit(4).includes(:images)
+    @supreme      = Product.get_supreme.limit(4).includes(:images)
+    @nike         = Product.get_nike.limit(4).includes(:images)
   end
 
 end
