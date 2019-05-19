@@ -46,3 +46,7 @@
 # CSV.foreach('db/dummy_datas/products.csv') do |record|
 #   Product.create(name: record[0], price: record[1], description: record[2], brand: record[3], shipping_id: record[4], category_id: record[5], size_id: record[6], state_id: record[7], status_id: record[8], user_id: record[9])
 # end
+
+# 1.upto(16) do |n|
+#   Image.create!(name: open("#{Rails.root}/db/fixtures/img#{n}.jpg"), product_id: n)
+# end
