@@ -1,50 +1,71 @@
 .main_container 
   = render 'shared/simple-header'
   .main-contents
+
     .main-contents_conteiner
       .main-contents_conteiner_inner
         %h2.header-text
           商品の情報を入力
+
         .sell-form
           .sell-form_image-box
-            .sell-upload_text-top
+            .sell-upload-head
               出品画像
               %span.required-tag 必須
             .sell-upload_text-bottom
               最大10枚までアップロードできます
             .sell-box_container
-              .sell-box_container_drop-box
-                .drop-box_text
+              %label.file{for: "file"}  
+                %img
+                %pre
                   ドラッグアンドドロップ
-                  %br
                   またはクリックしてファイルをアップロード
-          .sell-content
+                %input#file{type: "file"}/          
+              
+          .sell-content_basic
             .form_product-name
               %label 商品名
               %span.required-tag 必須
-              %input.input-name{placeholder: '商品名(必須 40文字まで)'}
+              %input.input-name{placeholder: '商品名(必須 40文字まで)',type:'text'}
             .form_product-intro
               %label 商品の説明
               %span.required-tag 必須
-              %input.input-intro{placeholder: '商品の説明 (必須 1,000文字以内) (色、素材、重さ、定価、注意点など) 例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'}
+              %textarea.input-intro{rows:"5",type:'text',placeholder: '商品の説明 (必須 1,000文字以内) (色、素材、重さ、定価、注意点など) 例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'}
           
-          .sell-content-detail
+          .sell-content_category
             %h3 商品の詳細
             .sell-form-box
               .form-area
                 %label カテゴリー
                 %span.required-tag 必須
-                %div
-                  .select-wrap
-                    %select.select-place
-                      %option ---
-                      %option{value: '1'}レディース
-                      %option{value: '2'}メンズ
-                      %option{value: '3'}ベビー・キッズ
-                      %option{value: '4'}インテリア・住まい・小物
-                      %option{value: '5'}本・音楽・ゲーム
-                      %option{value: '6'}おもちゃ・ホビー・グッズ
-                    = fa_icon 'chevron-down', class: 'arrow-icon'
+                .select-wrap
+                  %select.select-place
+                    %option ---
+                    %option{value: '1'}レディース
+                    %option{value: '2'}メンズ
+                    %option{value: '3'}ベビー・キッズ
+                    %option{value: '4'}インテリア・住まい・小物
+                    %option{value: '5'}本・音楽・ゲーム
+                    %option{value: '6'}おもちゃ・ホビー・グッズ
+                    %option{value: '7'}コスメ・香水・美容
+                    %option{value: '8'}家電・スマホ・カメラ
+                    %option{value: '9'}スポーツ・レジャー
+                    %option{value: '10'}ハンドメイド
+                    %option{value: '11'}チケット
+                    %option{value: '12'}自動車・オートバイ
+                    %option{value: '13'}その他
+                  = fa_icon 'chevron-down', class: 'arrow-icon'
+
+                .select-wrap
+                  %select.select-place
+                    %option ---
+                  = fa_icon 'chevron-down', class: 'arrow-icon'
+
+                .select-wrap
+                  %select.select-place
+                    %option ---
+                  = fa_icon 'chevron-down', class: 'arrow-icon'
+
               .form-area.form-area_bottom
                 %label 商品の状態
                 %span.required-tag 必須
@@ -60,10 +81,8 @@
                       %option{value: '6'}全体的に状態が悪い
                     = fa_icon 'chevron-down', class: 'arrow-icon icon fa-fw'
 
-          .sell-content-shipping-method
+          .sell-content_delivery
             %h3 配送について
-            .form-help
-              =link_to ''
             .sell-form-box
               .form-area
                 %label 配送料の負担
@@ -98,7 +117,7 @@
                       %option{value: '1'}4~7日で発送
                     = fa_icon 'chevron-down', class: 'arrow-icon'
                     
-          .contents-price
+          .sell-content_plice
             %h3 販売価格(300~9,999,999)
             .form-help
               =link_to ''
@@ -112,7 +131,7 @@
                     .right-price_input
                       ¥
                       %div
-                        %input.price_input{placeholder:'例) 300'}
+                        %input.price_input{placeholder:'例) 300',type:'text'}
                 .price_fee
                   .left-text
                     販売手数料(10%)
@@ -124,24 +143,24 @@
                   .right-price
                     -
 
-          .sell_button-box
+          .sell-content_sell-btn-box
             %div
               %p
-                =link_to '禁止されている出品'
+                =link_to '禁止されている出品','#',style:'text-decoration:none;color:#099BE8'
                 、
-                =link_to '行為'
+                =link_to '行為','#',style:'text-decoration:none;color:#099BE8'
                 を必ずご確認ください。
               %p
                 またブランド品でシリアルナンバー等がある場合はご記載ください。
-                =link_to '偽ブランドの販売'
+                =link_to '偽ブランドの販売','#',style:'text-decoration:none;color:#099BE8'
                 は犯罪であり処罰される可能性があります。
               %p
                 また、出品をもちまして
-                =link_to '加盟店規約'
+                =link_to '加盟店規約','#',style:'text-decoration:none;color:#099BE8'
                 に同意したことになります。
             %button.btn-sell.btn-red{:type => "submit"}
               出品する
-            =link_to :back ,style:'text-decoration:none;color:white' do
-              %button.btn-sell.btn-gray もどる
+            %button.btn-sell.btn-gray{:type => "submit"}
+              もどる
           
   = render 'shared/simple-footer'
