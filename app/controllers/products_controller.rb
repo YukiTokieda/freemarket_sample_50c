@@ -1,12 +1,13 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!, only: :new
   before_action :set_user, :set_category, :set_shipping, :set_image
 
-  before_action :authenticate_user!, only: :new
   def index
   end
 
   def show
     @product = Product.find(params[:id])
+    @product_ another = Product.where.not(id: ).where(id: )
   end
  
   def new
@@ -42,10 +43,6 @@ class ProductsController < ApplicationController
   end
 
   def set_image
-    @image1 = Image.find(1)
-    @image2 = Image.find(2)
-    @image3 = Image.find(3)
-    @image4 = Image.find(4)
-    @image5 = Image.find(5)
+    @image = Image.find(params[:id])
   end
 end

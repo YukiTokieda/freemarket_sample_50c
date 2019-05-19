@@ -27,16 +27,14 @@
             margin: 16px 0 0;
             .item-photo {
                 .owl-carousel.owl-loaded.owl-drag {
+                    padding-right: 10px;
                     float: left;
-                    .owl-stage-outer img {
-                        padding: 5px;
-                        height: 300px;
-                        width: 300px;
+                    .owl-stage-outer {
                     }
-                    .owl-dots img {
-                        padding-right: 5px;
-                        height: 70px;
-                        width: 70px;
+                    .owl-dots {
+                        width: 25%;
+                        max-height: 90px;
+                        float: left;
                     }
                 }
             }

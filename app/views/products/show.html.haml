@@ -1,5 +1,4 @@
 = render 'root/header'
-
 .item-main-container
   .item-box-container
     .item-box-container_item-cover
@@ -8,13 +7,14 @@
       .item-box-container_item-cover__item-main-content
         .item-photo
           .owl-carousel.owl-loaded.owl-drag
-            .owl-stage-outer
-              = image_tag @image1.url, size: "100x100"
-            .owl-dots
-              = image_tag @image1.url, size: "100x100"
-              = image_tag @image2.url, size: "100x100"
-              = image_tag @image3.url, size: "100x100"
-              = image_tag @image4.url, size: "100x100"
+            - @product.images.each_with_index do |image, index|
+              - if index == 0
+                .owl-stage-outer
+                  = image_tag image.name, width: "300", height: "300"
+            - @product.images.each_with_index do |image, index|
+              - if index <= 3
+                .owl-dots
+                  = image_tag image.name, class: "owl-dot", width: "70", height: "70"
         = render "product-right-inf"
         = render "product-down-inf"
         %p.product-buy
