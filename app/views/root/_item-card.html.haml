@@ -1,5 +1,5 @@
 %section.item-card__position-left
-  =link_to product_path(product.id), class: "item-card_url" do
+  =link_to product_path(product), class: "item-card_url" do
 
     .item-card-photo
       = image_tag(product.images.first.name, class: "lazyloaded")
