@@ -17,3 +17,9 @@
 .byebug_history
 
 .env
+db/fixtures
+public/uploads
+
+db/fixtures
+
+config/secrets.yml

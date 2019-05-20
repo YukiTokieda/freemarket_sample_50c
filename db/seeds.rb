@@ -1,11 +1,11 @@
 # require "csv"
-# # This file should contain all the record creation needed to seed the database with its default values.
-# # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-# #
-# # Examples:
-# #
-# #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-# #   Character.create(name: 'Luke', movie: movies.first)
+# # # This file should contain all the record creation needed to seed the database with its default values.
+# # # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+# # #
+# # # Examples:
+# # #
+# # #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+# # #   Character.create(name: 'Luke', movie: movies.first)
 
 # CSV.foreach('db/dummy_datas/users.csv') do |record|
 #   User.create(nickname: record[0], email: record[1], password: record[2], password_confirmation: record[3])
@@ -45,4 +45,8 @@
 
 # CSV.foreach('db/dummy_datas/products.csv') do |record|
 #   Product.create(name: record[0], price: record[1], description: record[2], brand: record[3], shipping_id: record[4], category_id: record[5], size_id: record[6], state_id: record[7], status_id: record[8], user_id: record[9])
+# end
+
+# 1.upto(16) do |n|
+#   Image.create!(name: open("#{Rails.root}/db/fixtures/img#{n}.jpg"), product_id: n)
 # end
