@@ -1,0 +1,124 @@
+.main_container
+  = render 'shared/simple-header'
+  .main-contents
+    .main-contents_conteiner
+      .main-contents_conteiner_inner
+        %h2.header-text
+          商品の情報を入力
+        = form_for @product do |product_form|
+          .sell-form
+            .sell-form_image-box
+              .sell-upload_text-top
+                出品画像
+                %span.required-tag 必須
+                = product_form.fields_for :images do |image_form|
+                  = image_form.file_field :name
+              .sell-upload_text-bottom
+                最大10枚までアップロードできます
+              .sell-box_container
+                .sell-box_container_drop-box
+                  .drop-box_text
+                    ドラッグアンドドロップ
+                    %br
+                    またはクリックしてファイルをアップロード
+            .sell-content
+              .form_product-name
+                %label 商品名
+                %span.required-tag 必須
+                = product_form.text_field :name, class: "input-name", placeholder: "商品名(必須 40文字まで)"
+              .form_product-intro
+                %label 商品の説明
+                %span.required-tag 必須
+                = product_form.text_area :description, class: "input-intro", placeholder: "商品の説明 (必須 1,000文字以内) (色、素材、重さ、定価、注意点など) 例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+            .sell-content-detail
+              %h3 商品の詳細
+              .sell-form-box
+                .form-area
+                  %label カテゴリー
+                  %span.required-tag 必須
+                  %div
+                    .select-wrap
+                      = product_form.collection_select :category_id, @categories, :id, :name, { prompt: '---' }, class: "select-place"
+                      = fa_icon 'chevron-down', class: 'arrow-icon'
+                  %div
+                    .select-wrap
+                      = product_form.collection_select :category_id, @categories[0].children, :id, :name, { prompt: '---' }, class: "select-place"
+                      = fa_icon 'chevron-down', class: 'arrow-icon'
+                  %div
+                    .select-wrap
+                      = product_form.collection_select :category_id, @categories[0].grandchildren, :id, :name, { prompt: '---' }, class: "select-place"
+                      = fa_icon 'chevron-down', class: 'arrow-icon'
+                .form-area.form-area_bottom
+                  %label 商品の状態
+                  %span.required-tag 必須
+                  %div
+                    .select-wrap
+                      = product_form.collection_select :state_id, @states, :id, :name, { prompt: '---' }, class: 'select-place'
+                      = fa_icon 'chevron-down', class: 'arrow-icon icon fa-fw'
+          = product_form.fields_for :shipping do |shipping_form|
+            .sell-content-shipping-method
+              %h3 配送について
+              .form-help
+                =link_to ''
+              .sell-form-box
+                .form-area
+                  %label 配送料の負担
+                  %span.required-tag 必須
+                  %div
+                    .select-wrap
+                      = shipping_form.select :fee_burden, Shipping.fee_burdens.keys.map {|k| [Shipping.fee_burdens[k], k]}, { prompt: '---' }, autofocus: true, class: 'select-place'
+                      = fa_icon 'chevron-down', class: 'arrow-icon'
+                .form-area
+                  %label 発送方法
+                  %span.required-tag 必須
+                  %div
+                    .select-wrap
+                      = shipping_form.select :method, Shipping.methods.keys.map {|k| [Shipping.methods[k], k]}, { prompt: '---' }, autofocus: true, class: 'select-place'
+                      = fa_icon 'chevron-down', class: 'arrow-icon'
+                .form-area.form-area_bottom
+                  %label 発送元の地域
+                  %span.required-tag 必須
+                  %div
+                    .select-wrap
+                      = shipping_form.select :prefecture_from, Shipping.froms.keys.map {|k| [Shipping.froms[k], k]}, { prompt: '---' }, autofocus: true, class: 'select-place'
+                      = fa_icon 'chevron-down', class: 'arrow-icon'
+                .form-area.form-area_bottom
+                  %label 発送までの日数
+                  %span.required-tag 必須
+                  %div
+                    .select-wrap
+                      = shipping_form.select :period_before_shipping, Shipping.period_before_shippings.keys.map {|k| [Shipping.period_before_shippings[k], k]}, { prompt: '---' }, autofocus: true, class: 'select-place'
+                      = fa_icon 'chevron-down', class: 'arrow-icon'
+                      
+            .contents-price
+              %h3 販売価格(300~9,999,999)
+              .form-help
+                =link_to ''
+              .sell-price_box
+                .sell-price_form
+                  .price_form
+                    .price_form-area
+                      %label.left-text
+                        価格
+                        %span.required-tag 必須
+                      .right-price_input
+                        ¥
+                        %div
+                          = product_form.text_field :price, class: 'price_input', placeholder: '例) 300'
+                  .price_fee
+                    .left-text
+                      販売手数料(10%)
+                    .right-price
+                      -
+                  .profit
+                    .left-text
+                      販売利益
+                    .right-price
+                      -
+
+            .sell_button-box
+              = product_form.submit '変更する', class: 'btn-sell btn-red'
+              =link_to :back ,style:'text-decoration:none;color:white' do
+                %button.btn-sell.btn-gray キャンセル
+          
+  = render 'shared/simple-footer'

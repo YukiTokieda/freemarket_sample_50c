@@ -1,11 +1,14 @@
 class Product < ApplicationRecord
   has_many :images, dependent: :delete_all
-  belongs_to :shipping
+  belongs_to :shipping, dependent: :delete
   belongs_to :size
   belongs_to :status
   belongs_to :state
   belongs_to :category
   belongs_to :user
+
+  accepts_nested_attributes_for :images, allow_destroy: true
+  accepts_nested_attributes_for :shipping, allow_destroy: true
 
   # 最新のものから並び替える
   scope :recent, -> { order("updated_at DESC") }
