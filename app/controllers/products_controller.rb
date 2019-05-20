@@ -1,10 +1,11 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, except: :show
+  before_action :set_product, only: [:show, :destroy, :edit, :update]
+
   def index
   end
- 
+
   def new
-    
   end
 
   def create
@@ -13,14 +14,20 @@ class ProductsController < ApplicationController
   def show
   end
 
+  def destroy
+    if @product.destroy
+      redirect_to controller: :root, action: :index
+    else
+      # TODO:削除失敗の処理を記述する
+    end
+  end
+
   def edit
-    set_product
     @categories = Category.where(parent_id: 0)
     @states = State.all
   end
 
   def update
-    set_product
     if @product.update(product_params)
       redirect_to controller: :root, action: :index
     else
