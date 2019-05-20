@@ -71,7 +71,8 @@ gem 'devise'
 # 画像
 gem 'carrierwave'
 gem 'mini_magick'
-# gem 'fog-aws'
+gem 'fog-aws'
+# SNS認証
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
