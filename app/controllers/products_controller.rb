@@ -15,7 +15,11 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy if product.user_id == current_user.id
+    if @product.destroy
+      redirect_to controller: :root, action: :index
+    else
+      # TODO:削除失敗の処理を記述する
+    end
   end
 
   def edit
