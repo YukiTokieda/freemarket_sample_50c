@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
   end
  
   def new
+    
   end
 
   def create
@@ -20,7 +21,7 @@ class ProductsController < ApplicationController
 
   def update
     set_product
-    if @product.update(update_params)
+    if @product.update(product_params)
       redirect_to controller: :root, action: :index
     else
       render :edit
@@ -33,7 +34,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
-  def update_params
+  def product_params
     params.require(:product).permit(:name, :description, :category_id, :state_id, :price,
       shipping_attributes:[:method, :prefecture_from, :period_before_shipping, :fee_burden, :_destroy, :id],
       images_attributes:[:name, :_destroy, :id])
