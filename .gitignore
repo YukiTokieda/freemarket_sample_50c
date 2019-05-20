@@ -19,5 +19,3 @@
 .env
 db/fixtures
 public/uploads
-
-db/fixtures
