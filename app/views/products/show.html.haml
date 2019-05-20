@@ -33,9 +33,8 @@
           .item-button-right
             %button.item-button-safe
               %span ※  あんしん・あんぜんへの取り組み
-
   = render "product-comment"
   = render "product-link"
   = render "product-sns"
-  = render "product-user-profile"
+  = render partial: 'product-user-profile', locals: { users_products: @users_products }
 = render 'root/footer'

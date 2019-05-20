@@ -1,13 +1,13 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only: :new
-  before_action :set_user, :set_category, :set_shipping, :set_image
+  before_action :set_user, :set_category, :set_shipping
 
   def index
   end
 
   def show
     @product = Product.find(params[:id])
-    @product_ another = Product.where.not(id: ).where(id: )
+    @users_products = Product.get_user_product(@product).limit(6)
   end
  
   def new
@@ -40,9 +40,5 @@ class ProductsController < ApplicationController
 
   def set_shipping
     @shipping = Shipping.find(params[:id])
-  end
-
-  def set_image
-    @image = Image.find(params[:id])
   end
 end
