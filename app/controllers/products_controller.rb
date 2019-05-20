@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :set_destroy, only: [:index, :new, :show]
+
   def index
   end
 
@@ -6,11 +8,9 @@ class ProductsController < ApplicationController
   end
 
   def show
-
   end
 
-  def destroy
-    product = Products.set(params[:id])
+  def set_destroy
+    product = Products.find(params[:id])
     product.destroy if product.user_id == current_user.id
   end
-end
