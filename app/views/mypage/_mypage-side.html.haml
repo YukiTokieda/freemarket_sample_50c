@@ -107,7 +107,7 @@
           = fa_icon "chevron-right", class: "mypage-navi-list_li_icon"
 
       %li.mypage-navi-list_li
-        = link_to '#',class: "mypage-navi-list_li_item" do
+        = link_to edit_mypage_identification_path(current_user.id),class: "mypage-navi-list_li_item" do
           本人情報
           = fa_icon "chevron-right", class: "mypage-navi-list_li_icon"
 
