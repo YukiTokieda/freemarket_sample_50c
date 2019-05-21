@@ -1,8 +1,8 @@
 %section.item-card__position-left
-  =link_to product_path(1), class: "item-card_url" do
+  =link_to product_path(product), class: "item-card_url" do
 
     .item-card-photo
-      = image_tag("dummy_product.jpg", class: "lazyloaded")
+      = image_tag(product.images.first.name, class: "lazyloaded")
 
     .item-card-body
       %h3.item-card-body_name
