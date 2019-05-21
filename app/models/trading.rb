@@ -1,0 +1,2 @@
+class Trading < ApplicationRecord
+end
