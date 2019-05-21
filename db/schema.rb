@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190516171936) do
+ActiveRecord::Schema.define(version: 20190520235944) do
 
   create_table "brand_groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
@@ -129,6 +129,15 @@ ActiveRecord::Schema.define(version: 20190516171936) do
     t.index ["name"], name: "index_statuses_on_name", unique: true, using: :btree
   end
 
+  create_table "tradings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "buyer_id",   null: false
+    t.integer  "seller_id",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["buyer_id"], name: "index_tradings_on_buyer_id", using: :btree
+    t.index ["seller_id"], name: "index_tradings_on_seller_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nickname",               default: "", null: false
     t.string   "email",                  default: "", null: false
@@ -152,4 +161,6 @@ ActiveRecord::Schema.define(version: 20190516171936) do
   add_foreign_key "products", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "sns_credentials", "users"
+  add_foreign_key "tradings", "users", column: "buyer_id"
+  add_foreign_key "tradings", "users", column: "seller_id"
 end
