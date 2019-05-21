@@ -6,7 +6,7 @@
     .container
       %section.chapter-container
         %h2.profile-head プロフィール
-        = form_for @profile, url: { action: :update } do |profile_form|
+        = form_for current_user.profile, url: { action: :update } do |profile_form|
           .setting-profile
             .profile-icon
               = image_tag ('profile-image_example1.jpg') ,size:'60x60', class:'profile-icon-round'

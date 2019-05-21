@@ -10,7 +10,7 @@
         %h2.contents-header
           本人情報の登録
         .contents-inner
-          = form_for @identification, url: { controller: :identification, action: :update } do |identification_form|
+          = form_for current_user.profile, url: { controller: :identification, action: :update } do |identification_form|
             %div
               %p
                 お客さまの本人情報をご登録ください。

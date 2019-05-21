@@ -1,20 +1,17 @@
 class Mypage::ProfilesController < ApplicationController
   before_action :authenticate_user!
   def edit
-    set_profile
   end
 
   def update
-    set_profile
-    @profile.update(profile_params)
-    redirect_to action: :edit
+    if current_user.profile.update(identification_params)
+      redirect_to action: :edit
+    else
+      # TODO:更新失敗時の処理を記述
+    end
   end
 
   private
-
-  def set_profile
-    @profile = Profile.find_by(user_id: current_user.id)
-  end
 
   def profile_params
     params.require(:profile).permit(:body)

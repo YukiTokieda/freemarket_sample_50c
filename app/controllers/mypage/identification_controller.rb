@@ -1,20 +1,17 @@
 class Mypage::IdentificationController < ApplicationController
   before_action :authenticate_user!
   def edit
-    set_identification
   end
 
   def update
-    set_identification
-    @identification.update(identification_params)
-    redirect_to action: :edit
+    if current_user.profile.update(identification_params)
+      redirect_to action: :edit
+    else
+      # TODO:更新失敗時の処理を記述
+    end
   end
 
   private
-
-  def set_identification
-    @identification = Profile.find_by(user_id: current_user.id)
-  end
 
   def identification_params
     params.require(:profile).permit(:zipcode, :prefecture, :city, :district, :building)
