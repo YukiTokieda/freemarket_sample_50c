@@ -21,13 +21,13 @@
               = fa_icon 'chevron-right', class: 'arrow-right-icon'
           .form-area
             %label お名前
-            %p 木下藤吉郎
+            %p #{current_user.profile.last_name}#{current_user.profile.first_name}
           .form-area
             %label お名前カナ
-            %p キノシタ トウキチロウ
+            %p #{current_user.profile.last_name_kana}#{current_user.profile.first_name_kana}
           .form-area
             %label 生年月日
-            %p 1500/7/11
+            %p #{current_user.profile.birth_year}/#{current_user.profile.birth_month}/#{current_user.profile.birth_day}
           .form-area
             %label 郵便番号
             %input.input-default{placeholder: '例) 1234567'}
