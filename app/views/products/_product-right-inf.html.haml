@@ -5,18 +5,25 @@
       %td
         %a{:href => "#"}
           = @user.nickname
+        %p.user-evaluation
+          = fa_icon 'smile-o lg', class: 'user-evaluation_face-pink'
+          %span 2525
+          = fa_icon 'meh-o lg', class: 'user-evaluation_face-orange'
+          %span 0
+          = fa_icon 'frown-o lg', class: 'user-evaluation_face-blue'
+          %span 0
     %tr
       %th カテゴリー
       %td
         %a{:href => "#"}
           %div
-            = @category.name
+            = @category_grandchild.name
         %a{:href => "#"}
           %div
-            = @category.name
+            = @category_child.name
         %a{:href => "#"}
           %div
-            = @category.name
+            = @category_parent.name
     %tr
       %th ブランド
       %td

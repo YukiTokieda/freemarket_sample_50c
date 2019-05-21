@@ -10,9 +10,11 @@
             .product-card-photo
               = image_tag product.images.first.name, class: "lazyloaded"
             .product-card-body
-              %h3.product-card-body_name アクセサリーパーツ ピアス
+              %h3.product-card-body_name
+                = product.name
               .product-card-body_num
-                .product-card-body_num_price ¥ 500
+                .product-card-body_num_price
+                  = product.price
                 .font-image
                   .like-icon
                     = fa_icon 'heart', class: 'icon-like-border'
@@ -21,3 +23,18 @@
     %h2.items-box-head
       = link_to '#' , style: 'text-decoration:none; color: #0099e8; font-size: 22px;' do
         = 'ピアス （ハンドメイド） その他の商品'
+    .items-box-content.clearfix
+      - @product.images.limit(6).each do |image|
+        %section.product-card__position-left
+          = link_to mypage_profile_path, class: "product-card_url" do
+            .product-card-photo
+              = image_tag image.name, class: "lazyloaded"
+            .product-card-body
+              %h3.product-card-body_name アクセサリーパーツ ピアス
+              .product-card-body_num
+                .product-card-body_num_price ¥ 500
+                .font-image
+                  .like-icon
+                    = fa_icon 'heart', class: 'icon-like-border'
+                  .like-count 10
+              %p.product-card-tax (税込)

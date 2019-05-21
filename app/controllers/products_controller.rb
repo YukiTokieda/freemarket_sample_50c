@@ -1,47 +1,13 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, only: :new
-  before_action :set_user, :set_category, :set_shipping
-
   before_action :authenticate_user!, except: :show
+  before_action :authenticate_user!, only: :new
+  before_action :set_product, :set_user, :set_shipping
+
   def index
   end
 
   def show
-    @product = Product.find(params[:id])
     @users_products = Product.get_user_product(@product).limit(6)
-  end
- 
-  def new
-  end
-
-  def create
-  end
-
-  def edit
-  end
-
-  def search
-  end
-
-  def destroy
-  end
-
-  private
-  def product_params
-    params.require(:product).permit(:id, :name, :price, :description)
-  end
-
-  def set_user
-    @user = User.find(params[:id])
-  end
-
-  def set_category
-    @category = Category.find(params[:id])
-  end
-
-  def set_shipping
-    @shipping = Shipping.find(params[:id])
-  def show
   end
 
   def edit
@@ -59,10 +25,37 @@ class ProductsController < ApplicationController
     end
   end
 
+  def new
+  end
+
+  def create
+  end
+
+  def search
+  end
+
+  def destroy
+  end
+
   private
 
   def set_product
     @product = Product.find(params[:id])
+    @category_grandchild = Category.find(@product.category_id)
+    @category_child = @category_grandchild.parent
+    @category_parent = @category_child.parent
+  end
+
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  def set_shipping
+    @shipping = Shipping.find(params[:id])
+  end
+
+  def product_params
+    params.require(:product).permit(:id, :name, :price, :description)
   end
 
   def update_params

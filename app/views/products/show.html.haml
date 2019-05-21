@@ -12,9 +12,13 @@
                 .owl-stage-outer
                   = image_tag image.name, width: "300", height: "300"
             - @product.images.each_with_index do |image, index|
-              - if index <= 3
+              - if index <= 4
                 .owl-dots
-                  = image_tag image.name, class: "owl-dot", width: "70", height: "70"
+                  = image_tag image.name, class: "owl-dot", width: "60", height: "60"
+            - @product.images.each_with_index do |image, index|
+              - if index <= 4
+                .owl-dots
+                  = image_tag image.name, class: "owl-dot", width: "60", height: "60"
         = render "product-right-inf"
         = render "product-down-inf"
         %p.product-buy
