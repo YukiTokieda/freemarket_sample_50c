@@ -9,51 +9,47 @@
       .right-contents
         %h2.contents-header
           本人情報の登録
-        %form.contents-inner
-          %div
-            %p
-              お客さまの本人情報をご登録ください。
-              %br
-              登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
-            %p.text-top
-              =link_to '#', class: 'delete-deco' do
-                本人確認書類のアップロードについて
+        .contents-inner
+          = form_for @identification, url: { controller: :identification, action: :update } do |identification_form|
+            %div
+              %p
+                お客さまの本人情報をご登録ください。
+                %br
+                登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+              %p.text-top
+                =link_to '#', class: 'delete-deco' do
+                  本人確認書類のアップロードについて
+                = fa_icon 'chevron-right', class: 'arrow-right-icon'
+            .form-area
+              %label お名前
+              %p #{current_user.profile.last_name}#{current_user.profile.first_name}
+            .form-area
+              %label お名前カナ
+              %p #{current_user.profile.last_name_kana}#{current_user.profile.first_name_kana}
+            .form-area
+              %label 生年月日
+              %p #{current_user.profile.birth_year}/#{current_user.profile.birth_month}/#{current_user.profile.birth_day}
+            .form-area
+              %label 郵便番号
+              = identification_form.text_field :zipcode, class:"input-default", placeholder: "例) 1234567"
+            .form-area
+              %label 都道府県
+              = identification_form.select :prefecture, Shipping.froms.keys.map {|k| [Shipping.froms[k], k]}, { prompt: '---' }, autofocus: true, class: 'select-prefecture'
+              = fa_icon 'chevron-down', class: 'arrow-icon'
+            .form-area
+              %label 市区町村
+              = identification_form.text_field :city, class:"input-default", placeholder: "例) 愛知県名古屋市"
+            .form-area
+              %label 番地
+              = identification_form.text_field :district, class:"input-default", placeholder: "例) 中区栄1-1-1"
+            .form-area
+              %label 建物名
+              = identification_form.text_field :building, class:"input-default", placeholder: "例) メゾン南蛮 201"
+            = identification_form.submit "登録する", class: "btn-update btn-red"
+            .text-bottom
+              =link_to '#', class:'delete-deco' do
+                本人情報の登録について
               = fa_icon 'chevron-right', class: 'arrow-right-icon'
-          .form-area
-            %label お名前
-            %p #{current_user.profile.last_name}#{current_user.profile.first_name}
-          .form-area
-            %label お名前カナ
-            %p #{current_user.profile.last_name_kana}#{current_user.profile.first_name_kana}
-          .form-area
-            %label 生年月日
-            %p #{current_user.profile.birth_year}/#{current_user.profile.birth_month}/#{current_user.profile.birth_day}
-          .form-area
-            %label 郵便番号
-            %input.input-default{placeholder: '例) 1234567'}
-          .form-area
-            %label 都道府県
-            %select.select-prefecture
-              %option ---
-              %option{value: '1'}神奈川県
-              %option{value: '1'}東京都
-              %option{value: '1'}千葉県
-            = fa_icon 'chevron-down', class: 'arrow-icon'
-          .form-area
-            %label 市区町村
-            %input.input-default{placeholder: '例) 愛知県名古屋市'}
-          .form-area
-            %label 番地
-            %input.input-default{placeholder: '例) 中区栄1-1-1'}
-          .form-area
-            %label 建物名
-            %input.input-default{placeholder: '例) メゾン南蛮 201'}
-          %button.btn-update.btn-red{:type => "submit"}
-            登録する
-          .text-bottom
-            =link_to '#', class:'delete-deco' do
-              本人情報の登録について
-            = fa_icon 'chevron-right', class: 'arrow-right-icon'
   = render 'root/aside'
   = render 'root/footer'
   
