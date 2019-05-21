@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, except: :show
   before_action :authenticate_user!, only: :new
-  before_action :set_product, :set_user, :set_shipping
+  before_action :set_product, :set_user, :set_shipping, :set_brand
 
   def index
   end
@@ -52,6 +52,10 @@ class ProductsController < ApplicationController
 
   def set_shipping
     @shipping = Shipping.find(params[:id])
+  end
+
+  def set_brand
+    @brand = Brand.find(params[:id])
   end
 
   def product_params
