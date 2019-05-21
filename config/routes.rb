@@ -26,8 +26,10 @@ Rails.application.routes.draw do
   get 'logout', to: 'mypage/logout#index'
   namespace :mypage do
     resources :creditcard, only: [:index, :new, :create, :destroy]
-    resources :identification, only: [:edit, :update]
-    resources :profiles, only: [:edit, :update]
+    get 'profile',        to: 'profiles#edit'
+    patch 'profile',        to: 'profiles#update'
+    get 'identification', to: 'identification#edit'
+    patch 'identification', to: 'identification#update'
   end
   
   # 購入
