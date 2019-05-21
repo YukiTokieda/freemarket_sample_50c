@@ -1,4 +1,5 @@
 = render 'root/header'
+
 .item-main-container
   .item-box-container
     .item-box-container_item-cover
@@ -19,8 +20,10 @@
               - if index <= 4
                 .owl-dots
                   = image_tag image.name, class: "owl-dot", width: "60", height: "60"
+
         = render "product-right-inf"
         = render "product-down-inf"
+
         %p.product-buy
           = link_to transaction_buy_index_path, class: "product-buy_btn" do
             = '購入画面に進む'
@@ -37,8 +40,10 @@
           .item-button-right
             %button.item-button-safe
               %span ※  あんしん・あんぜんへの取り組み
+
   = render "product-comment"
   = render "product-link"
   = render "product-sns"
   = render partial: 'product-user-profile', colletion: @users_products
+
 = render 'root/footer'

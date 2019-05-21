@@ -3,8 +3,7 @@
     %tr
       %th 出品者
       %td
-        %a{:href => "#"}
-          = @user.nickname
+        = link_to @user.nickname, '#'
         %p.user-evaluation
           = fa_icon 'smile-o lg', class: 'user-evaluation_face-pink'
           %span 2525
@@ -15,15 +14,12 @@
     %tr
       %th カテゴリー
       %td
-        %a{:href => "#"}
-          %div
-            = @category_grandchild.name
-        %a{:href => "#"}
-          %div
-            = @category_child.name
-        %a{:href => "#"}
-          %div
-            = @category_parent.name
+        %div
+          = link_to @category_grandchild.name, '#'
+        %div
+          = link_to @category_child.name, '#'
+        %div
+          = link_to @category_parent.name, '#'
     %tr
       %th ブランド
       %td
@@ -40,8 +36,7 @@
     %tr
       %th 配送元地域
       %td
-        %a{:href => "#"}
-          = @shipping.prefecture_from
+        = link_to @shipping.prefecture_from, '#'
     %tr
       %th 発送日の目安
       %td 1~2日で発送

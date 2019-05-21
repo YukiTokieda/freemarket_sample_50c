@@ -1,5 +1,6 @@
 %section.items-in-user-profile
   %section.items-box-container.clearfix.items-box-overflow.items-in-user-profile
+
     %h2.items-box-head
       = link_to mypage_path , style: 'text-decoration:none; color: #0099e8; font-size: 22px;' do
         = @user.nickname + 'さんのその他の出品'
@@ -20,6 +21,7 @@
                     = fa_icon 'heart', class: 'icon-like-border'
                   .like-count 10
               %p.product-card-tax (税込)
+
     %h2.items-box-head
       = link_to '#' , style: 'text-decoration:none; color: #0099e8; font-size: 22px;' do
         = 'ピアス （ハンドメイド） その他の商品'
