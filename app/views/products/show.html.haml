@@ -25,8 +25,8 @@
         = render "product-down-inf"
 
         %p.product-buy
-          = link_to transaction_buy_index_path, class: "product-buy_btn" do
-            = '購入画面に進む'
+          = link_to transaction_buy_path, class: "product-buy_btn" do
+            購入画面に進む
         .item-description 
           %p.item-description-inner
             = @product.description
