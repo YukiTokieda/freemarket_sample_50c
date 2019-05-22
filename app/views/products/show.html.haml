@@ -1,29 +1,35 @@
 = render 'root/header'
+
 .item-main-container
   .item-box-container
     .item-box-container_item-cover
-      %h1.item-box-container_item-cover__item-name K18PG ダンシング ダイヤネックレス
+      %h1.item-box-container_item-cover__item-name
+        = @product.name
       .item-box-container_item-cover__item-main-content
         .item-photo
           .owl-carousel.owl-loaded.owl-drag
-            .owl-stage-outer
-              %img{alt: "K18PG ダンシング ダイヤネックレス", src: "https://static.mercdn.net/item/detail/orig/photos/m40679013203_1.jpg?1550474573"}/
-            .owl-dots
-              %img{src: "https://static.mercdn.net/item/detail/orig/photos/m40679013203_1.jpg?1550474573"}/
-              %img{src: "https://static.mercdn.net/item/detail/orig/photos/m40679013203_2.jpg?1550474573"}/
-              %img{src: "https://static.mercdn.net/item/detail/orig/photos/m40679013203_3.jpg?1550474573"}/
-              %img{src: "https://static.mercdn.net/item/detail/orig/photos/m40679013203_4.jpg?1550474573"}/
+            - @product.images.each_with_index do |image, index|
+              - if index == 0
+                .owl-stage-outer
+                  = image_tag image.name, width: "300", height: "300"
+            - @product.images.each_with_index do |image, index|
+              - if index <= 4
+                .owl-dots
+                  = image_tag image.name, class: "owl-dot", width: "60", height: "60"
+            - @product.images.each_with_index do |image, index|
+              - if index <= 4
+                .owl-dots
+                  = image_tag image.name, class: "owl-dot", width: "60", height: "60"
+
         = render "product-right-inf"
         = render "product-down-inf"
+
         %p.product-buy
-          = link_to transaction_buy_index_path, class: "product-buy_btn" do
-            = '購入画面に進む'
+          = link_to transaction_buy_path, class: "product-buy_btn" do
+            購入画面に進む
         .item-description 
           %p.item-description-inner
-            %br ハートの中で ダイヤモンドが揺れて とても綺麗なネックレスです。
-            %br 0.112カラット
-            %br チェーンには アジャスターが付き 最長で43cmです。
-            %br 鑑定書付き
+            = @product.description
         .item-button-container.clearfix
           .item-button-left
             %button.item-button.item-button-like
@@ -38,5 +44,6 @@
   = render "product-comment"
   = render "product-link"
   = render "product-sns"
-  = render "product-user-profile"
+  = render partial: 'product-user-profile', colletion: @users_products
+
 = render 'root/footer'

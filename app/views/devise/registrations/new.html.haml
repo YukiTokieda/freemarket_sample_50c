@@ -33,23 +33,23 @@
             .registration-form-group
               %P.registration-form-group_label 姓 (全角)
               %span.required-tag 必須
-              = profile_form.text_field :first_name, class: "registration-form-group-first_input", placeholder: "例) 山田"
+              = profile_form.text_field :last_name, class: "registration-form-group-first_input", placeholder: "例) 山田"
 
             .registration-form-group
               %P.registration-form-group_label 名 (全角)
               %span.required-tag 必須
-              = profile_form.text_field :last_name, class: "registration-form-group-first_input", placeholder: "例) 彩"
+              = profile_form.text_field :first_name, class: "registration-form-group-first_input", placeholder: "例) 彩"
 
 
             .registration-form-group
               %P.registration-form-group_label 姓カナ (全角)
               %span.required-tag 必須
-              = profile_form.text_field :first_name_kana, class: "registration-form-group-first_input", placeholder: "例) ヤマダ"
+              = profile_form.text_field :last_name_kana, class: "registration-form-group-first_input", placeholder: "例) ヤマダ"
 
             .registration-form-group
               %P.registration-form-group_label 名カナ (全角)
               %span.required-tag 必須
-              = profile_form.text_field :last_name_kana, class: "registration-form-group-first_input", placeholder: "例) アヤ"
+              = profile_form.text_field :first_name_kana, class: "registration-form-group-first_input", placeholder: "例) アヤ"
 
             .registration-form-group-birthday
               %P.registration-form-group-birthday_label 生年月日

@@ -3,7 +3,7 @@
   .credit_content
     %h3.credit_content_head クレジットカード一覧
     .credit_content_card
-      = link_to '#', class: 'credit_content_card_link' do
+      = link_to new_mypage_creditcard_path, class: 'credit_content_card_link' do
         = fa_icon 'credit-card'
         %span クレジットカードを追加する
     = link_to '#', class: 'credit_content_about-link' do
