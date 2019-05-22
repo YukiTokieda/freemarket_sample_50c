@@ -24,11 +24,9 @@
         = render "product-right-inf"
         = render "product-down-inf"
 
-        - if user_signed_in?
-          - if @product.user_id =! current_user.id
-            %p.product-buy
-              = link_to transaction_buy_path, class: "product-buy_btn" do
-                = "購入画面に進む"
+        - if user_signed_in? && @product.user_id != current_user.id
+          %p.product-buy
+            = link_to "購入画面に進む", transaction_buy_path, class: "product-buy_btn"
 
         .item-description 
           %p.item-description-inner
@@ -44,9 +42,8 @@
             %button.item-button-safe
               %span ※  あんしん・あんぜんへの取り組み
 
-        - if user_signed_in?
-          - if @product.user_id == current_user.id
-            = render "product-edit"
+  - if user_signed_in? && @product.user_id == current_user.id
+    = render "product-edit"
 
   = render "product-comment"
   = render "product-link"
