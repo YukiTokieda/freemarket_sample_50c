@@ -87,7 +87,7 @@
     %h3.mypage-navi_head 設定
     %ul.mypage-navi_list
       %li.mypage-navi-list_li
-        = link_to edit_mypage_profile_path(:id),class: "mypage-navi-list_li_item" do
+        = link_to mypage_profile_path,class: "mypage-navi-list_li_item" do
           プロフィール
           = fa_icon "chevron-right", class: "mypage-navi-list_li_icon"
 
@@ -107,7 +107,7 @@
           = fa_icon "chevron-right", class: "mypage-navi-list_li_icon"
 
       %li.mypage-navi-list_li
-        = link_to '#',class: "mypage-navi-list_li_item" do
+        = link_to mypage_identification_path,class: "mypage-navi-list_li_item" do
           本人情報
           = fa_icon "chevron-right", class: "mypage-navi-list_li_icon"
 
