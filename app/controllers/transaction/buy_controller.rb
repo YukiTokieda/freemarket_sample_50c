@@ -1,7 +1,7 @@
 class Transaction::BuyController < ApplicationController
   before_action :authenticate_user!
 
-  def show
+  def new
     @product = Product.find(params[:id])
   end
 
