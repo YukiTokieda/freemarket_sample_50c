@@ -7,9 +7,16 @@
   font-size: 14px;
   color: #333;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  .user-evaluation {
+    padding-top: 10px;
+    padding-right: 10px;
+    &_face-pink {color: pink}
+    &_face-orange {color: orange}
+    &_face-blue {color: skyblue}
+  }
   th {
     width: 39%;
-    padding: 8px;
+    padding: 20px 8px 18px 8px;
     text-align: left;
     font-weight: 400;
     background: #fafafa;
@@ -26,5 +33,8 @@
   a {
     color: #0099e8;
     text-decoration: none;
+  }
+  span {
+    padding-right: 10px;
   }
 }

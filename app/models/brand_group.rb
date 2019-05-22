@@ -1,0 +1,2 @@
+class BrandGroup < ApplicationRecord
+end

@@ -5,18 +5,18 @@
     .contents
       .sign_up
         %p アカウントをお持ちでない方はこちら
-        = link_to root_path, class: "sign_up__registrattion" do
+        = link_to signup_path, class: "sign_up__registrattion" do
           %p 新規会員登録
 
       .main
         .account-button.main__sns
           .facebook
-            = link_to root_path, class: "account-button__facebook" do
+            = link_to user_facebook_omniauth_authorize_path, class: "account-button__facebook" do
               facebookでログイン
             =fa_icon 'facebook-square'
 
           .google
-            = link_to root_path, class: "account-button__google" do
+            = link_to user_google_oauth2_omniauth_authorize_path, class: "account-button__google" do
               Googleでログイン
             =fa_icon 'google'
 
@@ -31,6 +31,7 @@
                 = f.submit "わたしはロボットではありません", class: "confirmbox"
               .foom__a.actions
                 = f.submit "ログイン", class: "login"
+
           .forget-password
             = link_to "パスワードをお忘れの方", "#", class: "forget-password"
     = render "shared/simple-footer"

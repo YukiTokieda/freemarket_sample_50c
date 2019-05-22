@@ -3,7 +3,8 @@
   min-width:1020px;
   min-height:300px;
   background-color: #212121;
-  color: #fff;
+  color: $white;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
   
   .clearfix{
     margin:0 auto;
@@ -47,6 +48,16 @@
           line-height: 2.5em;
         }
       
+        .footer-social-link{
+          display: inline-block;
+          height:48px;
+          width:45px;
+        }
+        .social-icon{
+          margin-top: 16px;
+          font-size: 30px;
+          color: $white;
+        }
           a{text-decoration: none;
             color:#BCBCBC;
           }
@@ -58,12 +69,11 @@
     width:1020px;
     margin:0 auto;
     background-color: #212121;
-    color: #fff;
+    color: $white;
     
-      .footer-logo{
-        display:inline-block;
-        padding-right:20px;
-        padding-top:20px;
+    .footer-logo{
+      display:inline-block;
+      padding-top:20px;
       }
     
       

@@ -9,13 +9,13 @@ class CreateProfiles < ActiveRecord::Migration[5.0]
       t.string      :birth_year
       t.string      :birth_month
       t.string      :birth_day
-      t.integer     :phone_number, unique: true
-      t.integer      :zipcode
+      t.bigint      :phone_number, unique: true
+      t.integer     :zipcode
       t.integer     :prefecture
       t.string      :city
       t.string      :district
       t.string      :building
-      t.references  :user, null: false, index: true, foreign_key: true
+      t.references  :user, null: false, index: { unique: true }, foreign_key: true
       t.timestamps
     end
   end

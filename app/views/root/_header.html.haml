@@ -2,7 +2,8 @@
   .header_inner
     .header_inner_top
       %h1.logo
-        = image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?613028459")
+        =link_to root_path do
+          = image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?613028459")
 
       .header_form
         .header_form__textfield 何をお探しですか？
@@ -28,24 +29,27 @@
               ブランドから探す
             .brand_icon
               %i= fa_icon 'bookmark', class: 'label-icon icon fa-fw'
-      
-      .right-contents
-        .right-contents_user-nav
-          %li.right-header_notification
-            -# = link_to 'お知らせ' mypage_notification_path do
-            -# link先実装後にlink化します
-            .right-header_notification_text お知らせ
-            .right-header_notification_icon
-              %i= fa_icon 'bullhorn', class: 'horn-icon icon fa-fw'
-          %li.right-header_todo-list
-            -# = link_to 'やることリスト' mypage_todo_path do
-            -# link先実装後にlink化します
-            .right-header_todo-list_text やることリスト
-            .right-header_todo-list_icon
-              %i= fa_icon 'check-circle', class: 'check-icon icon fa-fw'
-          %li.right-header_mypage-link
-            -# = link_to 'マイページ' mypage_path do
-            -# link先実装後にlink化します
-            .right-header_mypage-link_text マイページ
-            .right-header_mypage-link_icon
-              %i= fa_icon 'user-circle', class:'user-icon icon fa-fw'
+      - if user_signed_in?  
+        .right-contents
+          .right-contents_user-nav
+            %li.right-header_notification
+              -# = link_to 'お知らせ' mypage_notification_path do
+              -# link先実装後にlink化します
+              .right-header_notification_text お知らせ
+              .right-header_notification_icon
+                %i= fa_icon 'bullhorn', class: 'horn-icon icon fa-fw'
+            %li.right-header_todo-list
+              -# = link_to 'やることリスト' mypage_todo_path do
+              -# link先実装後にlink化します
+              .right-header_todo-list_text やることリスト
+              .right-header_todo-list_icon
+                %i= fa_icon 'check-circle', class: 'check-icon icon fa-fw'
+            %li.right-header_mypage-link
+              = link_to 'マイページ', mypage_path, style:'text-decoration:none;color:#333333', class:'right-header_mypage-link_text'
+              .right-header_mypage-link_icon
+                %i= fa_icon 'user-circle', class:'user-icon icon fa-fw'
+      - else
+        .right-contents
+          .right-contents_user-nav
+            = link_to 'ログイン', login_path
+            = link_to '新規登録', signup_path

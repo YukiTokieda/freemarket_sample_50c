@@ -38,6 +38,7 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'pry-rails'
 end
 
 group :development do
@@ -59,9 +60,6 @@ group :production do
   gem 'unicorn', '5.4.1'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
 gem 'haml-rails'
 gem 'erb2haml'
 # アイコン
@@ -70,5 +68,12 @@ gem "font-awesome-rails"
 gem 'kaminari'
 # ユーザー機能
 gem 'devise'
-#erb→haml
-gem 'erb2haml'
+# 画像
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog-aws'
+# SNS認証
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'dotenv-rails'

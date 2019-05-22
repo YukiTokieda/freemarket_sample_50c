@@ -1,16 +1,19 @@
 %section.item-card__position-left
-  =link_to root_path, class: "item-card_url" do
+  =link_to product_path(product), class: "item-card_url" do
 
     .item-card-photo
-      = image_tag("https://static.mercdn.net/thumb/photos/m91813716433_1.jpg?155769760", class: "lazyloaded")
+      = image_tag(product.images.first.name, class: "lazyloaded")
 
     .item-card-body
-      %h3.item-card-body_name チェックパンツ
+      %h3.item-card-body_name
+        = product.name
       .item-card-body_num
-        .item-card-body_num_price ¥ 2,700
+        .item-card-body_num_price
+          ¥#{product.price}
         .font-2
           .icon-like
             =fa_icon 'heart', class: 'icon-like-border'
 
           .like-count 10
       %p.item-card-tax (税込)
+      
