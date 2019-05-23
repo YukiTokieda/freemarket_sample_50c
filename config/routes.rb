@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   # 商品
   resources :products
-  
+  post      'search',               to: 'products#search'
   # マイページ
   get      'mypage',                to: 'mypage/mypage#index'
   get      'logout',                to: 'mypage/logout#index'

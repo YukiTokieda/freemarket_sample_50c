@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, except: :show
+  before_action :authenticate_user!, except: [:show, :search]
   before_action :set_product, :set_user, :set_shipping, :set_brand, except: [:new, :create]
   before_action :set_product, only: [:show, :destroy, :edit, :update]
 
@@ -47,6 +47,7 @@ class ProductsController < ApplicationController
   end
 
   def search
+    @words = Product.where('title LIKE(?)', "%#{params[:keyword]}%").limit(20)
   end
 
   private
