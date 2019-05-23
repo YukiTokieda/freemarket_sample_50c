@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  # アソシエーション
   has_many :images, dependent: :delete_all
   belongs_to :shipping, dependent: :delete
   belongs_to :size
@@ -7,6 +8,15 @@ class Product < ApplicationRecord
   belongs_to :category
   belongs_to :user
 
+  # バリデーション
+  validates :name, presence: true, length: { in: 1..75 }
+  validates :description, presence: true, length: { in: 1..1000 }
+  validates :category_id, presence: true
+  validates :size_id, presence: true
+  validates :state_id, presence: true
+  validates :price, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
+
+  # ネストフォーム
   accepts_nested_attributes_for :images, allow_destroy: true
   accepts_nested_attributes_for :shipping, allow_destroy: true
 
