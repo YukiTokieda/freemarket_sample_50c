@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    if Product.create(product_params)
+    if current_user.products.create(product_params)
       redirect_to controller: :root, action: :index
     else
       # TODO:削除失敗の処理を記述する
@@ -71,6 +71,6 @@ class ProductsController < ApplicationController
       :name, :description, :category_id, :brand, :size_id, :state_id, :price,
       shipping_attributes:[:method, :prefecture_from, :period_before_shipping, :fee_burden, :_destroy, :id],
       images_attributes:[:name, :_destroy, :id]
-      ).merge(user_id: current_user.id)
+    )
   end
 end
