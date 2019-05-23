@@ -3,7 +3,7 @@
 
     %h2.items-box-head
       = link_to mypage_path , style: 'text-decoration:none; color: #0099e8; font-size: 22px;' do
-        = @user.nickname + 'さんのその他の出品'
+        = @product.user.nickname + 'さんのその他の出品'
     %section.items-box-content.clearfix
       - @users_products.each do |product|
         %section.product-card__position-left

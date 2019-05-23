@@ -21,7 +21,6 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @user = User.find(@product.user_id)
     @users_products = Product.get_user_product(@product).limit(6)
   end
 
