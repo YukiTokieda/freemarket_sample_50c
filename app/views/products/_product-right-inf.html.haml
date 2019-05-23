@@ -4,7 +4,7 @@
       %th 出品者
       %td
         = link_to mypage_path do
-          = @user.nickname
+          = @product.user.nickname
         %p.user-evaluation
           = fa_icon 'smile-o lg', class: 'user-evaluation_face-pink'
           %span 2525

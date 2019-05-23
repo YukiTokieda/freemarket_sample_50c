@@ -1,7 +1,12 @@
 class ProductsController < ApplicationController
+<<<<<<< HEAD
   before_action :authenticate_user!, except: [:show, :search]
   before_action :set_product, :set_user, :set_shipping, :set_brand, except: [:new, :create]
   before_action :set_product, only: [:show, :destroy, :edit, :update]
+=======
+  before_action :authenticate_user!, except: :show
+  before_action :set_product, :set_shipping, :set_brand, except: [:new, :create]
+>>>>>>> master
 
   def index
   end
@@ -14,10 +19,24 @@ class ProductsController < ApplicationController
   end
 
   def create
-    if current_user.products.create(product_params)
-      redirect_to controller: :root, action: :index
+    new_product = current_user.products.create(product_params)
+    if new_product.save
+      redirect_to root_path
     else
-      # TODO:削除失敗の処理を記述する
+      redirect_to action: :new
+    end
+  end
+
+  def edit
+    @categories = Category.where(parent_id: 0)
+    @states = State.all
+  end
+
+  def update
+    if @product.update(product_params)
+      redirect_to root_path
+    else
+      redirect_to action: :edit
     end
   end
 
@@ -29,20 +48,7 @@ class ProductsController < ApplicationController
     if @product.destroy
       redirect_to controller: :root, action: :index
     else
-      # TODO:削除失敗の処理を記述する
-    end
-  end
-
-  def edit
-    @categories = Category.where(parent_id: 0)
-    @states = State.all
-  end
-
-  def update
-    if @product.update(product_params)
-      redirect_to controller: :root, action: :index
-    else
-      render :edit
+      redirect_to action: :show
     end
   end
 
