@@ -47,13 +47,13 @@ ActiveRecord::Schema.define(version: 20190521065541) do
   end
 
   create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "status",     default: 0, null: false
-    t.integer  "product_id",             null: false
-    t.integer  "trading_id",             null: false
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.index ["product_id"], name: "index_orders_on_product_id", using: :btree
-    t.index ["trading_id"], name: "index_orders_on_trading_id", using: :btree
+    t.string   "status",     default: "waiting_for_shipping", null: false
+    t.integer  "product_id",                                  null: false
+    t.integer  "trading_id",                                  null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+    t.index ["product_id"], name: "index_orders_on_product_id", unique: true, using: :btree
+    t.index ["trading_id"], name: "index_orders_on_trading_id", unique: true, using: :btree
   end
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
