@@ -1,12 +1,6 @@
 class ProductsController < ApplicationController
-<<<<<<< HEAD
   before_action :authenticate_user!, except: [:show, :search]
-  before_action :set_product, :set_user, :set_shipping, :set_brand, except: [:new, :create]
-  before_action :set_product, only: [:show, :destroy, :edit, :update]
-=======
-  before_action :authenticate_user!, except: :show
-  before_action :set_product, :set_shipping, :set_brand, except: [:new, :create]
->>>>>>> master
+  before_action :set_product, :set_shipping, :set_brand, except: [:new, :create, :search]
 
   def index
   end
@@ -53,7 +47,7 @@ class ProductsController < ApplicationController
   end
 
   def search
-    @words = Product.where('title LIKE(?)', "%#{params[:keyword]}%").limit(20)
+    @products = Product.where('name LIKE(?)', "%#{params[:keyword]}%").limit(48)
   end
 
   private
