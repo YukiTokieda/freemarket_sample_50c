@@ -1,16 +1,24 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, except: :show
-  before_action :authenticate_user!, only: :new
-  before_action :set_product, :set_user, :set_shipping, :set_brand
+  before_action :set_product, :set_user, :set_shipping, :set_brand, except: [:new, :create]
   before_action :set_product, only: [:show, :destroy, :edit, :update]
 
   def index
   end
 
   def new
+    @product = Product.new
+    @shipping =  Shipping.new
+    @categories = Category.where(parent_id: 0)
+    @states = State.all
   end
 
-  def index
+  def create
+    if current_user.products.create(product_params)
+      redirect_to controller: :root, action: :index
+    else
+      # TODO:削除失敗の処理を記述する
+    end
   end
 
   def show
@@ -38,16 +46,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  def new
-  end
-
-  def create
-  end
-
   def search
-  end
-
-  def destroy
   end
 
   private
@@ -59,10 +58,6 @@ class ProductsController < ApplicationController
     @category_parent = @category_child.parent
   end
 
-  def set_user
-    @user = User.find(params[:id])
-  end
-
   def set_shipping
     @shipping = Shipping.find(params[:id])
   end
@@ -72,12 +67,10 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:id, :name, :price, :description)
-  end
-
-  def product_params
-    params.require(:product).permit(:name, :description, :category_id, :state_id, :price,
+    params.require(:product).permit(
+      :name, :description, :category_id, :brand, :size_id, :state_id, :price,
       shipping_attributes:[:method, :prefecture_from, :period_before_shipping, :fee_burden, :_destroy, :id],
-      images_attributes:[:name, :_destroy, :id])
+      images_attributes:[:name, :_destroy, :id]
+    )
   end
 end

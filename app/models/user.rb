@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :trading
   has_one :profile, inverse_of: :user
   has_many :sns_credentials, dependent: :destroy
+  has_many :products, dependent: :destroy
 
   accepts_nested_attributes_for :profile
   validates :nickname, presence: true
