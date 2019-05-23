@@ -27,17 +27,22 @@
             margin: 16px 0 0;
             .item-photo {
                 .owl-carousel.owl-loaded.owl-drag {
+                    width: 300px;
+                    height: 360px;
+                    padding-right: 10px;
                     float: left;
-                    .owl-stage-outer img {
-                        padding: 5px;
-                        height: 300px;
-                        width: 300px;
+                    .owl-stage-outer {
                     }
-                    .owl-dots img {
-                        padding-right: 5px;
-                        height: 70px;
-                        width: 70px;
+                    .owl-dots {
+                        float: left;
                     }
+                }
+            }
+            .item-description {
+                padding-top: 50px;
+                padding-bottom: 10px;
+                .item-description-inner {
+                    font-size: 18px;
                 }
             }
             .item-button-container {

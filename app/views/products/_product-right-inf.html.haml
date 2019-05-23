@@ -3,19 +3,28 @@
     %tr
       %th 出品者
       %td
-        %a{:href => "#"} JUNNA
+        = link_to mypage_path do
+          = @user.nickname
+        %p.user-evaluation
+          = fa_icon 'smile-o lg', class: 'user-evaluation_face-pink'
+          %span 2525
+          = fa_icon 'meh-o lg', class: 'user-evaluation_face-orange'
+          %span 0
+          = fa_icon 'frown-o lg', class: 'user-evaluation_face-blue'
+          %span 0
     %tr
       %th カテゴリー
       %td
-        %a{:href => "#"}
-          %div レディース
-        %a{:href => "#"}
-          %div アクセサリー
-        %a{:href => "#"}
-          %div ブレスレット
+        %div
+          = link_to @category_grandchild.name, '#'
+        %div
+          = link_to @category_child.name, '#'
+        %div
+          = link_to @category_parent.name, '#'
     %tr
       %th ブランド
       %td
+        = @product.brand
     %tr
       %th 商品の状態
       %td 新品、未使用
@@ -28,7 +37,7 @@
     %tr
       %th 配送元地域
       %td
-        %a{:href => "#"} 福岡県
+        = link_to @shipping.prefecture_from, '#'
     %tr
       %th 発送日の目安
       %td 1~2日で発送
