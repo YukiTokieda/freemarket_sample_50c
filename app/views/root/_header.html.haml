@@ -7,10 +7,11 @@
 
       .header_form
         .header_form__textfield 何をお探しですか？
-        -# = form_for [] do |f|
-          -# =f.text_field :content, class: 'search_form', placeholder: '何をお探しですか？'
-          -# link先実装後にlink化します
-        .search-icon
+        -# .header_form__textfield 何かお探しですか？
+        -# url: search_product_path
+        = form_tag @product do |f|
+          %input.header_form__textfield{name: "keyword", placeholder: "何かお探しですか？", type: "text", value: ""}
+        %button.search-icon
           %i= fa_icon 'search', class: 'loupe-icon icon'
     .header_bottom-crearfix
       .left-contents
