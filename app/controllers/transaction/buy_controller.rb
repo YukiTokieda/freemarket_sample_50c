@@ -6,10 +6,13 @@ class Transaction::BuyController < ApplicationController
   end
 
   def create
+    binding.pry
+    @trading = Trading.create(buyer_id: current_user.id, seller_id: 3)
+    @order = @trading.orders.create(status: 2, product_id: 1)
 
-    @trading = Trading.create(buyer_id: 1,seller_id: 2)
-    @order = Order.create(status: 2,product_id: 1,trading_id: 1)
-    redirect_to controller: :root, action: :index
+    redirect_to root_path
   end
+
+
 
 end
