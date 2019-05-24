@@ -57,10 +57,6 @@ class ProductsController < ApplicationController
     @category_child = @category_grandchild.parent
     @category_parent = @category_child.parent
   end
-  
-  def set_user
-    @user = User.find(params[:id])
-  end
 
   def set_shipping
     @shipping = Shipping.find(params[:id])
