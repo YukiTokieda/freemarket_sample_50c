@@ -7,7 +7,6 @@ class Transaction::BuyController < ApplicationController
   end
 
   def create
-    binding.pry
     @trading = Trading.create(buyer_id: current_user.id, seller_id: @@product.user_id)
     @order = @trading.orders.create(product_id: @@product.id)
     redirect_to root_path
