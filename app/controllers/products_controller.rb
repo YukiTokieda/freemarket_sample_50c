@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :search]
-  before_action :set_product, :set_shipping, :set_brand, except: [:new, :create, :search]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_product, :set_shipping, :set_brand, only: [:new, :create, :edit, :update, :destroy]
 
   def index
   end
