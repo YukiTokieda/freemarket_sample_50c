@@ -17,6 +17,11 @@ crumb :card do
   parent :mypage
 end
 
+crumb :logout do
+  link "ログアウト"
+  parent :mypage
+end
+
 crumb :category do |product|
   link product.id
   parent :root
