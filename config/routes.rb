@@ -16,18 +16,20 @@ Rails.application.routes.draw do
   end
 
   # トップページ
-  root 'root#index'
+  root     'root#index'
 
   # 商品
   resources :products
-  
+  post      'search',               to: 'products#search'
   # マイページ
-  get 'mypage', to: 'mypage/mypage#index'
-  get 'logout', to: 'mypage/logout#index'
+  get      'mypage',                to: 'mypage/mypage#index'
+  get      'logout',                to: 'mypage/logout#index'
   namespace :mypage do
     resources :creditcard, only: [:index, :new, :create, :destroy]
-    resources :identification, only: [:edit, :update]
-    resources :profiles, only: [:edit, :update]
+    get    'profile',               to: 'profiles#edit'
+    patch  'profile',               to: 'profiles#update'
+    get    'identification',        to: 'identification#edit'
+    patch  'identification',        to: 'identification#update'
   end
   
   # 購入

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190516171936) do
+ActiveRecord::Schema.define(version: 20190521065541) do
 
   create_table "brand_groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
@@ -46,6 +46,16 @@ ActiveRecord::Schema.define(version: 20190516171936) do
     t.index ["product_id"], name: "index_images_on_product_id", using: :btree
   end
 
+  create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "status",     default: "waiting_for_shipping", null: false
+    t.integer  "product_id",                                  null: false
+    t.integer  "trading_id",                                  null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+    t.index ["product_id"], name: "index_orders_on_product_id", unique: true, using: :btree
+    t.index ["trading_id"], name: "index_orders_on_trading_id", unique: true, using: :btree
+  end
+
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                                   null: false
     t.bigint   "price",                                  null: false
@@ -79,7 +89,7 @@ ActiveRecord::Schema.define(version: 20190516171936) do
     t.string   "birth_day"
     t.bigint   "phone_number"
     t.integer  "zipcode"
-    t.integer  "prefecture"
+    t.string   "prefecture"
     t.string   "city"
     t.string   "district"
     t.string   "building"
@@ -129,6 +139,15 @@ ActiveRecord::Schema.define(version: 20190516171936) do
     t.index ["name"], name: "index_statuses_on_name", unique: true, using: :btree
   end
 
+  create_table "tradings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "buyer_id",   null: false
+    t.integer  "seller_id",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["buyer_id"], name: "index_tradings_on_buyer_id", using: :btree
+    t.index ["seller_id"], name: "index_tradings_on_seller_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nickname",               default: "", null: false
     t.string   "email",                  default: "", null: false
@@ -144,6 +163,8 @@ ActiveRecord::Schema.define(version: 20190516171936) do
 
   add_foreign_key "brands", "brand_groups"
   add_foreign_key "images", "products"
+  add_foreign_key "orders", "products"
+  add_foreign_key "orders", "tradings"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "shippings"
   add_foreign_key "products", "sizes"
@@ -152,4 +173,6 @@ ActiveRecord::Schema.define(version: 20190516171936) do
   add_foreign_key "products", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "sns_credentials", "users"
+  add_foreign_key "tradings", "users", column: "buyer_id"
+  add_foreign_key "tradings", "users", column: "seller_id"
 end

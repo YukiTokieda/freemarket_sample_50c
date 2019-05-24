@@ -1,0 +1,12 @@
+= render 'root/header'
+.search_result__main
+  .result-contents
+    .itembox_container
+      %h2.result_header 検索結果 1-48 件
+      .itembox
+        - @products.each do |product|
+          = render partial: 'root/item-card', locals: { product: product }
+    .side-contents
+
+= render 'root/aside'
+= render 'root/footer'

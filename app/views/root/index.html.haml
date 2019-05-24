@@ -1,13 +1,20 @@
 -# %h1 Root#index
 -# %p Find me in app/views/root/index.html.erb
+
 .wrapper
   -# = render 'root/header'
 
   %body
-    - breadcrumb :root
+    -# - breadcrumb :root
   .body_main
-    .slide-image
-      = image_tag('')
+    %div.slick
+      %div
+        = image_tag ("https://www.mercari.com/jp/assets/img/common/jp/top/banner-camp.jpg") ,class:'slide-image'
+      %div
+        = image_tag ("https://www.mercari.com/jp/assets/img/common/jp/top/banner-natsukashi.jpg"),class:'slide-image'
+      %div
+        = image_tag ("slick_image4.png"),class:'slide-image'
+
     .product-container
       %h2.product-container_title
         ピックアップカテゴリー

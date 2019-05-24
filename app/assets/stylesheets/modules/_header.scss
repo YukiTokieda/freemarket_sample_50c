@@ -5,12 +5,13 @@
 
   .header_inner {
     width: 1020px;
+    height: 100px;
     margin: 0 auto;
     padding: 8px 0 0;
     z-index: 100;
     &_top {
       height: 40px;
-      margin:12px;
+      margin:1px;
       padding: 0;
       .logo {
         height: 36px;
@@ -19,30 +20,40 @@
         float: left;
       }
       .header_form {
-        height: 34px;
-        width: 80%;
+        height: 40px;
+        width: 82%;
         margin: left 45px;
         border-radius: 5px;
         border: solid 1px rgb(202, 202, 202);
         background-color: rgb(243, 243, 243);
         float: right;
         &__textfield {
-          height: 34px;
-          width: 740px;
-          padding: 5px;
+          height: 40px;
+          width: 790px;
+          padding-left: 20px;
           opacity: 0.5;
+          line-height: 40px;
           float: left;
         }
+        input, button, textarea, select {
+          margin: 0;
+          padding: 0;
+          background: none;
+          border: none;
+          border-radius: 0;
+          outline: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+        }
         .search-icon {
-          height: 34px;
-          width: 45px;
+          height: 40px;
+          width: 44px;
           float: right;
-          background-color: rgb(230, 230, 230);
+          cursor: pointer;
+          background-color: rgb(243, 243, 243);
           .loupe-icon {
             font-size: 16px;
-            padding-top: 8px;
-            padding-left: 15px;
-            position: absolute;
             opacity: 0.5;
           }
         }
@@ -50,13 +61,14 @@
     }
     .header_bottom-crearfix {
       height: 50px;
-      margin: 8px;
+      margin-top: 8px;
       padding: 0;
       .left-contents {
         height: 40px;
         width: 350px;
         margin: 5px 5px;
         float: left;
+        font-weight: 600;
         &_search-nav {
           height: 40px;
           width: 350px;
@@ -110,7 +122,7 @@
       .right-contents {
         height: 40px;
         width: 380px;
-        margin: 5px 5px;
+        margin: 5px 0;
         float: right;
         &_user-nav {
           height: 40px;
@@ -178,6 +190,49 @@
                 position: absolute;
                 opacity: 0.5;
               }
+            }
+          }
+          li.right-header_log-in {
+            height: 30px;
+            width: 56px;
+            display: block;
+            padding: 0 10px;
+            line-height: 30px;
+            border-radius: 4px;
+            text-align: center;
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: auto;
+            font-weight: 500;
+            a {
+              text-decoration: none;
+              color: #fff;
+              }
+          }
+          .right-header_sign-up {
+            height: 30px;
+            width: 84px;
+            display: block;
+            padding: 0 10px;
+            margin-left: 10px;
+            line-height: 30px;
+            border-radius: 4px;
+            text-align: center;
+            // background-color: #b3d4fc;
+            border: 1px solid #0099e8;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            a {
+              text-decoration: none;
+              color: #0099e8;
+              }
+              .right-header_sign-up:hover {
+              background-color: #0099e8;
             }
           }
         }

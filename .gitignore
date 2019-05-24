@@ -10,8 +10,10 @@
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
+/image/*
 !/log/.keep
 !/tmp/.keep
+!/image/.keep
 
 # Ignore Byebug command history file.
 .byebug_history
@@ -19,7 +21,3 @@
 .env
 db/fixtures
 public/uploads
-
-db/fixtures
-
-config/secrets.yml
