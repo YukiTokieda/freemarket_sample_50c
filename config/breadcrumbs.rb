@@ -22,8 +22,13 @@ crumb :logout do
   parent :mypage
 end
 
-crumb :category do |product|
-  link product.id
+crumb :edit do
+  link "本人情報の登録"
+  parent :mypage
+end
+
+crumb :product do |product|
+  link product.name
   parent :root
 end
 
