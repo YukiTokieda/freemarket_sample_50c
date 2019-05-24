@@ -16,7 +16,7 @@
               ¥ #{@product.price}
             %p.item-shipping-fee 送料込み
           %ul.buy-price-table
-            %p.buy-price-cell 支払い金額 
+            %p.buy-price-cell 支払い金額
             %p.data-buy-pay ¥ #{@product.price}
           .buy-buy
             %p
@@ -44,8 +44,7 @@
         .buy-content-inner
           %h3 支払い方法
           %p.buy-user-info-text
-            %br/
-            \/
+            %br
           .buy-user-info-fix
             = link_to "変更する", {href: "/index"}, {class: "buy-user-info-fix"}
             = fa_icon "chevron-right", class: "icon"
