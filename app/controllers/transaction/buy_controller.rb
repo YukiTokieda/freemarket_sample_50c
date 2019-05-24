@@ -1,14 +1,19 @@
 class Transaction::BuyController < ApplicationController
   before_action :authenticate_user!
-  @@product
+  before_action :set_product
+
   def show
-    @@product = Product.find(params[:id])
-    @product = @@product
   end
 
   def create
-    @trading = Trading.create(buyer_id: current_user.id, seller_id: @@product.user_id)
-    @order = @trading.orders.create(product_id: @@product.id)
-    redirect_to root_path
+    @trading = Trading.create(buyer_id: current_user.id, seller_id: @product.id)
+    @order = Order.create(trading_id: @trading.id, product_id: @product.id)
   end
+
+  private
+
+  def set_product
+    @product = Product.find(params[:id])
+  end
+
 end

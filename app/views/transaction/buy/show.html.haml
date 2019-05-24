@@ -20,9 +20,7 @@
             %p.data-buy-pay ¥ #{@product.price}
           .buy-buy
             %p
-              = link_to '購入する', transaction_buy_index_path, class: "buy-buy_btn", method: :post
-
-            %input#user_info_is_not_complete{type: "hidden"}/
+            = link_to '購入する', transaction_buy_index_path(id: @product.id), method: :post, class:"buy-buy_btn"
 
       %section.buy-content.buy-user-info
         .buy-content-inner
