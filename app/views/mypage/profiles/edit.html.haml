@@ -6,16 +6,17 @@
     .container
       %section.chapter-container
         %h2.profile-head プロフィール
-        = form_for current_user.profile, url: { action: :update } do |profile_form|
-          .setting-profile
-            .profile-icon
-              = image_tag ('profile-image_example1.jpg') ,size:'60x60', class:'profile-icon-round'
-            %input.input-default{name: "nickname", placeholder: "例)AYA☆セール中", type: "text", value: "#{current_user.nickname}"}/
+        - if current_user.profile.present?
+          = form_for current_user.profile, url: { action: :update } do |profile_form|
+            .setting-profile
+              .profile-icon
+                = image_tag ('profile-image_example1.jpg') ,size:'60x60', class:'profile-icon-round'
+              %input.input-default{name: "nickname", placeholder: "例)AYA☆セール中", type: "text", value: "#{current_user.nickname}"}/
 
-            .setting-profile-content
-              = profile_form.text_area :body, class:"textarea-default", placeholder:"例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"
-              %input{name: "after_save_callback", type: "hidden", value: "https://www.mercari.com/jp/mypage/profile/"}/
-              = profile_form.submit "変更する", class:"btn-default btn-red"
+              .setting-profile-content
+                = profile_form.text_area :body, class:"textarea-default", placeholder:"例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"
+                %input{name: "after_save_callback", type: "hidden", value: "https://www.mercari.com/jp/mypage/profile/"}/
+                = profile_form.submit "変更する", class:"btn-default btn-red"
           
 = render 'root/aside'
 = render 'root/footer'
