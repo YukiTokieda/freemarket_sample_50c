@@ -33,8 +33,7 @@ Rails.application.routes.draw do
   end
   
   # 購入
-  get 'transaction', to: 'transaction/buy#index'
   namespace :transaction do
-    resources :buy
+    resources :buy, only: [:show, :create]
   end
 end
