@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   # 商品
   resources :products
-  
+  post      'search',               to: 'products#search'
   # マイページ
   get      'mypage',                to: 'mypage/mypage#index'
   get      'logout',                to: 'mypage/logout#index'
@@ -33,8 +33,7 @@ Rails.application.routes.draw do
   end
   
   # 購入
-  get 'transaction', to: 'transaction/buy#index'
   namespace :transaction do
-    resources :buy
+    resources :buy, only: [:show, :create]
   end
 end

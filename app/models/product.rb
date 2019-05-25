@@ -7,6 +7,7 @@ class Product < ApplicationRecord
   belongs_to :state
   belongs_to :category
   belongs_to :user
+  has_one :order
 
   # バリデーション
   validates :name, presence: true, length: { in: 1..75 }
