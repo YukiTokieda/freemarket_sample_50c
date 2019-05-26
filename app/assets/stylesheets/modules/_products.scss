@@ -33,6 +33,25 @@
                     float: left;
                     .owl-dots {
                         float: left;
+                        width: 20%;
+                        height: 52px;
+                        opacity: 0.5;
+                    }
+                    .side-dots {
+                        position: relative;
+                        display: inline-block;
+                        height: 20px;
+                        margin: 0 5px;
+                        padding: 0;
+                        cursor: pointer;
+                    }
+                    .side-dots {
+                        position: relative;
+                        display: inline-block;
+                        height: 20px;
+                        margin: 0 5px;
+                        padding: 0;
+                        cursor: pointer;
                     }
                 }
             }
