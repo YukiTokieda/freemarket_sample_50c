@@ -1,0 +1,15 @@
+.search_result__main {
+  background-color: rgb(245, 245, 245);
+  height: 3000px;
+  .result-contents {
+    padding: 40px 0;
+    .itembox_container {
+      width: 940px;
+      height: 442px;
+      margin: 0 auto;
+      .result_header {
+        font-size: 18px;
+      }
+    }
+  }
+}
