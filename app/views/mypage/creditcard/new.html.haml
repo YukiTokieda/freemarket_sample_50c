@@ -2,14 +2,15 @@
 .mypage-box
   %main.my-containercleanfix
     = render 'mypage/mypage-side'
+
     .credit
       %h2.credit_head クレジットカード情報入力
-      %form.credit_form{:action => "#", :method => "POST"}
+      = form_tag(mypage_creditcard_index_path, method: :post, id: 'charge-form', name: "inputForm",class: "credit_form") do
         .credit_form-content
           .credit_form-group
-            %label{:for => "card_no"} カード番号
+            %label{for: "card_no"} カード番号
             %span.required-tag 必須
-            %input.credit_form_input{:maxlength => "19", :placeholder => "半角数字のみ", :type => "text", :value => ""}/
+            %input.credit_form_input{maxlength:  "16", placeholder: "半角数字のみ", type: "text",id: "card_number"}/
             %ul.credit-brand_list
               %li
                 = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?376951604', height: '20', width: '49'
@@ -62,14 +63,15 @@
               = fa_icon 'chevron-down', class: "credit_form_select-wrap_icon"
             %span 年
           .form-group
-            %label{:for => "payment_card_security_code"} セキュリティコード
+            %label{for: "payment_card_security_code"} セキュリティコード
             %span.required-tag 必須
-            %input.credit_form_input{:placeholder => "カード背面4桁もしくは3桁の番号", :type => "number", :value => ""}/
+            %input.credit_form_input{placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"}/
             .credit_form_what-code
               .credit_form_what-code_text
                 %span.quiestion-tag ?
                 カード裏面の番号とは？
-          %button.credit_form_btn{:type => "button"} 追加する
+          #card_token
+          = submit_tag "追加する", class:"credit_form_btn",id: "token_submit"
 
 = render 'root/aside'
 = render 'root/footer'
