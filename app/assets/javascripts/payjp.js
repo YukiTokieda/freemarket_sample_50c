@@ -4,6 +4,7 @@ document.addEventListener(
       Payjp.setPublicKey("pk_test_7aed2182e9b7224c66756ba7"); //ここに公開鍵を直書き
       let btn = document.getElementById("token_submit"); //IDがtoken_submitの場合に取得されます
       btn.addEventListener("click", e => { //ボタンが押されたときに作動します
+        e.preventDefault(); //ボタンを一旦無効化します
         let card = {
           number: document.getElementById("card_number").value,
           cvc: document.getElementById("cvc").value,
@@ -19,3 +20,14 @@ document.addEventListener(
             $("#card_token").append(
               $('<input type="hidden" name="payjp-token">').val(response.id)
             ); //取得したトークンを送信できる状態にします
+            document.inputForm.submit();
+            alert("登録が完了しました"); //確認用
+          } else {
+            alert("カード情報が正しくありません。"); //確認用
+          }
+        });
+      });
+    }
+  },
+  false
+);
