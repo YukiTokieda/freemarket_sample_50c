@@ -40,6 +40,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry-rails'
   gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -69,6 +70,8 @@ gem "font-awesome-rails"
 gem 'kaminari'
 # ユーザー機能
 gem 'devise'
+#erb→haml
+gem 'erb2haml'
 # 画像
 gem 'carrierwave'
 gem 'mini_magick'
@@ -80,3 +83,5 @@ gem 'omniauth-google-oauth2'
 gem 'dotenv-rails'
 # クレジットカード機能
 gem 'payjp'
+# パンくず
+gem 'gretel'

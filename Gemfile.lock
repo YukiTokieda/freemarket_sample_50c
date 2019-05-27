@@ -92,6 +92,11 @@ GEM
     erubis (2.7.0)
     excon (0.64.0)
     execjs (2.7.0)
+    factory_bot (5.0.2)
+      activesupport (>= 4.2.0)
+    factory_bot_rails (5.0.2)
+      factory_bot (~> 5.0.2)
+      railties (>= 4.2.0)
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
     ffi (1.10.0)
@@ -116,6 +121,8 @@ GEM
     formatador (0.2.5)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    gretel (3.0.9)
+      rails (>= 3.1.0)
     haml (5.0.4)
       temple (>= 0.8.0)
       tilt
@@ -338,8 +345,10 @@ DEPENDENCIES
   devise
   dotenv-rails
   erb2haml
+  factory_bot_rails
   fog-aws
   font-awesome-rails
+  gretel
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails
