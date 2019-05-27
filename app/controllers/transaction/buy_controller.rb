@@ -8,7 +8,7 @@ class Transaction::BuyController < ApplicationController
   def create
     @trading = Trading.create(buyer_id: current_user.id, seller_id: @product.id)
     @order = Order.create(trading_id: @trading.id, product_id: @product.id)
-    @product.update(status_id: 2);
+    @product.update(status_id: 2)
   end
 
   private
