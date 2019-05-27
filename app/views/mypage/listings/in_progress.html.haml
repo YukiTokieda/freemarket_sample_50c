@@ -1,0 +1,19 @@
+.mypage-box
+  %main.my-containercleanfix
+    .my-content
+      %h2.contents-header
+        取引中
+      %section.mypage-tab_container_notification-todo
+        .tab-content
+          %ul#tab-content-notification.mypage-item-list
+            - @products.each do |product|
+              %li.mypage-item-list_links
+                = link_to product_path(product), class: "mypage-item-list_link" do
+                  = image_tag product.images[0].name, class: "news-size-icon"
+                  .mypage-item-news
+                    .mypage-item-news_text #{product.name}
+                  = fa_icon "chevron-right", class: "news-arrow-icon"
+    = render 'mypage/mypage-side'
+
+= render 'root/aside'
+= render 'root/footer'
