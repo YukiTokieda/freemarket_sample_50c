@@ -6,19 +6,11 @@
         = @product.name
       .item-box-container_item-cover__item-main-content
         .item-photo
+
           .owl-carousel.owl-loaded.owl-drag
-            - @product.images.each_with_index do |image, index|
-              - if index == 0
-                .owl-stage-outer
-                  = image_tag image.name, width: "300", height: "300"
-            - @product.images.each_with_index do |image, index|
-              - if index <= 4
-                .owl-dots
-                  = image_tag image.name, class: "owl-dot", width: "60", height: "60"
-            - @product.images.each_with_index do |image, index|
-              - if index <= 4
-                .owl-dots
-                  = image_tag image.name, class: "owl-dot", width: "60", height: "60"
+            - @product.images.each do |image|
+              .owl-stage-outer
+                = image_tag image.name.url, width: "300", height: "300"
 
         = render "product-right-inf"
         = render "product-down-inf"

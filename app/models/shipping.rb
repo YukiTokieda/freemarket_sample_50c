@@ -6,7 +6,7 @@ class Shipping < ApplicationRecord
   validates :period_before_shipping, presence: true
 
   enum fee_burdens: {
-    postage_included: '送料込み（出品者負担）', 
+    including_postage: '送料込み（出品者負担）', 
     cash_on_delivery: '着払い（購入者負担）'
   }
 
