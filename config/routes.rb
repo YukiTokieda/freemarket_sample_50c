@@ -24,10 +24,10 @@ Rails.application.routes.draw do
   # マイページ
   get      'mypage',                to: 'mypage/mypage#index'
   get      'logout',                to: 'mypage/logout#index'
-  namespace :mypage do
 
+  namespace :mypage do
   #クレジットカード 
-    resources :creditcard, only: [:index ,:new, :show] do
+    resources :creditcard, only: [:new, :show] do
       collection do
         get  'index',to: 'creditcard#index'
         post 'show', to: 'creditcard#show'

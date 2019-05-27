@@ -1,6 +1,8 @@
 class Mypage::CreditcardController < ApplicationController
   before_action :authenticate_user!
 
+  require "payjp"
+  
   def index
   end
 
@@ -20,7 +22,7 @@ class Mypage::CreditcardController < ApplicationController
       card: params['payjp-token'],
       metadata: {user_id: current_user.id}
       ) #念の為metadataにuser_idを入れましたがなくてもOK
-      @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
+      @card = Creditcard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
         redirect_to action: "show"
       else
@@ -42,14 +44,15 @@ class Mypage::CreditcardController < ApplicationController
   end
 
   def show #Cardのデータpayjpに送り情報を取り出します
-    # card = Creditcard.where(user_id: current_user.id).first
-    # if card.blank?
-    #   redirect_to action: "new" 
-    # else
-    #   Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-    #   customer = Payjp::Customer.retrieve(card.customer_id)
-    #   @default_card_information = customer.cards.retrieve(card.card_id)
-    # end
+    card = Creditcard.where(user_id: current_user.id).first
+    if card.blank?
+      redirect_to action: "new" 
+
+    else
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      @default_card_information = customer.cards.retrieve(card.card_id)
+    end
   end
 
 end
