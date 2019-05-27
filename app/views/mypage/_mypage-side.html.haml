@@ -28,17 +28,17 @@
           = fa_icon "chevron-right", class: "mypage-navi-list_li_icon"
 
       %li.mypage-navi-list_li
-        = link_to '#',class: "mypage-navi-list_li_item" do
+        = link_to mypage_listings_listing_path,class: "mypage-navi-list_li_item" do
           出品した商品-出品中
           = fa_icon "chevron-right", class: "mypage-navi-list_li_icon"
 
       %li.mypage-navi-list_li
-        = link_to '#',class: "mypage-navi-list_li_item" do
+        = link_to mypage_listings_in_progress_path,class: "mypage-navi-list_li_item" do
           出品した商品-取引中
           = fa_icon "chevron-right", class: "mypage-navi-list_li_icon"
 
       %li.mypage-navi-list_li
-        = link_to '#',class: "mypage-navi-list_li_item" do
+        = link_to mypage_listings_completed_path,class: "mypage-navi-list_li_item" do
           出品した商品-売却済
           = fa_icon "chevron-right", class: "mypage-navi-list_li_icon"
 
