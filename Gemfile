@@ -69,7 +69,6 @@ gem "font-awesome-rails"
 gem 'kaminari'
 # ユーザー機能
 gem 'devise'
-# <<<<<<< HEAD
 #erb→haml
 gem 'erb2haml'
 # 画像
