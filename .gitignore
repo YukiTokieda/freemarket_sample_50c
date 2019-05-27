@@ -19,5 +19,6 @@
 .byebug_history
 
 .env
-db/fixtures
+# db/fixtures
 public/uploads
+
