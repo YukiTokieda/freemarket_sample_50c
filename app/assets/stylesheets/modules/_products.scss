@@ -31,11 +31,35 @@
                     height: 360px;
                     padding-right: 10px;
                     float: left;
-                    .owl-stage-outer {
-                    }
                     .owl-dots {
                         float: left;
+                        width: 20%;
+                        height: 52px;
+                        opacity: 0.5;
                     }
+                    .side-dots {
+                        position: relative;
+                        display: inline-block;
+                        height: 20px;
+                        margin: 0 5px;
+                        padding: 0;
+                        cursor: pointer;
+                    }
+                    .side-dots {
+                        position: relative;
+                        display: inline-block;
+                        height: 20px;
+                        margin: 0 5px;
+                        padding: 0;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .item-description {
+                padding-top: 50px;
+                padding-bottom: 10px;
+                .item-description-inner {
+                    font-size: 18px;
                 }
             }
             .item-description {

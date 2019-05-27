@@ -3,6 +3,7 @@
   .single-main
     %section.single-container.buy-item-container
       %h2.single-container.buy-item-container_single-head.bold 購入を確定しますか？
+
       %section.single-container.buy-item-container_buy-content.buy-item
         .buy-content-inner
           %h3.buy-item-image
@@ -18,8 +19,9 @@
             %p.buy-price-cell 支払い金額
             %p.data-buy-pay ¥ #{@product.price}
           .buy-buy
-            %p.buy-buy_btn{disabled: "disabled", type: "submit"} 購入する
-            %input#user_info_is_not_complete{type: "hidden"}
+            %p
+            = link_to '購入する', transaction_buy_index_path(id: @product.id), method: :post, class:"buy-buy_btn"
+
       %section.buy-content.buy-user-info
         .buy-content-inner
           %h3 配送先
@@ -35,6 +37,7 @@
           .buy-user-info-text
             = link_to "変更する", {href: "/index"}, {class: "buy-user-info-fix"}
             = fa_icon "chevron-right", class: "icon"
+
       %section.buy-content.buy-user-info
         .buy-content-inner
           %h3 支払い方法
