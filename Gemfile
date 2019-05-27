@@ -63,7 +63,6 @@ group :production do
 end
 
 gem 'haml-rails'
-gem 'erb2haml'
 # アイコン
 gem "font-awesome-rails"
 # ページネーション
