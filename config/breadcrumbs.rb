@@ -27,7 +27,17 @@ crumb :edit do
   parent :mypage
 end
 
+crumb :creditnew do
+  link "クレジットカード情報入力"
+  parent :mypage
+end
+
 crumb :product do |product|
   link product.name
+  parent :root
+end
+
+crumb :search do |word|
+  link word
   parent :root
 end
