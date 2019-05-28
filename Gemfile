@@ -63,13 +63,14 @@ group :production do
 end
 
 gem 'haml-rails'
-gem 'erb2haml'
 # アイコン
 gem "font-awesome-rails"
 # ページネーション
 gem 'kaminari'
 # ユーザー機能
 gem 'devise'
+#erb→haml
+gem 'erb2haml'
 # 画像
 gem 'carrierwave'
 gem 'mini_magick'
@@ -79,3 +80,5 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'dotenv-rails'
+# パンくず
+gem 'gretel'
