@@ -4,7 +4,7 @@ class Mypage::ProfilesController < ApplicationController
   end
 
   def update
-    if current_user.profile.update(identification_params)
+    if current_user.profile.update(profile_params)
       redirect_to action: :edit
     else
       # TODO:更新失敗時の処理を記述

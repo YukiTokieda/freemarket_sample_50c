@@ -1,5 +1,4 @@
-= render 'root/header'
-
+- breadcrumb :product, @product
 .item-main-container
   .item-box-container
     .item-box-container_item-cover
@@ -17,8 +16,9 @@
         = render "product-down-inf"
 
         - if user_signed_in? && @product.user_id != current_user.id
-          %p.product-buy
-            = link_to "購入画面に進む", transaction_buy_path, class: "product-buy_btn"
+          - if @product.status_id == 1            
+            %p.product-buy
+              = link_to "購入画面に進む", transaction_buy_path, class: "product-buy_btn"
 
         .item-description 
           %p.item-description-inner

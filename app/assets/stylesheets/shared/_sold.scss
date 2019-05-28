@@ -1,0 +1,25 @@
+.sold {
+  position: relative;
+  .badge {
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 120px 120px 0 0;
+    border-color: $red transparent transparent transparent;
+    position: absolute;
+  }
+  p {
+      top: -95px;
+      left: 5px;
+      position: absolute;
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      transform: rotate(-45deg);
+    }
+  img {
+    width: 100%;
+  }
+}

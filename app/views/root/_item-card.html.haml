@@ -1,8 +1,11 @@
 %section.item-card__position-left
   =link_to product_path(product), class: "item-card_url" do
 
-    .item-card-photo
+    .item-card-photo.sold
       = image_tag product.images.first.name, class: "lazyloaded"
+      - if product.status_id == 2
+        .badge
+          %p SOLD
 
     .item-card-body
       %h3.item-card-body_name

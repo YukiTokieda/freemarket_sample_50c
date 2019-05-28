@@ -27,17 +27,21 @@
         = @product.brand
     %tr
       %th 商品の状態
-      %td 新品、未使用
+      %td 
+        = @product.state.name
     %tr
       %th 配送料の負担
-      %td 送料込み(出品者負担)
+      %td 
+        = Shipping.fee_burdens[@product.shipping.fee_burden]
     %tr
       %th 配送の方法
-      %td 普通郵便(定形、定形外)
+      %td
+        = Shipping.methods[@product.shipping.method]
     %tr
       %th 配送元地域
       %td
-        = link_to @shipping.prefecture_from, '#'
+        = link_to Shipping.froms[@shipping.prefecture_from], '#'
     %tr
       %th 発送日の目安
-      %td 1~2日で発送
+      %td
+        = Shipping.period_before_shippings[@product.shipping.period_before_shipping]
