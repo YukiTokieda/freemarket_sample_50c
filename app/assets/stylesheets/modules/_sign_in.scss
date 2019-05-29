@@ -4,6 +4,7 @@
     background-color: #f5f5f5;
     height: 100%;
     font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+    
     font-size: 14px;
     .contents{
       margin: 0 auto;
@@ -86,9 +87,22 @@
           border: 1px solid #979797;
           padding: 10px 16px 8px;
           border-radius: 3px;
+          }
         }
+        .email{
+          margin-top: 24px;
+          [type="email"]:focus {
+            outline: 0;
+            border-color: #099BE8;
+          }
+        }
+
         .password{
           margin-top: 24px;
+          [type="password"]:focus {
+            outline: 0;
+            border-color: #099BE8;
+          }
         }
         .confirmbox{
           width: 300px;
@@ -114,4 +128,4 @@
         }
       }
     }
-  }
+  
