@@ -24,10 +24,9 @@
           .main
             = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
               .field.email
-                = f.email_field :email, autofocus: true, autocomplete: "email", class: "form__enter"
+                = f.email_field :email, autofocus: true, autocomplete: "email", class: "form__enter" ,placeholder:"メールアドレス"
               .field.password
-                = f.password_field :password, autocomplete: "current-password",class: "form__enter"
-              .foom__a.actions
+                = f.password_field :password, autocomplete: "current-password",class: "form__enter" ,placeholder:"パスワード"
                 = f.submit "わたしはロボットではありません", class: "confirmbox"
               .foom__a.actions
                 = f.submit "ログイン", class: "login"
