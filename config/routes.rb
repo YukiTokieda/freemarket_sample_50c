@@ -27,15 +27,12 @@ Rails.application.routes.draw do
 
   namespace :mypage do
   #クレジットカード 
-    resources :creditcard, only: [:new, :show] do
+    resources :creditcard, only: [:index, :new, :show] do
       collection do
-        get  'index',to: 'creditcard#index'
-        post 'show', to: 'creditcard#show'
         post 'pay', to: 'creditcard#pay'
         post 'delete', to: 'creditcard#delete'
       end
     end
-
     get    'profile',               to: 'profiles#edit'
     patch  'profile',               to: 'profiles#update'
     get    'identification',        to: 'identification#edit'
