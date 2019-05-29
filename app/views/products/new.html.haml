@@ -1,14 +1,13 @@
 .main_container 
   = render 'shared/simple-header'
   .main-contents
-
     .main-contents_conteiner
       .main-contents_conteiner_inner
         %h2.header-text
           商品の情報を入力
         = form_for @product do |product_form|
           .sell-form
-            = product_form.fields_for :images , @product.images.build do |image_form|
+            = product_form.fields_for :images  do |image_form|
 
               .sell-form_image-box
                 .sell-upload-head
@@ -17,12 +16,24 @@
                 .sell-upload_text-bottom
                   最大10枚までアップロードできます
                 .sell-box_container
-                  %label.file{for: "file"}  
-                    %img
-                    %pre
-                      ドラッグアンドドロップ
-                      またはクリックしてファイルをアップロード
-                      = image_form.file_field :name, id: 'file'     
+                  #preview
+                  .sellzone-area
+                    = image_form.label :image_form, class: "sellzone-box", for: "upload-image" do
+                      .input_area
+                        = image_form.file_field :image_form, multiple: 'true', name: 'images[image_form][]',id: 'upload-image', class: "upload-image",type: 'file', 'data-image': 0
+                      %p 
+                        ドラッグアンドドロップ
+                        %br
+                        またはクリックしてファイルをアップロード
+
+                  #preview2
+                  .sellzone-area2
+                    = image_form.label :image_form, class: "sellzone-box", for: "upload-image" do
+                      %p 
+                        ドラッグアンドドロップ
+                        %br
+                        またはクリックしてファイルをアップロード
+                        
                   
               .sell-content_basic
                 .form_product-name
@@ -149,5 +160,5 @@
                   = product_form.submit '出品する', class: 'btn-sell btn-red'
                   =link_to :back ,style:'text-decoration:none;color:white' do
                     %button.btn-sell.btn-gray もどる
-              
+
   = render 'shared/simple-footer'
