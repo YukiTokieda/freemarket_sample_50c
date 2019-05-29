@@ -43,15 +43,125 @@
               }
 
               .sell-box_container {
-                height: 162px;
                 width: 620px;
+                height: 162px;
                 margin-top: 8px;
-                background-color: rgb(245, 245, 245);
-                border-style: dashed;
-                border-width: 1px;
-                border-color: rgb(209, 209, 209);
-                position: relative;
+                background-color: $white;
+                outline: 0;
                 
+                
+                .sell-upload-item{
+                  float: left;
+                  width: 112px;
+                  height: 162px;
+                  margin: 0 10px 10px 0;
+                  font-size:14px;
+                  line-height: 14px;
+                  text-align: center;
+                  background-color: $white;
+                  border: 1px solid $gray;
+                  border-bottom: none;
+        
+                  img{
+                    height: 114px;
+                    width: 100%;
+                  }
+
+                  .sell-upload-button{
+                    display: block;
+                    width: 114px;
+                    height: 44px;
+                    color:$blue;
+                    background-color: $gray;
+                    
+
+                    .btn.edit {
+                      display: inline-block;
+                      width: 50%;
+                      height: 100%;
+                      margin-top: 15px;
+                    }
+
+                    .btn.delete{
+                      display: inline-block;
+                      width: 50%;
+                      height: 100%;
+                      margin-top: 15px;
+                    }
+                  } 
+                }
+
+                .sellzone-area{
+                  position: relative;
+                  float: left;
+                  height: 162px;
+                  width: 100%;
+                  box-sizing: border-box;
+                  padding: 40px;
+                  margin-bottom: 10px;
+                  background-color: $gray;
+                  border: 1px dashed #CCCCCC;
+                  cursor: pointer;  
+                
+                  .sellzone-box{
+                    display: block;
+                    background-color: #F5F5F5;
+                    height: 100%;
+                    width: 100%;
+                    cursor: pointer;  
+                
+                    .input_area{  
+                      display: none;
+                      word-wrap: break-all;  
+                    }
+                      p{
+                        margin-top:20px;
+                        text-align: center;
+                        font-size: 14px;
+                        font-weight: 600;
+                        line-height: 1.5;
+                        
+                      } 
+                  }
+                }  
+                
+                .sellzone-area2{
+                  display: none;
+                  float: left;
+                  height: 162px;
+                  width: 100%;
+                  box-sizing: border-box;
+                  padding: 40px;
+                  background-color: $gray;
+                  border: 1px dashed #CCCCCC;
+                  cursor: pointer;
+
+                
+                  .sellzone-box{
+                    display: block;
+                    background-color: #F5F5F5;
+                    height: 100%;
+                    width: 100%;
+                    cursor: pointer;  
+                
+                    .input_area{  
+                      display: none;
+                      word-wrap: break-all;  
+                    }
+                      p{
+                        margin-top:20px;
+                        text-align: center;
+                        font-size: 14px;
+                        font-weight: 600;
+                        line-height: 1.5;
+                        
+                      } 
+                  }
+                }  
+                
+
+                
+                /*
                 .file img{
                   height: 100%;
                   width: 100%;
@@ -76,8 +186,11 @@
                 .file input{
                   display:none;
                 }
-              }
+                */
+              
             }
+          }
+
           
 
             .sell-content_basic {
