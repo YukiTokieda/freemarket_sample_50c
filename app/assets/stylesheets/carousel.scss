@@ -1,11 +1,46 @@
+
 .slick-prev{
-  border:bold;
-  left: 50px;
-  height: 80px;
-  width: 80px;
-  background-image: image-url("hidari.png");
+  content:'';
+  display: block;
+  border-bottom: 3px solid $white;
+  border-right: 3px solid $white;
+  border-left: none;
+
+  transform: rotate(135deg);
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  cursor: pointer;
+  left: 10%;
+  top: 50%;
   z-index: 100;
-  background-size: 30px;
-  background-repeat: no-repeat;
-  background-position: center;
+}
+
+
+.slick-next{
+  content:'';
+  display: block;
+  border-bottom: 3px solid $white;
+  border-right: 3px solid $white;
+  transform: rotate(315deg);
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  cursor: pointer;
+  right: 10%;
+  top: 50%;
+}
+
+
+.slick-dots {
+  bottom: 25px;
+  li button{
+    &::before{
+      top:10px;
+      height: 12px;
+      width: 12px;
+      background-color: #757573;
+      border-radius: 50%;
+    }
+  }
 }
