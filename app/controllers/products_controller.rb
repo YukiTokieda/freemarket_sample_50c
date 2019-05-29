@@ -14,9 +14,11 @@ class ProductsController < ApplicationController
   end
 
   def create
-    new_product = current_user.products.create(product_params)
+    new_product = current_user.products.new(product_params)
     if new_product.save
-      params[:images][:image_form].each do |image_form|
+      images_form = params[:images][:image_form].reverse
+      binding.pry
+      images_form.each do |image_form|
         new_product.images.create(name: image_form.tempfile, product_id: new_product.id)
       end
       redirect_to root_path

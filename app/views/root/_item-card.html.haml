@@ -2,7 +2,8 @@
   =link_to product_path(product), class: "item-card_url" do
 
     .item-card-photo.sold
-      = image_tag product.images.first.name, class: "lazyloaded"
+      - if product.images.first      
+        = image_tag product.images.first.name, class: "lazyloaded"
       - if product.status_id == 2
         .badge
           %p SOLD
