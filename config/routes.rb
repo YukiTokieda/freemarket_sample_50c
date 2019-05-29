@@ -37,6 +37,9 @@ Rails.application.routes.draw do
     patch  'profile',               to: 'profiles#update'
     get    'identification',        to: 'identification#edit'
     patch  'identification',        to: 'identification#update'
+    get    'listings/listing',      to: 'listings#listing'
+    get    'listings/in_progress',      to: 'listings#in_progress'
+    get    'listings/completed',      to: 'listings#completed'
   end
   
   # 購入
