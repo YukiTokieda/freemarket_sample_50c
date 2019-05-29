@@ -17,7 +17,6 @@ class ProductsController < ApplicationController
     new_product = current_user.products.new(product_params)
     if new_product.save
       images_form = params[:images][:image_form].reverse
-      binding.pry
       images_form.each do |image_form|
         new_product.images.create(name: image_form.tempfile, product_id: new_product.id)
       end
