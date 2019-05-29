@@ -50,6 +50,13 @@ class ProductsController < ApplicationController
     @products = Product.where('name LIKE(?)', "%#{params[:keyword]}%").limit(48)
   end
 
+  def stop_selling
+    @product.stop
+    @statuses = Statuses.find_by(name: '出品停止中')
+  end
+
+
+  
   private
 
   def set_product
