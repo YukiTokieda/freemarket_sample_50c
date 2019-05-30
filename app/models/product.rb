@@ -26,7 +26,7 @@ class Product < ApplicationRecord
   # 商品を出品した投稿者の他の商品を取得
   scope :get_user_product, -> (product) { where(user_id: product.user_id).recent }
   # 渡されたカテゴリーIDの持った商品を取得（範囲指定可能）
-  scope :get_category_products, -> (category_id) { where(category_id: category_id).recent }
+  scope :get_category_products, -> (category_id) { where(category_id: category_id, status_id: 1).recent }
 
   # 渡されたカテゴリーを持った配列を範囲形式で返す
   # 例：レディース159~337のカテゴリー配列を「159..337」形式で返す

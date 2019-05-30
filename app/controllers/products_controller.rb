@@ -51,12 +51,11 @@ class ProductsController < ApplicationController
   end
 
   def stop_selling
-    @product.stop
+    @statuses = Statuses.find(params[:id]) 
     @statuses = Statuses.find_by(name: '出品停止中')
   end
+ 
 
-
-  
   private
 
   def set_product
