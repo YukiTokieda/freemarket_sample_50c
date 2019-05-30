@@ -2,10 +2,12 @@
 .mypage-box
   %main.my-containercleanfix
     = render 'mypage/mypage-side'
-    - if false
-      = render "show-creditcard"
-    - else
+
+    - if @card.blank?
       = render "add-creditcard"
+    - else
+      = render "show-creditcard"
+
     -# クレジットカードがある場合はtrueでクレジットカードを表示する。
     -# falseの場合はクレジットカードが登録されてないので、新規登録が表示される
 

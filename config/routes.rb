@@ -20,18 +20,30 @@ Rails.application.routes.draw do
 
   # 商品
   resources :products
+  resources :comments, only: [:create]
   post      'search',               to: 'products#search'
+  post      'stop_sell',            to: 'products#stop_selling'
   # マイページ
   get      'mypage',                to: 'mypage/mypage#index'
   get      'logout',                to: 'mypage/logout#index'
+
   namespace :mypage do
-    resources :creditcard, only: [:index, :new, :create, :destroy]
+  #クレジットカード 
+    resources :creditcard, only: [:index, :new] do
+      collection do
+        post 'pay', to: 'creditcard#pay'
+        post 'delete', to: 'creditcard#delete'
+      end
+    end
     get    'profile',               to: 'profiles#edit'
     patch  'profile',               to: 'profiles#update'
     get    'identification',        to: 'identification#edit'
     patch  'identification',        to: 'identification#update'
+    get    'listings/listing',      to: 'listings#listing'
+    get    'listings/in_progress',      to: 'listings#in_progress'
+    get    'listings/completed',      to: 'listings#completed'
   end
-  
+
   # 購入
   namespace :transaction do
     resources :buy, only: [:show, :create]

@@ -43,15 +43,125 @@
               }
 
               .sell-box_container {
-                height: 162px;
                 width: 620px;
+                height: 162px;
                 margin-top: 8px;
-                background-color: rgb(245, 245, 245);
-                border-style: dashed;
-                border-width: 1px;
-                border-color: rgb(209, 209, 209);
-                position: relative;
+                background-color: $white;
+                outline: 0;
                 
+                
+                .sell-upload-item{
+                  float: left;
+                  width: 112px;
+                  height: 162px;
+                  margin: 0 10px 10px 0;
+                  font-size:14px;
+                  line-height: 14px;
+                  text-align: center;
+                  background-color: $white;
+                  border: 1px solid $gray;
+                  border-bottom: none;
+        
+                  img{
+                    height: 114px;
+                    width: 100%;
+                  }
+
+                  .sell-upload-button{
+                    display: block;
+                    width: 114px;
+                    height: 44px;
+                    color:$blue;
+                    background-color: $gray;
+                    
+
+                    .btn.edit {
+                      display: inline-block;
+                      width: 50%;
+                      height: 100%;
+                      margin-top: 15px;
+                    }
+
+                    .btn.delete{
+                      display: inline-block;
+                      width: 50%;
+                      height: 100%;
+                      margin-top: 15px;
+                    }
+                  } 
+                }
+
+                .sellzone-area{
+                  position: relative;
+                  float: left;
+                  height: 162px;
+                  width: 100%;
+                  box-sizing: border-box;
+                  padding: 40px;
+                  margin-bottom: 10px;
+                  background-color: $gray;
+                  border: 1px dashed #CCCCCC;
+                  cursor: pointer;  
+                
+                  .sellzone-box{
+                    display: block;
+                    background-color: #F5F5F5;
+                    height: 100%;
+                    width: 100%;
+                    cursor: pointer;  
+                
+                    .input_area{  
+                      display: none;
+                      word-wrap: break-all;  
+                    }
+                      p{
+                        margin-top:20px;
+                        text-align: center;
+                        font-size: 14px;
+                        font-weight: 600;
+                        line-height: 1.5;
+                        
+                      } 
+                  }
+                }  
+                
+                .sellzone-area2{
+                  display: none;
+                  float: left;
+                  height: 162px;
+                  width: 100%;
+                  box-sizing: border-box;
+                  padding: 40px;
+                  background-color: $gray;
+                  border: 1px dashed #CCCCCC;
+                  cursor: pointer;
+
+                
+                  .sellzone-box{
+                    display: block;
+                    background-color: #F5F5F5;
+                    height: 100%;
+                    width: 100%;
+                    cursor: pointer;  
+                
+                    .input_area{  
+                      display: none;
+                      word-wrap: break-all;  
+                    }
+                      p{
+                        margin-top:20px;
+                        text-align: center;
+                        font-size: 14px;
+                        font-weight: 600;
+                        line-height: 1.5;
+                        
+                      } 
+                  }
+                }  
+                
+
+                
+                /*
                 .file img{
                   height: 100%;
                   width: 100%;
@@ -76,8 +186,11 @@
                 .file input{
                   display:none;
                 }
-              }
+                */
+              
             }
+          }
+
           
 
             .sell-content_basic {
@@ -144,7 +257,7 @@
             }
             
             .sell-content_category {
-                min-height: 520px;
+                height: 180px;
                 width: 620px;
                 padding: 40px;
                 border-bottom: solid 1px rgb(245, 245, 245);
@@ -157,21 +270,244 @@
                 color: rgb(136, 136, 136);
               }
               .sell-form-box {
-                min-height: 180px;
+                height: 180px;
                 width:400px;
                 float: right;
-                .form-area {
+                .form-area:nth-of-type(1) {
+                  display: block;
+                  height: 90px;
+                  width: 100%;
                   label {
                     font-size: 14px;
                     font-weight: 900;
                   }
-                  .select-wrap {
+                  .select-wrap:nth-of-type(1) {
+                    display: block;
+                    height:60px;
 
                     .select-place {
                       -webkit-appearance: none;
                       -moz-appearance: none;
                       appearance: none;
-                      display: block;
+                      height: 48px;
+                      width: 100%;
+                      position: relative;
+                      font-size: 16px;
+                      padding: 0 0px 0 7px;
+                      border-radius: 4px;
+                      border-color: rgb(206, 206, 206);
+                      background-color: white;
+                      z-index: 2;
+                    }
+                    
+                    .arrow-icon {
+                      display: inline-block;
+                      position: relative;
+                      left: 370px;
+                      top: -37px;
+                      z-index: 2;
+                      color: rgb(136, 136, 136);
+                    } 
+
+                    .select-place:focus {
+                      outline: 0;
+                      border-color: #099BE8;
+                    }
+                    .text-place {
+                      appearance: none;
+                      height: 48px;
+                      width: 390px;
+                      position: relative;
+                      font-size: 16px;
+                      padding: 0 0px 0 7px;
+                      border-radius: 4px;
+                      border: 1px solid #ccc;
+                      background-color: white;
+                      z-index: 2;
+                    }
+                    .text-place:focus {
+                      outline: 0;
+                      border-color: #099BE8;
+                    }
+                  }  
+
+                  .select-wrap:nth-of-type(2) {
+                    display: none;
+                    height:60px;
+
+                    .select-place {
+                      -webkit-appearance: none;
+                      -moz-appearance: none;
+                      appearance: none;
+                      height: 48px;
+                      width: 100%;
+                      position: relative;
+                      font-size: 16px;
+                      padding: 0 0px 0 7px;
+                      border-radius: 4px;
+                      border-color: rgb(206, 206, 206);
+                      background-color: white;
+                      z-index: 2;
+                    }
+                    
+                    .arrow-icon {
+                      display: inline-block;
+                      position: relative;
+                      left: 370px;
+                      top: -37px;
+                      z-index: 2;
+                      color: rgb(136, 136, 136);
+                    } 
+
+                    .select-place:focus {
+                      outline: 0;
+                      border-color: #099BE8;
+                    }
+                    .text-place {
+                      appearance: none;
+                      height: 48px;
+                      width: 390px;
+                      position: relative;
+                      font-size: 16px;
+                      padding: 0 0px 0 7px;
+                      border-radius: 4px;
+                      border: 1px solid #ccc;
+                      background-color: white;
+                      z-index: 2;
+                    }
+                    .text-place:focus {
+                      outline: 0;
+                      border-color: #099BE8;
+                    }
+                  }
+
+                  .select-wrap:nth-of-type(3) {
+                    display: none;
+                    height:60px;
+
+                    .select-place {
+                      -webkit-appearance: none;
+                      -moz-appearance: none;
+                      appearance: none;
+                      height: 48px;
+                      width: 100%;
+                      position: relative;
+                      font-size: 16px;
+                      padding: 0 0px 0 7px;
+                      border-radius: 4px;
+                      border-color: rgb(206, 206, 206);
+                      background-color: white;
+                      z-index: 2;
+                    }
+                    
+                    .arrow-icon {
+                      display: inline-block;
+                      position: relative;
+                      left: 370px;
+                      top: -37px;
+                      z-index: 2;
+                      color: rgb(136, 136, 136);
+                    } 
+
+                    .select-place:focus {
+                      outline: 0;
+                      border-color: #099BE8;
+                    }
+                    .text-place {
+                      appearance: none;
+                      height: 48px;
+                      width: 390px;
+                      position: relative;
+                      font-size: 16px;
+                      padding: 0 0px 0 7px;
+                      border-radius: 4px;
+                      border: 1px solid #ccc;
+                      background-color: white;
+                      z-index: 2;
+                    }
+                    .text-place:focus {
+                      outline: 0;
+                      border-color: #099BE8;
+                    }
+                  }
+                }
+
+                .form-area:nth-of-type(2) {
+                  display: none;
+                  height: 90px;
+                  width: 100%;
+                  margin-top:10px;
+
+                  label {
+                    font-size: 14px;
+                    font-weight: 900;
+                  }
+                  .select-wrap{
+                    display: block;
+
+                    .select-place {
+                      -webkit-appearance: none;
+                      -moz-appearance: none;
+                      appearance: none;
+                      height: 48px;
+                      width: 100%;
+                      position: relative;
+                      font-size: 16px;
+                      padding: 0 0px 0 7px;
+                      border-radius: 4px;
+                      border-color: rgb(206, 206, 206);
+                      background-color: white;
+                      z-index: 2;
+                    }
+                    
+                    .arrow-icon {
+                      display: inline-block;
+                      position: relative;
+                      left: 370px;
+                      top: -37px;
+                      z-index: 2;
+                      color: rgb(136, 136, 136);
+                    } 
+
+                    .select-place:focus {
+                      outline: 0;
+                      border-color: #099BE8;
+                    }
+                    .text-place {
+                      appearance: none;
+                      height: 48px;
+                      width: 390px;
+                      position: relative;
+                      font-size: 16px;
+                      padding: 0 0px 0 7px;
+                      border-radius: 4px;
+                      border: 1px solid #ccc;
+                      background-color: white;
+                      z-index: 2;
+                    }
+                    .text-place:focus {
+                      outline: 0;
+                      border-color: #099BE8;
+                    }
+                  }
+                }
+                .form-area:nth-of-type(3) {
+                  display: none;
+                  height: 90px;
+                  width: 100%;
+                  margin-top:10px;
+
+                  label {
+                    font-size: 14px;
+                    font-weight: 900;
+                  }
+                  .select-wrap {
+                    display: block;
+
+                    .select-place {
+                      -webkit-appearance: none;
+                      -moz-appearance: none;
+                      appearance: none;
                       height: 48px;
                       width: 100%;
                       position: relative;
@@ -214,19 +550,73 @@
                     }
                   }  
                 }
-                .form-area.form-area_bottom{
-                  margin-top:40px;
+              
+
+                .form-area:nth-of-type(4) {
+                  display: block;
+                  height: px;
+                  width: 100%;
+                  margin-top:5px;
+                  
                   label {
                     font-size: 14px;
                     font-weight: 900;
                   }
-                  
+                  .select-wrap {
+                    display: block;
+
+                    .select-place {
+                      -webkit-appearance: none;
+                      -moz-appearance: none;
+                      appearance: none;
+                      height: 48px;
+                      width: 100%;
+                      position: relative;
+                      font-size: 16px;
+                      padding: 0 0px 0 7px;
+                      border-radius: 4px;
+                      border-color: rgb(206, 206, 206);
+                      background-color: white;
+                      z-index: 2;
+                    }
+                    
+                    .arrow-icon {
+                      display: inline-block;
+                      position: relative;
+                      left: 370px;
+                      top: -37px;
+                      z-index: 2;
+                      color: rgb(136, 136, 136);
+                    } 
+
+                    .select-place:focus {
+                      outline: 0;
+                      border-color: #099BE8;
+                    }
+                    .text-place {
+                      appearance: none;
+                      height: 48px;
+                      width: 390px;
+                      position: relative;
+                      font-size: 16px;
+                      padding: 0 0px 0 7px;
+                      border-radius: 4px;
+                      border: 1px solid #ccc;
+                      background-color: white;
+                      z-index: 2;
+                    }
+                    .text-place:focus {
+                      outline: 0;
+                      border-color: #099BE8;
+                    }
+                  }  
                 }          
               }
             }
             
+            
             .sell-content_delivery {
-              min-height: 400px;
+              min-height: 290px;
               width: 620px;
               padding: 40px;
               border-bottom: solid 1px rgb(245, 245, 245);
@@ -238,11 +628,54 @@
                 color: rgb(136, 136, 136);
               }
               .sell-form-box {
-                min-height: 300px;
+                height: 290px;
                 width:400px;
                 float: right;
                 .form-area {
+                  height:70px;
                   width:400px;
+                  margin-bottom:40px;
+                  label {
+                    font-size: 14px;
+                    font-weight: 900;
+                  }
+                  div {
+                    .select-wrap {
+                      margin: 6px 0 0;
+                      .select-place {
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        appearance: none;
+                        display: inline-block;
+                        height: 48px;
+                        width: 100%;
+                        position: relative;
+                        font-size: 16px;
+                        padding: 0 0px 0 7px;
+                        border-radius: 4px;
+                        border-color: rgb(206, 206, 206);
+                        background-color: white;
+                      }
+                      .select-place:focus {
+                        outline: 0;
+                        border-color: #099BE8;
+                      }
+                      .arrow-icon {
+                        display: inline-block;
+                        position: relative;
+                        left: 370px;
+                        top: -37px;
+                        z-index: 2;
+                        color: rgb(136, 136, 136);
+                      }
+                    }
+                  } 
+                }
+                #shipping_period_before_shipping.form-area {
+                  display: none;
+                  width:400px;
+                  height:70px;
+                  
                   label {
                     font-size: 14px;
                     font-weight: 900;

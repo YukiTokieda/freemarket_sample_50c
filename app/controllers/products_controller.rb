@@ -10,18 +10,23 @@ class ProductsController < ApplicationController
     @shipping =  Shipping.new
     @categories = Category.where(parent_id: 0)
     @states = State.all
+    @product.images.build
   end
 
   def create
-    new_product = current_user.products.create(product_params)
+    new_product = current_user.products.new(product_params)
     if new_product.save
+      images_form = params[:images][:image_form].reverse
+      images_form.each do |image_form|
+        new_product.images.create(name: image_form.tempfile, product_id: new_product.id)
+      end
       redirect_to root_path
     else
       redirect_to action: :new
     end
   end
 
-  def edit
+  def edit  
     @categories = Category.where(parent_id: 0)
     @states = State.all
   end
@@ -35,6 +40,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @product.comments
     @users_products = Product.get_user_product(@product).limit(6)
   end
 
@@ -48,6 +55,15 @@ class ProductsController < ApplicationController
 
   def search
     @products = Product.where('name LIKE(?)', "%#{params[:keyword]}%").limit(48)
+  end
+
+  def stop_selling
+    @product = Product.find(params[:id])
+    if @product.update(status_id: 4)
+      redirect_to root_path
+    else
+      # TODO: 失敗時の処理
+    end
   end
 
   private
@@ -71,7 +87,7 @@ class ProductsController < ApplicationController
     params.require(:product).permit(
       :name, :description, :category_id, :brand, :size_id, :state_id, :price,
       shipping_attributes:[:method, :prefecture_from, :period_before_shipping, :fee_burden, :_destroy, :id],
-      images_attributes:[:name, :_destroy, :id]
+      images_attributes:[:image_form,:name, :_destroy, :id]
     )
   end
 end

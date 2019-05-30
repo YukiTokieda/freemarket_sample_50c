@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190521065541) do
+ActiveRecord::Schema.define(version: 20190530023024) do
 
   create_table "brand_groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
@@ -36,6 +36,24 @@ ActiveRecord::Schema.define(version: 20190521065541) do
     t.datetime "updated_at",     null: false
     t.index ["grandparent_id"], name: "index_categories_on_grandparent_id", using: :btree
     t.index ["parent_id"], name: "index_categories_on_parent_id", using: :btree
+  end
+
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "body",       limit: 65535, null: false
+    t.integer  "user_id",                  null: false
+    t.integer  "product_id",               null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["product_id"], name: "index_comments_on_product_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
+  end
+
+  create_table "creditcards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",     null: false
+    t.string   "customer_id", null: false
+    t.string   "card_id",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

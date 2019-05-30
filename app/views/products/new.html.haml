@@ -1,14 +1,13 @@
 .main_container 
   = render 'shared/simple-header'
   .main-contents
-
     .main-contents_conteiner
       .main-contents_conteiner_inner
         %h2.header-text
           商品の情報を入力
         = form_for @product do |product_form|
           .sell-form
-            = product_form.fields_for :images , @product.images.build do |image_form|
+            = product_form.fields_for :images  do |image_form|
 
               .sell-form_image-box
                 .sell-upload-head
@@ -17,12 +16,24 @@
                 .sell-upload_text-bottom
                   最大10枚までアップロードできます
                 .sell-box_container
-                  %label.file{for: "file"}  
-                    %img
-                    %pre
-                      ドラッグアンドドロップ
-                      またはクリックしてファイルをアップロード
-                      = image_form.file_field :name, id: 'file'     
+                  #preview
+                  .sellzone-area
+                    = image_form.label :image_form, class: "sellzone-box", for: "upload-image" do
+                      .input_area
+                        = image_form.file_field :image_form, multiple: 'true', name: 'images[image_form][]',id: 'upload-image', class: "upload-image",type: 'file', 'data-image': 0
+                      %p 
+                        ドラッグアンドドロップ
+                        %br
+                        またはクリックしてファイルをアップロード
+
+                  #preview2
+                  .sellzone-area2
+                    = image_form.label :image_form, class: "sellzone-box", for: "upload-image" do
+                      %p 
+                        ドラッグアンドドロップ
+                        %br
+                        またはクリックしてファイルをアップロード
+                        
                   
               .sell-content_basic
                 .form_product-name
@@ -35,68 +46,69 @@
                   = product_form.text_area :description, class: "input-intro", rows: '5', placeholder: "商品の説明 (必須 1,000文字以内) (色、素材、重さ、定価、注意点など) 例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
               .sell-content_category
                 %h3 商品の詳細
-                .sell-form-box
+                .sell-form-box 
                   .form-area
                     %label カテゴリー
                     %span.required-tag 必須
-                    .select-wrap
+                    #content_category1.select-wrap
                       = product_form.collection_select :category_id, @categories, :id, :name, { prompt: '---' }, class: "select-place"
                       = fa_icon 'chevron-down', class: 'arrow-icon'
 
-                    .select-wrap
+                    #content_category2.select-wrap
                       = product_form.collection_select :category_id, @categories[0].children, :id, :name, { prompt: '---' }, class: "select-place"
                       = fa_icon 'chevron-down', class: 'arrow-icon'
 
-                    .select-wrap
+                    #content_category3.select-wrap
                       = product_form.collection_select :category_id, @categories[0].grandchildren, :id, :name, { prompt: '---' }, class: "select-place"
                       = fa_icon 'chevron-down', class: 'arrow-icon'
-
+                  
+                  #content_size.form-area
                     %label サイズ
-                    %span.required-tag 任意
+                    %span.required-tag 必須
                     .select-wrap
                       = product_form.text_field :size_id, class: "text-place"
                       = fa_icon 'chevron-down', class: 'arrow-icon'
                  
+                  #content_brand.form-area
                     %label ブランド
-                    %span.required-tag 任意
+                    %span.optional-tag 任意
                     .select-wrap
                       = product_form.text_field :brand, class: "text-place",placeholder: "例）シャネル"
                       = fa_icon 'chevron-down', class: 'arrow-icon'
 
-                  .form-area.form-area_bottom
+                  #content_states.form-area
                     %label 商品の状態
                     %span.required-tag 必須
-                    %div
-                      .select-wrap
-                        = product_form.collection_select :state_id, @states, :id, :name, { prompt: '---' }, class: 'select-place'
-                        = fa_icon 'chevron-down', class: 'arrow-icon icon fa-fw'
+                    .select-wrap
+                      = product_form.collection_select :state_id, @states, :id, :name, { prompt: '---' }, class: 'select-place'
+                      = fa_icon 'chevron-down', class: 'arrow-icon icon fa-fw'
 
             = product_form.fields_for :shipping , @shipping do |shipping_form|
               .sell-content_delivery
                 %h3 配送について
                 .sell-form-box
-                  .form-area
+                  #shipping_fee_burden.form-area
                     %label 配送料の負担
                     %span.required-tag 必須
                     %div
                       .select-wrap
                         = shipping_form.select :fee_burden, Shipping.fee_burdens.keys.map {|k| [Shipping.fee_burdens[k], k]}, { prompt: '---' }, autofocus: true, class: 'select-place'
                         = fa_icon 'chevron-down', class: 'arrow-icon'
-                  .form-area.form-area_bottom
+                  .form-area
                     %label 配送方法
                     %span.required-tag 必須
                     %div
                       .select-wrap
                         = shipping_form.select :method, Shipping.methods.keys.map {|k| [Shipping.methods[k], k]}, { prompt: '---' }, autofocus: true, class: 'select-place'
                         = fa_icon 'chevron-down', class: 'arrow-icon'
-                  .form-area.form-area_bottom
+                  .form-area
                     %label 発送元の地域
                     %span.required-tag 必須
                     %div
                       .select-wrap
                         = shipping_form.select :prefecture_from, Shipping.froms.keys.map {|k| [Shipping.froms[k], k]}, { prompt: '---' }, autofocus: true, class: 'select-place'
                         = fa_icon 'chevron-down', class: 'arrow-icon'
-                  .form-area.form-area_bottom
+                  #shipping_period_before_shipping.form-area
                     %label 発送までの日数
                     %span.required-tag 必須
                     %div
@@ -149,5 +161,5 @@
                   = product_form.submit '出品する', class: 'btn-sell btn-red'
                   =link_to :back ,style:'text-decoration:none;color:white' do
                     %button.btn-sell.btn-gray もどる
-              
+
   = render 'shared/simple-footer'
