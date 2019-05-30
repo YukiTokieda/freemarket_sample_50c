@@ -40,6 +40,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @product.comments
     @users_products = Product.get_user_product(@product).limit(6)
   end
 
