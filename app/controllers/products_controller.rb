@@ -57,6 +57,15 @@ class ProductsController < ApplicationController
     @products = Product.where('name LIKE(?)', "%#{params[:keyword]}%").limit(48)
   end
 
+  def stop_selling
+    @product = Product.find(params[:id])
+    if @product.update(status_id: 4)
+      redirect_to root_path
+    else
+      # TODO: 失敗時の処理
+    end
+  end
+
   private
 
   def set_product

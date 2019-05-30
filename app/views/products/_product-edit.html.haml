@@ -1,5 +1,5 @@
 .product-change-box
   = link_to "商品の編集", edit_product_path, class: "btn-default btn-red"
   %p.text-center or
-  %button.btn-default.btn-gray{type: "submit"} 出品を一旦停止する
+  = link_to "出品を一旦停止する", stop_sell_path(id: @product.id), method: :post, class:"btn-default btn-gray"
   = link_to "この商品を削除する", product_path(@product), class: "btn-default btn-gray", method: :delete

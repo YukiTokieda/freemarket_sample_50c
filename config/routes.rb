@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   resources :products
   resources :comments, only: [:create]
   post      'search',               to: 'products#search'
+  post      'stop_sell',            to: 'products#stop_selling'
   # マイページ
   get      'mypage',                to: 'mypage/mypage#index'
   get      'logout',                to: 'mypage/logout#index'
