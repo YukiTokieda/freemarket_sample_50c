@@ -41,7 +41,7 @@ Rails.application.routes.draw do
     get    'listings/in_progress',      to: 'listings#in_progress'
     get    'listings/completed',      to: 'listings#completed'
   end
-  
+
   # 購入
   namespace :transaction do
     resources :buy, only: [:show, :create]
