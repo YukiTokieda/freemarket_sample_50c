@@ -5,18 +5,15 @@ class Mypage::CreditcardController < ApplicationController
   
   def index#Cardのデータpayjpに送り情報を取り出します
     @card = Creditcard.where(user_id: current_user.id).first
-    if @card.blank?
-      # redirect_to action: "new"
-    else
+    if !@card.blank?
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @default_card_information = customer.cards.retrieve(card.card_id)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = customer.cards.retrieve(@card.card_id)
     end
   end
 
   def new
-    card = Creditcard.where(user_id: current_user.id)
-    redirect_to action: "show" if card.exists?
+    
   end
 
   def pay #payjpとCardのデータベース作成を実施します。
