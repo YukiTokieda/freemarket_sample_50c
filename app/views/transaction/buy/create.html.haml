@@ -3,4 +3,8 @@
 .single
   = render 'shared/simple-header'
   .single-main
+  %h2 購入が完了しました！
+  %p 
+  = @product.name
+  %p ¥ #{@product.price}(税込)
   = render 'shared/simple-footer'
