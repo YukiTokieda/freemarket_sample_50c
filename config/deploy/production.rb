@@ -67,3 +67,4 @@ set :unicorn_rack_env, "production"
 
 # config valid only for current version of Capistrano
 
+# config.assets.js_compressor = :uglifier
