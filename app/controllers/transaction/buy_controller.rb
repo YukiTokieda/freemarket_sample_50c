@@ -27,9 +27,9 @@ class Transaction::BuyController < ApplicationController
         card = Creditcard.where(user_id: current_user.id).first
         Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
         Payjp::Charge.create(
-          :amount => @product.price, #支払金額
-          :customer => card.customer_id, #顧客ID
-          :currency => 'jpy', #日本円
+          amount: @product.price, #支払金額
+          customer: card.customer_id, #顧客ID
+          currency: 'jpy', #日本円
         )
       else
         # TODO: 決済失敗時の処理
