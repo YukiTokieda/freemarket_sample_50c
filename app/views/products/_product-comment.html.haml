@@ -1,7 +1,11 @@
 .product-detail-message
   .product-detail-message_product-message
+    - @comments.each do |comment|
+      %p
+        = "#{comment.user.nickname}:#{comment.body}"
     .product-detail-message_product-message__message-content
-      %form{class: "message-form", action: "link_path", method: "POST"}
+      = form_for @comment, class:"message-form" do |comment_form|
         %p="相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。"
-        %textarea{class: "textarea-default"}
-        %input{class: "message-submit btn-default btn-gray", type: "submit", value: "コメントする"}
+        = comment_form.hidden_field :product_id, :value => product.id
+        = comment_form.text_area :body, class:"textarea-default"
+        = comment_form.submit 'コメントする', class:"message-submit btn-default btn-gray"
