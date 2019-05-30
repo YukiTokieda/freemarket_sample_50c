@@ -1,3 +1,36 @@
+
+
+
+
+
+
+
+
+
+$(function(){
+  $("#content_category1 .select-place").change(function() {
+    if ($("#content_category1 .select-place").val() == '---') $(".select-wrap:nth-of-type(2)").css('display','none');
+    else $(".select-wrap:nth-of-type(2)").css('display','block'),$(".sell-form-box").css('height','240px'),$(".sell-content_category").css('height','240px'),$(".sell-content_category .form-area:nth-of-type(1)").css('height','150px');
+  });
+
+  $("#content_category2 .select-place").change(function() {
+    if ($("#content_category2 .select-place").val() == '---') $(".select-wrap:nth-of-type(3)").css('display','none');
+    else $(".select-wrap:nth-of-type(3)").css('display','block'),$(".sell-form-box").css('height','300px'),$(".sell-content_category").css('height','300px'),$(".sell-content_category .form-area:nth-of-type(1)").css('height','210px');
+  });
+
+  $("#content_category3 .select-place").change(function() {
+    if ($("#content_category3 .select-place").val() == '---') $(".form-area:nth-of-type(2)").css('display','none');
+    else $(".form-area:nth-of-type(2)").css('display','block'),$(".form-area:nth-of-type(3)").css('display','block'),$(".sell-content_category .sell-form-box").css('height','500px'),$(".sell-content_category").css('height','500px'),$(".form-area:nth-of-type(4)").css('margin-top','15px');
+  });
+
+  $("#shipping_fee_burden .select-place").change(function() {
+    if ($("#shipping_fee_burden .select-place").val() == '---') $("#shipping_period_before_shipping.form-area").css('display','none');
+    else $("#shipping_period_before_shipping.form-area").css('display','block'),$(".sell-content_delivery .sell-form-box").css('height','400px'),$(".sell-content_delivery").css('height','400px');
+  });
+
+});
+
+
 $(document).on('turbolinks:load', function(){
   var sellzone = $('.sellzone-area');
   var sellzone2 = $('.sellzone-area2');
@@ -8,6 +41,7 @@ $(document).on('turbolinks:load', function(){
   var input_area = $('.input_area');
   var preview = $('#preview');
   var preview2 = $('#preview2');
+
 
   $(document).on('change', 'input[type= "file"].upload-image',function(event) {
     var file = $(this).prop('files')[0];
@@ -66,6 +100,8 @@ $(document).on('turbolinks:load', function(){
     var new_image = $(`<input multiple= "multiple" name="images[image_form][]" class="upload-image" data-image= ${images.length} type="file" id="upload-image">`);
     input_area.prepend(new_image);
   });
+  
+
   $(document).on('click', '.delete', function() {
     var target_image = $(this).parent().parent();
     $.each(inputs, function(index, input){
@@ -131,3 +167,4 @@ $(document).on('turbolinks:load', function(){
     }
   })
 });
+
