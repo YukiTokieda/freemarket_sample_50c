@@ -80,5 +80,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'dotenv-rails'
+# クレジットカード機能
+gem 'payjp'
 # パンくず
 gem 'gretel'

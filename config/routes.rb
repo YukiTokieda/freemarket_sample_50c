@@ -26,8 +26,15 @@ Rails.application.routes.draw do
   # マイページ
   get      'mypage',                to: 'mypage/mypage#index'
   get      'logout',                to: 'mypage/logout#index'
+
   namespace :mypage do
-    resources :creditcard, only: [:index, :new, :create, :destroy]
+  #クレジットカード 
+    resources :creditcard, only: [:index, :new] do
+      collection do
+        post 'pay', to: 'creditcard#pay'
+        post 'delete', to: 'creditcard#delete'
+      end
+    end
     get    'profile',               to: 'profiles#edit'
     patch  'profile',               to: 'profiles#update'
     get    'identification',        to: 'identification#edit'

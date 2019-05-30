@@ -1,0 +1,10 @@
+class CreateCreditcards < ActiveRecord::Migration[5.0]
+  def change
+    create_table :creditcards do |t|
+      t.integer :user_id,null: false
+      t.string :customer_id,null: false #payjpの顧客id
+      t.string :card_id,null: false #payjpのデフォルトカードid
+      t.timestamps
+    end
+  end
+end
