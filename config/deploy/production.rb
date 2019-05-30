@@ -67,5 +67,5 @@ set :unicorn_rack_env, "production"
 
 # config valid only for current version of Capistrano
 
-# config.assets.js_compressor = :uglifier
-# config.assets.js_compressor = Uglifier.new(harmony: true)
+config.assets.js_compressor = :uglifier
+config.assets.js_compressor = Uglifier.new(harmony: true)
