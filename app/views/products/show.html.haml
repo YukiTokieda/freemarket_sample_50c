@@ -37,7 +37,7 @@
   - if user_signed_in? && @product.user_id == current_user.id
     = render "product-edit"
 
-  = render "product-comment"
+  = render partial: "product-comment", locals: {product: @product}
   = render "product-link"
   = render "product-sns"
   = render partial: 'product-user-profile', colletion: @users_products

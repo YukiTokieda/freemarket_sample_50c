@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   # 商品
   resources :products
+  resources :comments, only: [:create]
   post      'search',               to: 'products#search'
   # マイページ
   get      'mypage',                to: 'mypage/mypage#index'

@@ -7,7 +7,11 @@ class User < ApplicationRecord
   has_one :profile, inverse_of: :user
   has_many :sns_credentials, dependent: :destroy
   has_many :products, dependent: :destroy
+<<<<<<< HEAD
   has_one :creditcard
+=======
+  has_many :comments
+>>>>>>> master
 
   accepts_nested_attributes_for :profile
   validates :nickname, presence: true

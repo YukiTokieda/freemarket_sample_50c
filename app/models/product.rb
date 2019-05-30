@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   # アソシエーション
   has_many :images, dependent: :delete_all
+  has_many :comments
   belongs_to :shipping, dependent: :delete
   belongs_to :size
   belongs_to :status
