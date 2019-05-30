@@ -73,10 +73,19 @@
           height: 40px;
           width: 350px;
           display: flex;
+          li:hover .parent {
+            visibility: visible;
+          }
           .category_nav {
             width: 150px;
+            height: 43px;
+            position: relative;
             display: inline-block;
             padding: 6px;
+            li:hover {
+              background-color: rgb(238, 0, 0);
+              color: #fff;
+            }
             .category_text {
               font-size: 14px;
               float: right;
@@ -94,11 +103,62 @@
                 color: rgb(255, 0, 0);
               }
             }
+            .parent {
+              font-weight: 500;
+              width: 250px;
+              height: 616px;
+              position: absolute;
+              z-index: 99999999;
+              top: 46px;
+              border-left: solid 1px rgb(235, 235, 235);
+              border-right: solid 1px rgb(235, 235, 235);
+              background: white;
+              line-height: 44px;
+              font-size: 14px;
+              visibility: hidden;
+              box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 1);
+              li:hover .child {
+                visibility:visible;
+              }
+              .child {
+                visibility: hidden;
+                position: absolute;
+                z-index: 99999999;
+                color: black;
+                left: 248px;
+                top: 0;
+                width: 100%;
+                height: 616px;
+                border-left: solid 1px rgb(235, 235, 235);
+                border-right: solid 1px rgb(235, 235, 235);
+                background: white;
+                li:hover .grand-child {
+                  visibility: visible;
+                }
+                  .grand-child {
+                    visibility: hidden;
+                    position: absolute;
+                    z-index: 99999999;
+                    color: black;
+                    left: 250px;
+                    top: 0;
+                    width: 100%;
+                    height: 616px;
+                    border-left: solid 1px rgb(235, 235, 235);
+                    border-right: solid 1px rgb(235, 235, 235);
+                    background: white;
+                  }
+              }
+            }
           }
           .brand_nav {
             width: 140px;
             display: inline-block;
             padding: 6px;
+            li:hover {
+              background-color: rgb(238, 0, 0);
+              color: #fff;
+            }
             .brand_text {
               font-size: 14px;
               float: right;
@@ -115,6 +175,21 @@
                 opacity: 0.9;
                 color: rgb(255, 0, 0);
               }
+            }
+            .brand_menu_box {
+              font-weight: 500;
+              width: 200px;
+              height: 270px;
+              position: absolute;
+              z-index: 99999999;
+              top: 108px;
+              border-left: solid 1px rgb(235, 235, 235);
+              border-right: solid 1px rgb(235, 235, 235);
+              background: white;
+              line-height: 44px;
+              font-size: 14px;
+              visibility: hidden;
+              box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 1);
             }
           }
         }

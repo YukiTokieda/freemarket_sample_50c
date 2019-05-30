@@ -1,6 +1,7 @@
 class RootController < ApplicationController
 
   def index
+    @parents = Category.where(parent_id: 0)
     @ladies       = Product.get_ladies.limit(4).includes(:images)
     @mens         = Product.get_mens.limit(4).includes(:images)
     @kids         = Product.get_kids.limit(4).includes(:images)
