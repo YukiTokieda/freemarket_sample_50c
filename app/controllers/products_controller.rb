@@ -51,10 +51,13 @@ class ProductsController < ApplicationController
   end
 
   def stop_selling
-    @statuses = Statuses.find(params[:id]) 
-    @statuses = Statuses.find_by(name: '出品停止中')
+    @product = Product.find(params[:id])
+    if @product.update(status_id: 4)
+      redirect_to root_path
+    else
+      # TODO: 失敗時の処理
+    end
   end
- 
 
   private
 
