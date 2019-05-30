@@ -20,20 +20,21 @@ class Transaction::BuyController < ApplicationController
 
   def create
     @trading = Trading.new(buyer_id: current_user.id, seller_id: @product.user_id)
-    @order = Order.new(trading_id: @trading.id, product_id: @product.id)
-    if @order.save
-      @product.update(status_id: 2)
-      card = Creditcard.where(user_id: current_user.id).first
-      Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
-      Payjp::Charge.create(
-        :amount => @product.price, #支払金額を入力（itemテーブル等に紐づけても良い）
-        :customer => card.customer_id, #顧客ID
-        :currency => 'jpy', #日本円
-      )
-    else
-      # TODO: 決済失敗時の処理
+    if @trading.save
+      @order = Order.new(trading_id: @trading.id, product_id: @product.id)
+      if @order.save
+        @product.update(status_id: 2)
+        card = Creditcard.where(user_id: current_user.id).first
+        Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+        Payjp::Charge.create(
+          :amount => @product.price, #支払金額を入力（itemテーブル等に紐づけても良い）
+          :customer => card.customer_id, #顧客ID
+          :currency => 'jpy', #日本円
+        )
+      else
+        # TODO: 決済失敗時の処理
+      end
     end
-    
   end
 
   private
