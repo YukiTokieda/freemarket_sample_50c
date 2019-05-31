@@ -4,7 +4,8 @@
     %figure.figure
       = image_tag("//static.mercdn.net/images/member_photo_noimage_thumb.png",alt:"mercari",class:"mypage-user_icon_link_image");
 
-    %h2.bold ユーザーA
+    %h2.bold 
+      = current_user.nickname
     .mypage-number
       .mypage-number_evaluation 評価 0
       .mypage-number_exhibits 出品数 0
