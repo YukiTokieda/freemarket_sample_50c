@@ -6,7 +6,7 @@ class Mypage::CreditcardController < ApplicationController
   def index#Cardのデータpayjpに送り情報を取り出します
     @card = Creditcard.where(user_id: current_user.id).first
     if !@card.blank?
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      Payjp.api_key ="sk_test_50ea21ccb6048ef447419b69"
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @default_card_information = customer.cards.retrieve(@card.card_id)
     end
@@ -17,7 +17,7 @@ class Mypage::CreditcardController < ApplicationController
   end
 
   def pay #payjpとCardのデータベース作成を実施します。
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    Payjp.api_key ="sk_test_50ea21ccb6048ef447419b69"
     if params['payjp-token'].blank?
       redirect_to action: "new"
     else
@@ -38,7 +38,7 @@ class Mypage::CreditcardController < ApplicationController
     card = Creditcard.where(user_id: current_user.id).first
     if card.blank?
     else
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      Payjp.api_key ="sk_test_50ea21ccb6048ef447419b69"
       customer = Payjp::Customer.retrieve(card.customer_id)
       customer.delete
       card.delete
