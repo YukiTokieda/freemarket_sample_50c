@@ -6,8 +6,6 @@
           = image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?613028459")
 
       .header_form
-        -# .header_form__textfield 何かお探しですか？
-        -# url: search_product_path
         = form_tag search_path, method: :post do
           %input.header_form__textfield{name: "keyword", placeholder: "何かお探しですか？", type: "text", value: ""}
           %button.search-icon
