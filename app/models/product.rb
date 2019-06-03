@@ -27,7 +27,8 @@ class Product < ApplicationRecord
   # 商品を出品した投稿者の他の商品を取得
   scope :get_user_product, -> (product) { where(user_id: product.user_id).recent }
   # 渡されたカテゴリーIDの持った商品を取得（範囲指定可能）
-  scope :get_category_products, -> (category_id) { where(category_id: category_id, status_id: 1).recent }
+  scope :get_category_products, -> (category_id) { where(category_id: category_id, status_id: 1) }
+  scope :get_brand_products, -> (brand) { where(brand: brand, status_id: 1) }
 
   # 渡されたカテゴリーを持った配列を範囲形式で返す
   # 例：レディース159~337のカテゴリー配列を「159..337」形式で返す
@@ -59,19 +60,19 @@ class Product < ApplicationRecord
   end
   # シャネルブランドの商品取得
   def self.get_chanel
-    chanel = Product.where(brand: 'シャネル').recent
+    chanel =  get_brand_products('シャネル').recent
   end
   # ルイ ヴィトンブランドの商品取得
   def self.get_loisvuitton
-    loisvuitton = Product.where(brand: 'ルイ ヴィトン').recent
+    loisvuitton =  get_brand_products('ルイ ヴィトン').recent
   end
   # シュプリームブランドの商品取得
   def self.get_supreme
-    supreme = Product.where(brand: 'シュプリーム').recent
+    supreme =  get_brand_products('シュプリーム').recent
   end
   # ナイキブランドの商品取得
   def self.get_nike
-    nike = Product.where(brand: 'ナイキ').recent
+    loisvuitton =  get_brand_products('ナイキ').recent
   end
 
 end
