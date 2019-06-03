@@ -8,7 +8,7 @@ class Transaction::BuyController < ApplicationController
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     if @card.blank?
       #登録された情報がない場合にカード登録画面に移動
-      redirect_to controller: "mypage/creditcard", action: "new"
+      redirect_to controller: "mypage/creditcard", action: "index"
     else
       Payjp.api_key = "sk_test_50ea21ccb6048ef447419b69"
       #保管した顧客IDでpayjpから情報取得
