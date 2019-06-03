@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
     @shipping =  Shipping.new
     @categories = Category.where(parent_id: 0)
     @states = State.all
+    @sizes = Size.all
     @product.images.build
   end
 

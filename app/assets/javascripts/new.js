@@ -1,13 +1,5 @@
-
-
-
-
-
-
-
-
-
 $(function(){
+  $(document).on('turbolinks:load', function(){
   $("#content_category1 .select-place").change(function() {
     if ($("#content_category1 .select-place").val() == '---') $(".select-wrap:nth-of-type(2)").css('display','none');
     else $(".select-wrap:nth-of-type(2)").css('display','block'),$(".sell-form-box").css('height','240px'),$(".sell-content_category").css('height','240px'),$(".sell-content_category .form-area:nth-of-type(1)").css('height','150px');
@@ -27,7 +19,7 @@ $(function(){
     if ($("#shipping_fee_burden .select-place").val() == '---') $("#shipping_period_before_shipping.form-area").css('display','none');
     else $("#shipping_period_before_shipping.form-area").css('display','block'),$(".sell-content_delivery .sell-form-box").css('height','400px'),$(".sell-content_delivery").css('height','400px');
   });
-
+});
 });
 
 
@@ -160,6 +152,12 @@ $(document).on('turbolinks:load', function(){
     if(images.length == 4) {
       sellzone2.css({
         'display': 'none'
+      })
+      sellzone.css({
+        'display': 'block'
+      })
+      sellboxcontainer.css({
+        'height': '162px'
       })
     }
     if(images.length == 3) {

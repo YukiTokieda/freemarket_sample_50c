@@ -62,11 +62,11 @@
                       = product_form.collection_select :category_id, @categories[0].grandchildren, :id, :name, { prompt: '---' }, class: "select-place"
                       = fa_icon 'chevron-down', class: 'arrow-icon'
                   
-                  #content_size.form-area
+                  #content_sizes.form-area
                     %label サイズ
                     %span.required-tag 必須
                     .select-wrap
-                      = product_form.text_field :size_id, class: "text-place"
+                      = product_form.collection_select :size_id, @sizes, :id, :name,{ prompt: '---' }, class: "select-place"
                       = fa_icon 'chevron-down', class: 'arrow-icon'
                  
                   #content_brand.form-area
